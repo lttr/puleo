@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "scripts": {
+    "build:examples": "postcss examples/css-features.css -o examples/css-features.min.css"
+  },
+  "devDependencies": {
+    "@csstools/postcss-global-data": "^2.1.0",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "postcss-dark-theme-class": "^1.0.0",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^9.2.0"
+  },
+  "dependencies": {
+    "open-props": "^1.6.10"
+  }
+}

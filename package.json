@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "build": "node build/build.js",
+    "build": "node src/build.js",
     "build:examples": "postcss examples/css-features.css -o examples/css-features.min.css",
     "format": "prettier --write .",
     "lint": "eslint ."
@@ -9,6 +9,7 @@
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.0",
     "cssnano": "^6.0.1",
+    "defu": "^6.1.3",
     "eslint": "^8.52.0",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",

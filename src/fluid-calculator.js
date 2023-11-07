@@ -73,10 +73,15 @@ export function fluidGrid({
   baseFontSize,
   baseMax,
   columns,
-  gridColumnSpaceMultiplier,
-  gridGapSpaceMultiplier,
+  gridColumnSpace,
+  gridGapSpace,
   gutterSize,
+  space,
 }) {
+  const spacesMap = Object.fromEntries(space)
+  const gridColumnSpaceMultiplier = spacesMap[gridColumnSpace]
+  const gridGapSpaceMultiplier = spacesMap[gridGapSpace]
+
   const gridMaxWidth =
     ((columns + 1) * gridGapSpaceMultiplier * baseMax +
       gridColumnSpaceMultiplier * baseMax * columns) /
@@ -84,7 +89,11 @@ export function fluidGrid({
 
   return [
     customProperty(prefix, "grid-max-width", `${gridMaxWidth.toFixed(2)}rem`),
-    customProperty(prefix, "grid-gutter", `var(${gutterSize})`),
+    customProperty(
+      prefix,
+      "grid-gutter",
+      `var(--${prefix}space-${gutterSize})`,
+    ),
   ]
 }
 

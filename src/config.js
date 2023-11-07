@@ -1,6 +1,6 @@
 export const defaultConfig = {
   prefix: "",
-  selector: ":where(html)",
+  rootSelector: ":where(html)",
   layoutHelpers: [
     "container",
     "grid",
@@ -13,9 +13,9 @@ export const defaultConfig = {
   ],
   grid: {
     columns: 12,
-    gutterSize: "3-5",
-    gridGapSpaceMultiplier: "6",
-    gridColumnSpaceMultiplier: "7",
+    gutterSize: "4-6",
+    gridGapSpace: "6",
+    gridColumnSpace: "7",
   },
   fluid: {
     minWidth: 320,

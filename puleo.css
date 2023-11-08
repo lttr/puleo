@@ -35,8 +35,8 @@
   --space-8-9: clamp(4.500rem, 3.46rem + 5.22vw, 7.500rem);
   /* 13.5px => 30.0px */
   --space-3-5: clamp(0.844rem, 0.49rem + 1.79vw, 1.875rem);
-  /* 18.0px => 30.0px */
-  --space-4-5: clamp(1.125rem, 0.86rem + 1.30vw, 1.875rem);
+  /* 18.0px => 40.0px */
+  --space-4-6: clamp(1.125rem, 0.65rem + 2.39vw, 2.500rem);
  
   /* 12.5px => 12.8px */
   --font-size--2: clamp(0.781rem, 0.77rem + 0.03vw, 0.800rem);

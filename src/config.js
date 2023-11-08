@@ -51,7 +51,7 @@ export const defaultConfig = {
 
     // Two up steps
     ["3-5", 0],
-    ["4-5", 0],
+    ["4-6", 0],
   ],
   inlineSize: [
     "size-content-1",

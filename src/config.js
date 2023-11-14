@@ -53,6 +53,8 @@ export const defaultConfig = {
     ["3-5", 0],
     ["4-6", 0],
   ],
+
+  // From Open Props
   inlineSize: [
     "size-content-1",
     "size-content-2",
@@ -61,4 +63,6 @@ export const defaultConfig = {
     "size-header-2",
     "size-header-3",
   ],
+  borderRadius: ["radius-2", "radius-round"],
+  borderSize: ["border-size-1"],
 }

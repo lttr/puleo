@@ -65,6 +65,11 @@
   --size-header-2: 25ch;
   --size-header-3: 35ch;
  
+  --radius-2: 5px;
+  --radius-round: 1e5px;
+ 
+  --border-size-1: 1px;
+ 
 }
 
 .container {

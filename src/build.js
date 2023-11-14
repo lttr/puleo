@@ -17,6 +17,8 @@ function insideRootSelector(rootSelector, groups) {
 function build(config) {
   const effectiveConfig = defu(config, defaultConfig)
   const {
+    borderRadius,
+    borderSize,
     fluid,
     fontSize,
     grid,
@@ -32,10 +34,13 @@ function build(config) {
     fontSize && fluidFontSize({ prefix, ...fluid, fontSize }),
     grid && fluidGrid({ prefix, ...fluid, ...grid, space }),
     inlineSize && openProps({ prefix, names: inlineSize }),
+    borderRadius && openProps({ prefix, names: borderRadius }),
+    borderSize && openProps({ prefix, names: borderSize }),
   ])
-  return [...rulesInsideRootSelector, fluidLayouts({ prefix, layoutHelpers })]
-    .flat()
-    .filter(Boolean)
+
+  const helperClasses = [fluidLayouts({ prefix, layoutHelpers })]
+
+  return [...rulesInsideRootSelector, ...helperClasses].flat().filter(Boolean)
 }
 
 const result = build({})

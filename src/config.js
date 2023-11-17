@@ -65,4 +65,18 @@ export const defaultConfig = {
   ],
   borderRadius: ["radius-2", "radius-round"],
   borderSize: ["border-size-1"],
+  colors: [
+    "gray-1",
+    "gray-2",
+    "gray-3",
+    "gray-4",
+    "gray-5",
+    "gray-6",
+    "gray-7",
+    "gray-8",
+    "gray-9",
+    "gray-10",
+    "gray-11",
+    "gray-12",
+  ],
 }

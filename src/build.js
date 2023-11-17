@@ -14,38 +14,49 @@ function insideRootSelector(rootSelector, groups) {
   return [`${rootSelector} {`, ...lines, "}\n"]
 }
 
-function build(config) {
+function buildScales(config) {
   const effectiveConfig = defu(config, defaultConfig)
-  const {
-    borderRadius,
-    borderSize,
-    fluid,
-    fontSize,
-    grid,
-    inlineSize,
-    layoutHelpers,
-    prefix,
-    rootSelector,
-    space,
-  } = effectiveConfig
+  const { fluid, fontSize, grid, layoutHelpers, prefix, rootSelector, space } =
+    effectiveConfig
 
   const rulesInsideRootSelector = insideRootSelector(rootSelector, [
     space && fluidSpace({ prefix, ...fluid, space }),
     fontSize && fluidFontSize({ prefix, ...fluid, fontSize }),
     grid && fluidGrid({ prefix, ...fluid, ...grid, space }),
+  ])
+
+  return [...rulesInsideRootSelector].flat().filter(Boolean)
+}
+
+function buildProps(config) {
+  const effectiveConfig = defu(config, defaultConfig)
+  const { borderRadius, borderSize, inlineSize, colors, prefix, rootSelector } =
+    effectiveConfig
+
+  const rulesInsideRootSelector = insideRootSelector(rootSelector, [
     inlineSize && openProps({ prefix, names: inlineSize }),
     borderRadius && openProps({ prefix, names: borderRadius }),
     borderSize && openProps({ prefix, names: borderSize }),
+    colors && openProps({ prefix, names: colors }),
   ])
 
-  const helperClasses = [fluidLayouts({ prefix, layoutHelpers })]
-
-  return [...rulesInsideRootSelector, ...helperClasses].flat().filter(Boolean)
+  return [...rulesInsideRootSelector].flat().filter(Boolean)
 }
 
-const result = build({})
+function buildObjects(config) {
+  const effectiveConfig = defu(config, defaultConfig)
+  const { layoutHelpers, prefix } = effectiveConfig
+  return fluidLayouts({ prefix, layoutHelpers })
+}
 
-const css = result.join("\n")
+const cssScales = buildScales({}).join("\n")
+const cssProps = buildProps({}).join("\n")
+const cssObjects = buildObjects({}).join("\n")
 
-const fileOutput = "./puleo.css"
-writeFileSync(fileOutput, css)
+const fileOutputScales = "./css/generated/scales.css"
+const fileOutputProps = "./css/generated/props.css"
+const fileOutputObjects = "./css/generated/objects.css"
+
+writeFileSync(fileOutputScales, cssScales)
+writeFileSync(fileOutputProps, cssProps)
+writeFileSync(fileOutputObjects, cssObjects)

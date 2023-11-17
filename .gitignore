@@ -1,2 +1,6 @@
 node_modules
+output
+generated
+
 *.min.css
+*.post.css

@@ -1,7 +1,6 @@
 import postcssPresetEnv from "postcss-preset-env"
 import postcssImport from "postcss-import"
 import postcssGlobalData from "@csstools/postcss-global-data"
-import cssnano from "cssnano"
 import darkThemeClass from "postcss-dark-theme-class"
 
 const plugins = [
@@ -28,9 +27,6 @@ const plugins = [
   // Enables to control dark theme via a class
   darkThemeClass({
     where: true,
-  }),
-  cssnano({
-    preset: "default",
   }),
 ]
 

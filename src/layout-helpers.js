@@ -32,6 +32,9 @@ export function fluidLayouts({ prefix, layoutHelpers }) {
 `,
 
     center: `.${prefix}center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-inline: auto;
 }
 `,

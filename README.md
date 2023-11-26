@@ -24,7 +24,8 @@ custom designs. Opinionated on demand.
   - Ment to be used with CSS, that is scoped to components (like Vue or Svelte
     scoped style blocks or upcoming CSS native scoping; BEM does the job as well)
 - Base styling layer needs (with ITCSS layer associations)
-  - set of variables/design tokens with focus on logical aspects (-> Settings)
+  - set of primitive values (physical variables/props) (-> Settings)
+  - set of semantic variables/design tokens (-> Settings)
   - type, space and grid system (-> Tools)
   - CSS reset/normalization (-> Generic)
   - brand specific reset (-> Generic)

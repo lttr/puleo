@@ -1,18 +1,18 @@
 :where(html) {
   /* text */
   --font-family-body: sans-serif;
-  --font-weight-headings: 700;
-  --font-weight-body: 400;
-  --font-weight-body-bold: 700;
-  --font-weight-light: 300;
-  --line-height-body: var(--line-height-3);
-  --line-height-headings: var(--line-height-1);
   --font-size-body: var(--font-size-0);
   --font-size-h1: var(--font-size-4);
   --font-size-h2: var(--font-size-3);
   --font-size-h3: var(--font-size-2);
   --font-size-h4: var(--font-size-1);
   --font-size-h5: var(--font-size-0);
+  --font-weight-body-bold: var(--font-weight-7);
+  --font-weight-body: var(--font-weight-4);
+  --font-weight-headings: var(--font-weight-7);
+  --font-weight-light: var(--font-weight-3);
+  --line-height-body: var(--font-lineheight-3);
+  --line-height-headings: var(--font-lineheight-1);
 
   /* colors */
   --text-color-1: var(--gray-12);

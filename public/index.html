@@ -7,23 +7,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="logo.svg" />
 	<link href="../output/index.post.css" rel="stylesheet">
-
-	<style>
-		.btn-custom {
-			--_bg: linear-gradient(var(--indigo-5), var(--indigo-7));
-			--_border: var(--indigo-6);
-			--_text: var(--indigo-0);
-			--_ink-shadow: 0 1px 0 var(--indigo-9);
-		}
-
-		.btn-large {
-			--_size: var(--font-size-4);
-		}
-	</style>
+	<link href="./demo.css" rel="stylesheet">
+	<script src="./script.js" defer></script>
 </head>
 
 <body>
 	<hr>
+
 	<header class="container">
 		<div class="center stack">
 			<h1>Puleo</h1>
@@ -36,45 +26,166 @@
 	</header>
 
 	<hr>
+	<!-- FONT-SCALE -->
 
-	<div class="container">
-		<h4>Included adaptive props</h4>
-		<h3>4 Surface Colors</h3>
-		<p>Great for cards, buttons, borders, sidenavs, wells, etc. When you want to change the perception of layering
-			and grouping.</p>
-		<div class="surface-samples">
-			<div class="surface1 rad-shadow">var(--surface-1)</div>
-			<div class="surface2 rad-shadow">var(--surface-2)</div>
-			<div class="surface3 rad-shadow">var(--surface-3)</div>
-			<div class="surface4 rad-shadow">var(--surface-4)</div>
-		</div>
-	</div>
-
-	<div class="text-samples">
-		<h3>2 Text Colors, 2 link colors</h3>
-		<h5 class="text1">
-			<span class="swatch link rad-shadow"></span>
-			var(--link)
-		</h5>
-		<h5 class="text1">
-			<span class="swatch link-visited rad-shadow"></span>
-			var(--link-visited)
-		</h5>
-		<h5 class="text1">
-			<span class="swatch text1 rad-shadow"></span>
-			var(--text-1)
-		</h5>
-		<h5 class="text2">
-			<span class="swatch text2 rad-shadow"></span>
-			var(--text-2)
-		</h5>
-		<p>Using these props results in colors that adapt to the users system theme preference automatically.</p>
-		<p>The brand color is used sparingly, find it used in the HTML elements below! The link color is useful for
-			buttons and other custom components you want to have consistent interactive text for.</p>
-	</div>
+	<section class="container" data-property="font-size">
+		<h2>Font scale</h2>
+		<article>
+			<h1>Primitive props</h1>
+			<div>
+				<code>--font-size--2</code>
+				<span class="example" style="font-size: var(--font-size--2)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-size--1</code>
+				<span class="example" style="font-size: var(--font-size--1)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-size-0</code>
+				<span class="example" style="font-size: var(--font-size-0)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-size-1</code>
+				<span class="example" style="font-size: var(--font-size-1)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-size-2</code>
+				<span class="example" style="font-size: var(--font-size-2)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-size-3</code>
+				<span class="example" style="font-size: var(--font-size-3)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-size-4</code>
+				<span class="example" style="font-size: var(--font-size-4)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-size-5</code>
+				<span class="example" style="font-size: var(--font-size-5)">Lorem ipsum</span>
+			</div>
+		</article>
+		<article>
+			<h1>Semantic props</h1>
+			<div>
+				<code>--font-size-body</code>
+				<span class="example" style="font-size: var(--font-size-body)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-size-h5</code>
+				<h5 class="example">Lorem ipsum</h5>
+			</div>
+			<div>
+				<code>--font-size-h4</code>
+				<h4 class="example">Lorem ipsum</h4>
+			</div>
+			<div>
+				<code>--font-size-h3</code>
+				<h3 class="example">Lorem ipsum</h3>
+			</div>
+			<div>
+				<code>--font-size-h2</code>
+				<h2 class="example">Lorem ipsum</h2>
+			</div>
+			<div>
+				<code>--font-size-h1</code>
+				<h1 class="example">Lorem ipsum</h1>
+			</div>
+		</article>
+	</section>
 
 	<hr>
+	<!-- LINE-HEIGHT -->
 
+	<section class="container" data-property="line-height">
+		<h2>Line height</h2>
+		<article>
+			<h1>Primitive props</h1>
+			<div>
+				<code>--font-lineheight-0</code>
+				<span class="example bg-gray" style="line-height: var(--font-lineheight-0);">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-lineheight-1</code>
+				<span class="example bg-gray" style="line-height: var(--font-lineheight-1);">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-lineheight-2</code>
+				<span class="example bg-gray" style="line-height: var(--font-lineheight-2);">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-lineheight-3</code>
+				<span class="example bg-gray" style="line-height: var(--font-lineheight-3);">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-lineheight-4</code>
+				<span class="example bg-gray" style="line-height: var(--font-lineheight-4);">Lorem ipsum</span>
+			</div>
+		</article>
+		<article>
+			<h1>Semantic props</h1>
+			<div>
+				<code>--line-height-body</code>
+				<span class="example bg-gray" style="line-height: var(--line-height-body);">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--line-height-headings</code>
+				<span class="example bg-gray" style="line-height: var(--line-height-headings);">Lorem ipsum</span>
+			</div>
+		</article>
+	</section>
+
+	<hr>
+	<!-- FONT-WEIGHT -->
+
+	<section class="container" data-property="font-weight">
+		<h2>Font weight</h2>
+		<article>
+			<h1>Primitive props</h1>
+			<div>
+				<code>--font-weight-3</code>
+				<span class="example" style="font-weight: var(--font-weight-3)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-weight-4</code>
+				<span class="example" style="font-weight: var(--font-weight-4)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-weight-5</code>
+				<span class="example" style="font-weight: var(--font-weight-5)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-weight-6</code>
+				<span class="example" style="font-weight: var(--font-weight-6)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-weight-7</code>
+				<span class="example" style="font-weight: var(--font-weight-7)">Lorem ipsum</span>
+			</div>
+		</article>
+		<article>
+			<h1>Semantic props</h1>
+			<div>
+				<code>--font-weight-body-bold</code>
+				<span class="example" style="font-weight: var(--font-weight-body-bold)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-weight-body</code>
+				<span class="example" style="font-weight: var(--font-weight-body)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-weight-headings</code>
+				<span class="example" style="font-weight: var(--font-weight-headings)">Lorem ipsum</span>
+			</div>
+			<div>
+				<code>--font-weight-light</code>
+				<span class="example" style="font-weight: var(--font-weight-light)">Lorem ipsum</span>
+			</div>
+		</article>
+	</section>
+
+
+	<hr>
 	<!-- BUTTONS -->
 
 	<section>
@@ -119,7 +230,6 @@
 	</form>
 
 	<hr>
-
 	<!-- FORMS -->
 
 	<header>

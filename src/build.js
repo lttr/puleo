@@ -30,14 +30,24 @@ function buildScales(config) {
 
 function buildProps(config) {
   const effectiveConfig = defu(config, defaultConfig)
-  const { borderRadius, borderSize, inlineSize, colors, prefix, rootSelector } =
-    effectiveConfig
+  const {
+    borderRadius,
+    borderSize,
+    colors,
+    inlineSize,
+    lineHeight,
+    fontWeight,
+    prefix,
+    rootSelector,
+  } = effectiveConfig
 
   const rulesInsideRootSelector = insideRootSelector(rootSelector, [
     inlineSize && openProps({ prefix, names: inlineSize }),
     borderRadius && openProps({ prefix, names: borderRadius }),
     borderSize && openProps({ prefix, names: borderSize }),
     colors && openProps({ prefix, names: colors }),
+    lineHeight && openProps({ prefix, names: lineHeight }),
+    fontWeight && openProps({ prefix, names: fontWeight }),
   ])
 
   return [...rulesInsideRootSelector].flat().filter(Boolean)

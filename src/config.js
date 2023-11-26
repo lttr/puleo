@@ -79,4 +79,18 @@ export const defaultConfig = {
     "gray-11",
     "gray-12",
   ],
+  lineHeight: [
+    "font-lineheight-0",
+    "font-lineheight-1",
+    "font-lineheight-2",
+    "font-lineheight-3",
+    "font-lineheight-4",
+  ],
+  fontWeight: [
+    "font-weight-3",
+    "font-weight-4",
+    "font-weight-5",
+    "font-weight-6",
+    "font-weight-7",
+  ],
 }

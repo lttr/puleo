@@ -61,7 +61,7 @@
 }
 
 :focus-visible {
-  outline-color: var(--brand-color, var(--link-color));
+  outline-color: var(--focus-color, var(--link-color));
 }
 
 /* Open Props: normalize.src.css */
@@ -103,7 +103,7 @@
 }
 
 :where(:not(:active):focus-visible) {
-  outline-offset: 5px;
+  outline-offset: var(--outline-offset);
 }
 
 :where(body) {

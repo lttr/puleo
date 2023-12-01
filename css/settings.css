@@ -23,38 +23,30 @@
   --surface-3: var(--gray-3);
   --surface-4: var(--gray-4);
 
-  --brand-color: var(--blue-4);
-  --brand-color-complementary-dark: var(--blue-11);
-  --brand-color-complementary-light: var(--blue-1);
+  --brand-color: var(--blue-6);
+  --brand-color-dim: var(--blue-10);
+  --brand-color-bright: var(--blue-2);
   --accent-color: var(--brand-color);
   --caret-color: var(--brand-color);
+  --focus-color: var(--brand-color);
 
   --text-color-body: var(--text-color-1);
   --text-color-headings: var(--text-color-1);
   --bg-color-body: var(--surface-0);
-  --focus-color: var(--brand-color);
 
   --link-color: inherit;
-  --link-color-visited: var(--purple-2);
+  --link-color-visited: var(--purple-7);
 
-  --positive-color: var(--green-7);
-  --negative-color: var(--red-error);
+  --positive-color: var(--green-8);
+  --negative-color: var(--red-8);
+
+  --error-alert-color: var(--red-11);
+  --error-alert-bg-color: var(--red-1);
 
   --scrollthumb-color: var(--gray-7);
 
-  --positive-alert-color: var(--positive-color);
-  --positive-alert-bg-color: var(--green-1);
-  --positive-alert-bg-close-color: var(--green-2);
-  --error-alert-color: var(--negative-color);
-  --error-alert-bg-color: var(--red-1);
-  --error-alert-bg-close-color: var(--red-2);
-  --info-alert-color: var(--black-light);
-  --info-alert-bg-color: var(--surface-2);
-  --info-alert-bg-close-color: var(--surface-3);
-
   /* a11y */
-  --outline-color: var(--brand-color);
-  --outline-offset: 2px; /* less then 2px is not useful when the offset color is the same as the accent color */
+  --outline-offset: 2px;
 
   /* inputs */
   --input-radius: var(--radius-2);
@@ -71,12 +63,16 @@
     --surface-3: var(--gray-7);
     --surface-4: var(--gray-6);
 
+    --brand-color-dim: var(--blue-11);
+    --brand-color-bright: var(--blue-3);
+
     --bg-color-body: var(--surface-1);
 
     --scrollthumb-color: var(--gray-6);
 
-    --link-color-color-visited: var(--text-color-1);
-
-    --info-alert-color: var(--text-color-2);
+    --positive-color: var(--green-6);
+    --negative-color: var(--red-6);
+    --error-alert-color: var(--red-1);
+    --error-alert-bg-color: var(--red-11);
   }
 }

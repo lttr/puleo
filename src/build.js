@@ -33,21 +33,23 @@ function buildProps(config) {
   const {
     borderRadius,
     borderSize,
+    breakpoints,
     colors,
+    fontWeight,
     inlineSize,
     lineHeight,
-    fontWeight,
     prefix,
     rootSelector,
   } = effectiveConfig
 
   const rulesInsideRootSelector = insideRootSelector(rootSelector, [
-    inlineSize && openProps({ prefix, names: inlineSize }),
     borderRadius && openProps({ prefix, names: borderRadius }),
     borderSize && openProps({ prefix, names: borderSize }),
+    breakpoints && openProps({ prefix, names: breakpoints }),
     colors && openProps({ prefix, names: colors }),
-    lineHeight && openProps({ prefix, names: lineHeight }),
     fontWeight && openProps({ prefix, names: fontWeight }),
+    inlineSize && openProps({ prefix, names: inlineSize }),
+    lineHeight && openProps({ prefix, names: lineHeight }),
   ])
 
   return [...rulesInsideRootSelector].flat().filter(Boolean)

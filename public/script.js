@@ -11,7 +11,7 @@ for (const propElement of propElements) {
   let cssProperty = ""
   if (exampleElement) {
     const elementStyles = window.getComputedStyle(exampleElement)
-    cssProperty = exampleElement.closest("section")?.dataset["property"]
+    cssProperty = exampleElement.closest("[data-property]")?.dataset["property"]
     elementStyle = elementStyles[cssProperty]
   }
 

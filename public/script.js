@@ -1,5 +1,5 @@
 const rootStyles = window.getComputedStyle(document.documentElement)
-const propElements = document.querySelectorAll("section article code")
+const propElements = document.querySelectorAll("section.sample article code")
 const cssIndex = Object.fromEntries(getCSSCustomPropIndex())
 
 for (const propElement of propElements) {

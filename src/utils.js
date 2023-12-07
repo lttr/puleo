@@ -1,3 +1,3 @@
-export function customProperty(prefix, name, value) {
-  return `--${prefix}${name}: ${value};`
+export function customProperty(propsPrefix, name, value) {
+  return `--${propsPrefix}${name}: ${value};`
 }

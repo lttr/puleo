@@ -1,7 +1,7 @@
 import { customProperty } from "./utils.js"
 
 export function fluidFontSize({
-  prefix,
+  propsPrefix,
   baseFontSize,
   baseMax,
   baseMin,
@@ -22,7 +22,7 @@ export function fluidFontSize({
       minSize: min,
       minWidth,
     })
-    const rule = customProperty(prefix, `font-size-${step}`, ruleValue)
+    const rule = customProperty(propsPrefix, `font-size-${step}`, ruleValue)
     const comment = `/* ${min.toFixed(1)}px => ${max.toFixed(1)}px */`
 
     result.push([comment, rule])
@@ -31,7 +31,7 @@ export function fluidFontSize({
 }
 
 export function fluidSpace({
-  prefix,
+  propsPrefix,
   baseFontSize,
   baseMax,
   baseMin,
@@ -60,7 +60,7 @@ export function fluidSpace({
       minSize: min,
       minWidth,
     })
-    const rule = customProperty(prefix, `space-${name}`, ruleValue)
+    const rule = customProperty(propsPrefix, `space-${name}`, ruleValue)
     const comment = `/* ${min.toFixed(1)}px => ${max.toFixed(1)}px */`
 
     result.push([comment, rule])
@@ -69,7 +69,7 @@ export function fluidSpace({
 }
 
 export function fluidGrid({
-  prefix,
+  propsPrefix,
   baseFontSize,
   baseMax,
   columns,
@@ -88,12 +88,17 @@ export function fluidGrid({
     baseFontSize
 
   return [
-    customProperty(prefix, "grid-max-width", `${gridMaxWidth.toFixed(2)}rem`),
     customProperty(
-      prefix,
-      "grid-gutter",
-      `var(--${prefix}space-${gutterSize})`,
+      propsPrefix,
+      "grid-max-width",
+      `${gridMaxWidth.toFixed(2)}rem`,
     ),
+    customProperty(
+      propsPrefix,
+      "grid-gutter",
+      `var(--${propsPrefix}space-${gutterSize})`,
+    ),
+    customProperty(propsPrefix, "grid-columns", 12),
   ]
 }
 

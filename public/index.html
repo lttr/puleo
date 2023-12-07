@@ -14,8 +14,8 @@
 <body>
 	<hr>
 
-	<header class="container">
-		<div class="center stack">
+	<header class="p-container">
+		<div class="p-center p-stack">
 			<h1>Puleo</h1>
 			<img src="logo.svg" alt="pulley" style="width: 6ch;" />
 			<p>
@@ -28,7 +28,7 @@
 	<hr>
 	<!-- FONT-SCALE -->
 
-	<section class="sample container" data-property="font-size">
+	<section class="sample p-container" data-property="font-size">
 		<h2>Font scale</h2>
 		<article>
 			<h1>Primitive props</h1>
@@ -97,7 +97,7 @@
 	<hr>
 	<!-- LINE-HEIGHT -->
 
-	<section class="sample container" data-property="line-height">
+	<section class="sample p-container" data-property="line-height">
 		<h2>Line height</h2>
 		<article>
 			<h1>Primitive props</h1>
@@ -138,7 +138,7 @@
 	<hr>
 	<!-- FONT-WEIGHT -->
 
-	<section class="sample container" data-property="font-weight">
+	<section class="sample p-container" data-property="font-weight">
 		<h2>Font weight</h2>
 		<article>
 			<h1>Primitive props</h1>
@@ -188,7 +188,7 @@
 	<hr>
 	<!-- SPACE -->
 
-	<section class="sample container" data-property="padding-left">
+	<section class="sample p-container" data-property="padding-left">
 		<h2>Space</h2>
 		<article>
 			<h1>Primitive props</h1>
@@ -272,29 +272,9 @@
 	</section>
 
 	<hr>
-	<!-- GRID -->
-
-	<section class="sample container">
-		<h2>Grid</h2>
-		<article>
-			<h1>Semantic props</h1>
-			<div data-property="max-width">
-				<code>--grid-max-width</code>
-				<span class="example" style="max-width: var(--grid-max-width);"></span>
-			</div>
-			<div data-property="padding-inline">
-				<code>--grid-gutter</code>
-				<span class="example bg-gray" style="padding-inline: var(--grid-gutter)">
-					Cras rutrum porta purus. Vivamus lorem.
-				</span>
-			</div>
-		</article>
-	</section>
-
-	<hr>
 	<!-- BREAKPOINTS -->
 
-	<section class="sample container" data-property="inline-size">
+	<section class="sample p-container" data-property="inline-size">
 		<h2>Breakpoints</h2>
 		<article>
 			<h1>Primitive props</h1>
@@ -332,7 +312,7 @@
 	<hr>
 	<!-- TEXT WIDTH -->
 
-	<section class="sample container" data-property="max-inline-size">
+	<section class="sample p-container" data-property="max-inline-size">
 		<h2>Text width</h2>
 		<article>
 			<h1>Primitive props</h1>
@@ -378,7 +358,7 @@
 	<hr>
 	<!-- COLORS -->
 
-	<section class="sample container" data-property="background">
+	<section class="sample p-container" data-property="background">
 		<h2>Colors</h2>
 		<article>
 			<h1>Primitive props</h1>
@@ -536,7 +516,7 @@
 	<hr>
 	<!-- BORDERS -->
 
-	<section class="sample container">
+	<section class="sample p-container">
 		<h2>Borders</h2>
 		<article>
 			<h1>Primitive props</h1>
@@ -601,6 +581,162 @@
 		</article>
 	</section>
 
+	<hr>
+	<!-- GRID -->
+
+	<section class="sample p-container">
+		<h2>Grid</h2>
+		<article>
+			<h1>Semantic props</h1>
+			<div data-property="max-width">
+				<code>--grid-max-width</code>
+				<span class="example" style="max-width: var(--grid-max-width);"></span>
+			</div>
+			<div data-property="padding-inline">
+				<code>--grid-gutter</code>
+				<span class="example bg-gray" style="padding-inline: var(--grid-gutter)">
+					Cras rutrum porta purus. Vivamus lorem.
+				</span>
+			</div>
+		</article>
+	</section>
+
+	<hr>
+	<!-- LAYOUTS -->
+
+	<section class="layouts p-container p-stack">
+		<h2>Layouts</h2>
+
+		<article class="p-flow">
+			<h3>Container</h3>
+			<div class="bg-gray">Lorem Ipsum</div>
+		</article>
+		<article class="p-flow">
+			<h3>Grid</h3>
+			<div class="p-grid grid">
+				<div class="item-1 bg-gray" style="padding: var(--space-3);">
+					<p>
+						I'm a <code>grid</code> item 8/12 columns wide on screen size
+						<code>sm</code> and above.
+					</p>
+				</div>
+				<div class="item-2 bg-gray" style="padding: var(--space-3);">
+					<p>
+						I'm a <code>grid</code> item 4/12 columns wide on screen size
+						<code>sm</code> and above.
+					</p>
+				</div>
+				<div class="item-3 bg-gray" style="padding: var(--space-3);">
+					<p>
+						I'm a <code>grid</code> item 3/12 columns wide on screen size
+						<code>sm</code> and above.
+					</p>
+				</div>
+			</div>
+		</article>
+		<article class="p-flow">
+			<h3>Cluster</h3>
+			<div class="p-cluster">
+				<div class="bg-gray">Lorem</div>
+				<div class="bg-gray">Ipsum</div>
+			</div>
+			<ul class="p-cluster" style="max-width: var(--size-content-2); border: var(--border-1);">
+				<li class="box">Elit</li>
+				<li class="box">Elit?</li>
+				<li class="box">Consectetur.</li>
+				<li class="box">Ipsum</li>
+				<li class="box">Ipsum.</li>
+				<li class="box">Adipisicing</li>
+				<li class="box">Elit.</li>
+			</ul>
+		</article>
+		<article class="p-flow">
+			<h3>Auto wrapping grid</h3>
+			<div class="p-stack">
+				<ul class="p-auto-grid" style="border: var(--border-1);">
+					<li class="box">Elit</li>
+					<li class="box">Elit?</li>
+					<li class="box">Consectetur.</li>
+				</ul>
+				<ul class="p-auto-grid grid1" style="border: var(--border-1);">
+					<li class="box">Elit</li>
+					<li class="box">Elit?</li>
+					<li class="box">Consectetur.</li>
+					<li class="box">Ipsum</li>
+					<li class="box">Ipsum.</li>
+					<li class="box">Adipisicing</li>
+					<li class="box">Elit.</li>
+				</ul>
+				<ul class="p-auto-grid grid2" style="border: var(--border-1);">
+					<li class="box">Elit</li>
+					<li class="box">Adipisicing</li>
+					<li class="box">Elit.</li>
+				</ul>
+				<ul class="p-auto-grid grid3" style="border: var(--border-1);">
+					<li class="box">Elit</li>
+					<li class="box">Adipisicing</li>
+					<li class="box">Elit.</li>
+				</ul>
+			</div>
+		</article>
+		<article class="p-flow" style="--flow-space: 1em">
+			<h3>The flow</h3>
+			<div class="p-flow" style="border: var(--border-1)">
+				<h2>Lorem ipsum</h2>
+				<p>
+					Consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+					accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+					delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor
+					cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+					mazim placerat facer possim assum.
+				</p>
+				<h3>Legentis in iis qui</h3>
+				<p>
+					Typi non habent claritatem insitam; est usus legentis in iis qui facit
+					eorum claritatem.
+				</p>
+			</div>
+		</article>
+		<article class="p-flow">
+			<h3>The stack</h3>
+			<div class="p-auto-grid stack">
+				<ul class="p-stack">
+					<li class="box">Elit</li>
+					<li class="box">Consectetur</li>
+					<li class="box">Ipsum</li>
+					<li class="box">Adipisicing</li>
+				</ul>
+				<div class="heigher">
+					<ul class="p-stack">
+						<li class="box">Elit</li>
+						<li class="box">Consectetur</li>
+						<li class="box">Ipsum</li>
+						<li class="box align-end">Adipisicing</li>
+					</ul>
+				</div>
+			</div>
+		</article>
+		<article class="p-flow">
+			<h3>The switcher</h3>
+			<div class="p-stack">
+				<div class="p-switcher">
+					<div class="box">A</div>
+					<div class="box">B</div>
+					<div class="box">C</div>
+				</div>
+				<div class="switcher p-switcher">
+					<div class="box">A</div>
+					<div class="box">B</div>
+					<div class="box">C</div>
+				</div>
+				<div class="switcher-2 p-switcher">
+					<div class="box">A</div>
+					<div class="box">B</div>
+					<div class="box">C</div>
+				</div>
+			</div>
+		</article>
+	</section>
 
 
 	<hr>

@@ -72,8 +72,8 @@ export const defaultConfig = {
     "size-xl",
     "size-xxl",
   ],
-  borderRadius: ["radius-2", "radius-round"],
-  borderSize: ["border-size-1"],
+  borderRadius: ["radius-1", "radius-2", "radius-round"],
+  borderSize: ["border-size-1", "border-size-2"],
   colors: [
     "gray-1",
     "gray-2",

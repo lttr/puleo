@@ -1,5 +1,6 @@
 export const defaultConfig = {
-  prefix: "",
+  propsPrefix: "",
+  classPrefix: "p-",
   rootSelector: ":where(html)",
   layoutHelpers: [
     "container",

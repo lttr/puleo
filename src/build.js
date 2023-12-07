@@ -16,13 +16,13 @@ function insideRootSelector(rootSelector, groups) {
 
 function buildScales(config) {
   const effectiveConfig = defu(config, defaultConfig)
-  const { fluid, fontSize, grid, layoutHelpers, prefix, rootSelector, space } =
+  const { fluid, fontSize, grid, propsPrefix, rootSelector, space } =
     effectiveConfig
 
   const rulesInsideRootSelector = insideRootSelector(rootSelector, [
-    space && fluidSpace({ prefix, ...fluid, space }),
-    fontSize && fluidFontSize({ prefix, ...fluid, fontSize }),
-    grid && fluidGrid({ prefix, ...fluid, ...grid, space }),
+    space && fluidSpace({ propsPrefix, ...fluid, space }),
+    fontSize && fluidFontSize({ propsPrefix, ...fluid, fontSize }),
+    grid && fluidGrid({ propsPrefix, ...fluid, ...grid, space }),
   ])
 
   return [...rulesInsideRootSelector].flat().filter(Boolean)
@@ -38,18 +38,18 @@ function buildProps(config) {
     fontWeight,
     inlineSize,
     lineHeight,
-    prefix,
+    propsPrefix,
     rootSelector,
   } = effectiveConfig
 
   const rulesInsideRootSelector = insideRootSelector(rootSelector, [
-    borderRadius && openProps({ prefix, names: borderRadius }),
-    borderSize && openProps({ prefix, names: borderSize }),
-    breakpoints && openProps({ prefix, names: breakpoints }),
-    colors && openProps({ prefix, names: colors }),
-    fontWeight && openProps({ prefix, names: fontWeight }),
-    inlineSize && openProps({ prefix, names: inlineSize }),
-    lineHeight && openProps({ prefix, names: lineHeight }),
+    borderRadius && openProps({ propsPrefix, names: borderRadius }),
+    borderSize && openProps({ propsPrefix, names: borderSize }),
+    breakpoints && openProps({ propsPrefix, names: breakpoints }),
+    colors && openProps({ propsPrefix, names: colors }),
+    fontWeight && openProps({ propsPrefix, names: fontWeight }),
+    inlineSize && openProps({ propsPrefix, names: inlineSize }),
+    lineHeight && openProps({ propsPrefix, names: lineHeight }),
   ])
 
   return [...rulesInsideRootSelector].flat().filter(Boolean)
@@ -57,8 +57,8 @@ function buildProps(config) {
 
 function buildObjects(config) {
   const effectiveConfig = defu(config, defaultConfig)
-  const { layoutHelpers, prefix } = effectiveConfig
-  return fluidLayouts({ prefix, layoutHelpers })
+  const { classPrefix, propsPrefix, layoutHelpers } = effectiveConfig
+  return fluidLayouts({ classPrefix, propsPrefix, layoutHelpers })
 }
 
 const cssScales = buildScales({}).join("\n")

@@ -1,37 +1,37 @@
-export function fluidLayouts({ prefix, layoutHelpers }) {
+export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   const helpers = {
-    container: `.${prefix}container {
-  max-width: var(--${prefix}grid-max-width);
-  padding-inline: var(--${prefix}grid-gutter);
+    container: `.${classPrefix}container {
+  max-width: var(--${propsPrefix}grid-max-width);
+  padding-inline: var(--${propsPrefix}grid-gutter);
   margin-inline: auto;
 }
 `,
 
-    grid: `.${prefix}grid {
+    grid: `.${classPrefix}grid {
   display: grid;
-  gap: var(--${prefix}grid-gutter);
+  gap: var(--${propsPrefix}grid-gutter);
 }
 `,
 
-    "auto-grid": `.${prefix}auto-grid {
-  --${prefix}auto-grid-min: var(--${prefix}size-content-2);
+    "auto-grid": `.${classPrefix}auto-grid {
+  --${propsPrefix}auto-grid-min: var(--${propsPrefix}size-content-2);
 
   display: grid;
-  column-gap: var(--${prefix}grid-gutter);
-  row-gap: var(--${prefix}space-3-4);
+  column-gap: var(--${propsPrefix}grid-gutter);
+  row-gap: var(--${propsPrefix}space-3-4);
   grid-template-columns: repeat(
-    var(--${prefix}auto-grid-repeat, auto-fit),
-    minmax(min(100%, var(--${prefix}auto-grid-min)), 1fr)
+    var(--${propsPrefix}auto-grid-repeat, auto-fit),
+    minmax(min(100%, var(--${propsPrefix}auto-grid-min)), 1fr)
   );
 }
 `,
 
-    flow: `.${prefix}flow > * + * {
-  margin-block-start: var(--${prefix}flow-space, 1em);
+    flow: `.${classPrefix}flow > * + * {
+  margin-block-start: var(--${propsPrefix}flow-space, 1em);
 }
 `,
 
-    center: `.${prefix}center {
+    center: `.${classPrefix}center {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +39,7 @@ export function fluidLayouts({ prefix, layoutHelpers }) {
 }
 `,
 
-    stack: `.${prefix}stack {
+    stack: `.${classPrefix}stack {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -49,23 +49,23 @@ export function fluidLayouts({ prefix, layoutHelpers }) {
   }
 
   > * + * {
-    margin-block-start: var(--${prefix}stack-space, var(--${prefix}space-5));
+    margin-block-start: var(--${propsPrefix}stack-space, var(--${propsPrefix}space-5));
   }
 }
 `,
 
-    cluster: `.${prefix}cluster {
+    cluster: `.${classPrefix}cluster {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--${prefix}cluster-space, var(--${prefix}space-3));
+  gap: var(--${propsPrefix}cluster-space, var(--${propsPrefix}space-3));
 }
 `,
 
-    switcher: `.${prefix}switcher {
+    switcher: `.${classPrefix}switcher {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--${prefix}switcher-space, var(--${prefix}space-6));
+  gap: var(--${propsPrefix}switcher-space, var(--${propsPrefix}space-6));
 
   > * {
     /*
@@ -79,7 +79,7 @@ export function fluidLayouts({ prefix, layoutHelpers }) {
      * In case it is positive, it grabs an equal amount of space for each child.
      */
     flex-basis: calc(
-      (var(--${prefix}switcher-treshold, var(--${prefix}size-content-3)) - 100%) *
+      (var(--${propsPrefix}switcher-treshold, var(--${propsPrefix}size-content-3)) - 100%) *
         999
     );
   }

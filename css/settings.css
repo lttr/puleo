@@ -50,6 +50,15 @@
 
   /* inputs */
   --input-radius: var(--radius-2);
+
+  /* borders */
+  --border-size-default: var(--border-size-1);
+  --radius-default: var(--radius-2);
+  --border-1: var(--border-size-1) solid var(--surface-2);
+  --border-2: var(--border-size-1) solid var(--surface-3);
+  --border-3: var(--border-size-1) solid var(--surface-4);
+  --border-4: var(--border-size-1) solid var(--text-color-2);
+  --border-5: var(--border-size-1) solid var(--text-color-1);
 }
 
 @media (--OSdark) {

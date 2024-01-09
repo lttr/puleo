@@ -4,6 +4,7 @@ import { defu } from "defu"
 import { defaultConfig } from "./config.js"
 import { fluidSpace, fluidFontSize, fluidGrid } from "./fluid-calculator.js"
 import { fluidLayouts } from "./layout-helpers.js"
+import { fontStyles } from "./font-style-helpers.js"
 import { openProps } from "./open-props.js"
 
 function insideRootSelector(rootSelector, groups) {
@@ -57,8 +58,12 @@ function buildProps(config) {
 
 function buildObjects(config) {
   const effectiveConfig = defu(config, defaultConfig)
-  const { classPrefix, propsPrefix, layoutHelpers } = effectiveConfig
-  return fluidLayouts({ classPrefix, propsPrefix, layoutHelpers })
+  const { classPrefix, propsPrefix, layoutHelpers, fontStyleHelpers } =
+    effectiveConfig
+  return [
+    ...fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }),
+    ...fontStyles({ classPrefix, propsPrefix, fontStyleHelpers }),
+  ]
 }
 
 const cssScales = buildScales({}).join("\n")

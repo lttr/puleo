@@ -54,3 +54,24 @@ function getCSSCustomPropIndex() {
       [],
     )
 }
+
+// Anchors
+
+const toc = document.getElementById("toc")
+document.querySelectorAll("section.sample > h2").forEach((heading) => {
+  const text = heading.textContent
+  const anchor = `<div id="${text}" class="anchor">
+      <h2>${text}</h2>
+      <a
+        href="#${text}"
+        class="anchor-link"
+        aria-label="Link to section ${text}"
+        ><span aria-hidden="true">#</span></a
+      >
+    </div>`
+  heading.outerHTML = anchor
+  toc.insertAdjacentHTML(
+    "beforeend",
+    `<li class="p-secondary-text-regular"><a href="#${text}">${text}</li>`,
+  )
+})

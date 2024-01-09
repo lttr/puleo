@@ -83,5 +83,7 @@
     --negative-color: var(--red-6);
     --error-alert-color: var(--red-1);
     --error-alert-bg-color: var(--red-11);
+
+    --link-color-visited: var(--blue-3);
   }
 }

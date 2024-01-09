@@ -705,7 +705,7 @@ input[type="range"] {
 }
 
 .buttons-list {
-  display: flex;
+  /* display: flex; */
   gap: var(--size-3);
 }
 

@@ -55,8 +55,16 @@
 :where(a[href]) {
   color: var(--brand-color, var(--link-color));
 
+  @media (--OSdark) {
+    color: var(--link-color);
+  }
+
   &:where(:visited) {
     color: var(--link-color-visited);
+
+    @media (--OSdark) {
+      color: var(--link-color);
+    }
   }
 }
 
@@ -108,6 +116,7 @@
 
 :where(body) {
   min-block-size: 100%;
+  font-size: var(--font-size-body);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {

@@ -5,9 +5,9 @@
   ),
 :where(input[type="file"])::-webkit-file-upload-button,
 :where(input[type="file"])::file-selector-button {
-  --_accent: initial /* your color */;
-  --_text: initial /* your text color */;
-  --_size: initial /* your size */;
+  --_accent: var(--gray-8);
+  --_text: var(--gray-10);
+  --_size: var(--font-size-0);
 
   --_bg-light: white;
   --_bg-dark: var(--surface-3);

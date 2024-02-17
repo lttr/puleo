@@ -190,3 +190,5 @@ body:has(.controls input:checked) .sample code.value {
 .breakpoints {
   overflow-x: scroll;
 }
+
+/* buttons */

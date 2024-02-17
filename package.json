@@ -1,4 +1,18 @@
 {
+  "name": "@lttr/puleo",
+  "author": "Lukas Trumm",
+  "license": "MIT",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lttr/puleo"
+  },
+  "keywords": [
+    "css",
+    "modular scale",
+    "normalize"
+  ],
+  "style": "output/puleo.min.css",
   "type": "module",
   "scripts": {
     "build": "npm run generate && run-p build:**",

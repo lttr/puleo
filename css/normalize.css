@@ -238,7 +238,7 @@
   opacity: 0.75;
 }
 
-:where(input:not([type="range"]), textarea) {
+:where(input:not([type="range"], [type="checkbox"], [type="radio"]), textarea) {
   padding-inline: var(--space-2);
   padding-block: var(--space-1);
 }

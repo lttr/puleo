@@ -12,6 +12,7 @@
     "modular scale",
     "normalize"
   ],
+  "main": "output/puleo.min.css",
   "style": "output/puleo.min.css",
   "type": "module",
   "scripts": {

@@ -15,19 +15,22 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
 
     "auto-grid": `.${classPrefix}auto-grid {
   --${propsPrefix}auto-grid-min: var(--${propsPrefix}size-content-2);
+  --${propsPrefix}auto-grid-repeat: auto-fit;
 
   display: grid;
   column-gap: var(--${propsPrefix}grid-gutter);
   row-gap: var(--${propsPrefix}space-3-4);
   grid-template-columns: repeat(
-    var(--${propsPrefix}auto-grid-repeat, auto-fit),
+    var(--${propsPrefix}auto-grid-repeat),
     minmax(min(100%, var(--${propsPrefix}auto-grid-min)), 1fr)
   );
 }
 `,
 
     flow: `.${classPrefix}flow > * + * {
-  margin-block-start: var(--${propsPrefix}flow-space, 1em);
+  --${propsPrefix}flow-space: 1em;
+
+  margin-block-start: var(--${propsPrefix}flow-space);
 }
 `,
 
@@ -40,6 +43,8 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
 `,
 
     stack: `.${classPrefix}stack {
+  --${propsPrefix}stack-space: var(--${propsPrefix}space-5);
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -49,23 +54,28 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   }
 
   > * + * {
-    margin-block-start: var(--${propsPrefix}stack-space, var(--${propsPrefix}space-5));
+    margin-block-start: var(--${propsPrefix}stack-space));
   }
 }
 `,
 
     cluster: `.${classPrefix}cluster {
+  --${propsPrefix}cluster-space: var(--${propsPrefix}space-3);
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--${propsPrefix}cluster-space, var(--${propsPrefix}space-3));
+  gap: var(--${propsPrefix}cluster-space);
 }
 `,
 
     switcher: `.${classPrefix}switcher {
+  --${propsPrefix}switcher-space: var(--${propsPrefix}space-6);
+  --${propsPrefix}switcher-treshold: var(--${propsPrefix}size-content-3);
+
   display: flex;
   flex-wrap: wrap;
-  gap: var(--${propsPrefix}switcher-space, var(--${propsPrefix}space-6));
+  gap: var(--${propsPrefix}switcher-space);
 
   > * {
     /*
@@ -79,7 +89,7 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
      * In case it is positive, it grabs an equal amount of space for each child.
      */
     flex-basis: calc(
-      (var(--${propsPrefix}switcher-treshold, var(--${propsPrefix}size-content-3)) - 100%) *
+      (var(--${propsPrefix}switcher-treshold) - 100%) *
         999
     );
   }

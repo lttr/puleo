@@ -1,10 +1,10 @@
-const rootStyles = window.getComputedStyle(document.documentElement)
+// const rootStyles = window.getComputedStyle(document.documentElement)
 const propElements = document.querySelectorAll("section.sample article code")
 const cssIndex = Object.fromEntries(getCSSCustomPropIndex())
 
 for (const propElement of propElements) {
   const propName = propElement.textContent.trim()
-  const rootValue = rootStyles.getPropertyValue(propName)
+  // const rootValue = rootStyles.getPropertyValue(propName)
 
   const exampleElement = propElement.parentNode.querySelector(".example")
   let elementStyle = ""

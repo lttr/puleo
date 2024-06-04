@@ -44,22 +44,22 @@
     "watch:generate": "nodemon --ext js --exec npm run generate"
   },
   "devDependencies": {
-    "@csstools/postcss-global-data": "^2.1.0",
-    "browser-sync": "^2.29.3",
-    "cssnano": "^6.0.1",
-    "defu": "^6.1.3",
-    "eslint": "^8.52.0",
-    "nodemon": "^3.0.1",
+    "@csstools/postcss-global-data": "^2.1.1",
+    "browser-sync": "^3.0.2",
+    "cssnano": "^7.0.1",
+    "defu": "^6.1.4",
+    "eslint": "^9.4.0",
+    "nodemon": "^3.1.3",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0",
-    "postcss-dark-theme-class": "^1.0.0",
-    "postcss-import": "^15.1.0",
-    "postcss-preset-env": "^9.2.0",
-    "prettier": "^3.0.3"
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-dark-theme-class": "^1.3.0",
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^9.5.14",
+    "prettier": "^3.3.0"
   },
   "dependencies": {
-    "open-props": "^1.6.10"
+    "open-props": "^1.7.4"
   },
   "packageManager": "pnpm@9.1.4+sha512.9df9cf27c91715646c7d675d1c9c8e41f6fce88246f1318c1aa6a1ed1aeb3c4f032fcdf4ba63cc69c4fe6d634279176b5358727d8f2cc1e65b65f43ce2f8bfb0"
 }

@@ -12,15 +12,17 @@ const plugins = [
     // Options for postcss-preset-env: https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env#options
     {
       stage: false, // Exlusively use features, don't include any polyfill's by default
-      autoprefixer: true, // Default true, double check when using older Edge versions
+      // Autoprefixer still used e.g. for
+      // -webkit-user-select, -webkit-backdrop-filter, etc.
+      autoprefixer: true,
       features: {
-        "color-function": true,
-        "color-mix": true,
-        "custom-media-queries": true,
-        "media-query-ranges": true,
-        "nesting-rules": true,
-        "oklab-function": true,
-        "relative-color-syntax": true,
+        "color-function": true, // Baseline: Newly available since 5/2023
+        "color-mix": true, // Baseline: Newly available since 5/2023
+        "custom-media-queries": true, // Draft standard: Media queries level 5
+        "media-query-ranges": true, // Baseline: Newly available since 3/2023
+        "nesting-rules": true, // Baseline: Newly available since 12/2023
+        "oklab-function": true, // Baseline: Newly available since 5/2023
+        "relative-color-syntax": true, // Baseline: Limited availability
       },
     },
   ),

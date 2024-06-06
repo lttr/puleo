@@ -45,10 +45,6 @@
   padding: 0;
 }
 
-body:has(.controls input:checked) .sample code.value {
-  display: block;
-}
-
 .anchor {
   position: relative;
   scroll-margin-top: var(--space-5);
@@ -104,6 +100,10 @@ body:has(.controls input:checked) .sample code.value {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+body:has(.controls input:checked) .sample code.value {
+  display: block;
 }
 
 /* layouts */

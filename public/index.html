@@ -1,1544 +1,2108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="logo.svg" />
+    <link href="../output/index.post.css" rel="stylesheet" />
+    <link href="./demo.css" rel="stylesheet" />
+    <script src="./script.js" defer></script>
+  </head>
 
-<head>
-	<title></title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="logo.svg" />
-	<link href="../output/index.post.css" rel="stylesheet">
-	<link href="./demo.css" rel="stylesheet">
-	<script src="./script.js" defer></script>
-</head>
+  <body>
+    <hr />
 
-<body>
-	<hr>
+    <header class="p-container">
+      <div class="p-center p-stack">
+        <h1>Puleo</h1>
+        <img src="logo.svg" alt="pulley" style="width: 6ch" />
+        <p>
+          A mid level CSS library built on top of shoulders of great projects
+          like Open Props, Every Layout, Pollen or Utopia.
+        </p>
+      </div>
+    </header>
 
-	<header class="p-container">
-		<div class="p-center p-stack">
-			<h1>Puleo</h1>
-			<img src="logo.svg" alt="pulley" style="width: 6ch;" />
-			<p>
-				A mid level CSS library built on top of shoulders of great projects
-				like Open Props, Every Layout, Pollen or Utopia.
-			</p>
-		</div>
-	</header>
+    <aside class="controls p-stack">
+      <label class="p-secondary-text-regular"
+        >Show computed values <input type="checkbox"
+      /></label>
+      <details class="toc">
+        <summary>TOC</summary>
+        <ul id="toc"></ul>
+      </details>
+    </aside>
 
-	<aside class="controls p-stack">
-		<label class="p-secondary-text-regular">Show computed values <input type="checkbox" /></label>
-		<details class="toc">
-			<summary>TOC</summary>
-			<ul id="toc"></ul>
-		</details>
-	</aside>
+    <hr />
+    <!-- FONT-SCALE -->
 
-	<hr>
-	<!-- FONT-SCALE -->
+    <section class="sample p-container" data-property="font-size">
+      <h2>Font scale</h2>
+      <article>
+        <h1>Primitive props</h1>
+        <div>
+          <code>--font-size--2</code>
+          <span class="example" style="font-size: var(--font-size--2)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-size--1</code>
+          <span class="example" style="font-size: var(--font-size--1)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-size-0</code>
+          <span class="example" style="font-size: var(--font-size-0)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-size-1</code>
+          <span class="example" style="font-size: var(--font-size-1)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-size-2</code>
+          <span class="example" style="font-size: var(--font-size-2)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-size-3</code>
+          <span class="example" style="font-size: var(--font-size-3)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-size-4</code>
+          <span class="example" style="font-size: var(--font-size-4)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-size-5</code>
+          <span class="example" style="font-size: var(--font-size-5)"
+            >Lorem ipsum</span
+          >
+        </div>
+      </article>
+      <article>
+        <h1>Semantic props</h1>
+        <div>
+          <code>--font-size-body</code>
+          <span class="example" style="font-size: var(--font-size-body)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-size-h5</code>
+          <h5 class="example">Lorem ipsum</h5>
+        </div>
+        <div>
+          <code>--font-size-h4</code>
+          <h4 class="example">Lorem ipsum</h4>
+        </div>
+        <div>
+          <code>--font-size-h3</code>
+          <h3 class="example">Lorem ipsum</h3>
+        </div>
+        <div>
+          <code>--font-size-h2</code>
+          <h2 class="example">Lorem ipsum</h2>
+        </div>
+        <div>
+          <code>--font-size-h1</code>
+          <h1 class="example">Lorem ipsum</h1>
+        </div>
+      </article>
+    </section>
 
-	<section class="sample p-container" data-property="font-size">
-		<h2>Font scale</h2>
-		<article>
-			<h1>Primitive props</h1>
-			<div>
-				<code>--font-size--2</code>
-				<span class="example" style="font-size: var(--font-size--2)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-size--1</code>
-				<span class="example" style="font-size: var(--font-size--1)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-size-0</code>
-				<span class="example" style="font-size: var(--font-size-0)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-size-1</code>
-				<span class="example" style="font-size: var(--font-size-1)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-size-2</code>
-				<span class="example" style="font-size: var(--font-size-2)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-size-3</code>
-				<span class="example" style="font-size: var(--font-size-3)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-size-4</code>
-				<span class="example" style="font-size: var(--font-size-4)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-size-5</code>
-				<span class="example" style="font-size: var(--font-size-5)">Lorem ipsum</span>
-			</div>
-		</article>
-		<article>
-			<h1>Semantic props</h1>
-			<div>
-				<code>--font-size-body</code>
-				<span class="example" style="font-size: var(--font-size-body)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-size-h5</code>
-				<h5 class="example">Lorem ipsum</h5>
-			</div>
-			<div>
-				<code>--font-size-h4</code>
-				<h4 class="example">Lorem ipsum</h4>
-			</div>
-			<div>
-				<code>--font-size-h3</code>
-				<h3 class="example">Lorem ipsum</h3>
-			</div>
-			<div>
-				<code>--font-size-h2</code>
-				<h2 class="example">Lorem ipsum</h2>
-			</div>
-			<div>
-				<code>--font-size-h1</code>
-				<h1 class="example">Lorem ipsum</h1>
-			</div>
-		</article>
-	</section>
+    <hr />
+    <!-- LINE-HEIGHT -->
 
-	<hr>
-	<!-- LINE-HEIGHT -->
+    <section class="sample p-container" data-property="line-height">
+      <h2>Line height</h2>
+      <article>
+        <h1>Primitive props</h1>
+        <div>
+          <code>--font-lineheight-0</code>
+          <span
+            class="example bg-gray"
+            style="line-height: var(--font-lineheight-0)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-lineheight-1</code>
+          <span
+            class="example bg-gray"
+            style="line-height: var(--font-lineheight-1)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-lineheight-2</code>
+          <span
+            class="example bg-gray"
+            style="line-height: var(--font-lineheight-2)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-lineheight-3</code>
+          <span
+            class="example bg-gray"
+            style="line-height: var(--font-lineheight-3)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-lineheight-4</code>
+          <span
+            class="example bg-gray"
+            style="line-height: var(--font-lineheight-4)"
+            >Lorem ipsum</span
+          >
+        </div>
+      </article>
+      <article>
+        <h1>Semantic props</h1>
+        <div>
+          <code>--line-height-body</code>
+          <span
+            class="example bg-gray"
+            style="line-height: var(--line-height-body)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--line-height-headings</code>
+          <span
+            class="example bg-gray"
+            style="line-height: var(--line-height-headings)"
+            >Lorem ipsum</span
+          >
+        </div>
+      </article>
+    </section>
 
-	<section class="sample p-container" data-property="line-height">
-		<h2>Line height</h2>
-		<article>
-			<h1>Primitive props</h1>
-			<div>
-				<code>--font-lineheight-0</code>
-				<span class="example bg-gray" style="line-height: var(--font-lineheight-0);">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-lineheight-1</code>
-				<span class="example bg-gray" style="line-height: var(--font-lineheight-1);">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-lineheight-2</code>
-				<span class="example bg-gray" style="line-height: var(--font-lineheight-2);">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-lineheight-3</code>
-				<span class="example bg-gray" style="line-height: var(--font-lineheight-3);">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-lineheight-4</code>
-				<span class="example bg-gray" style="line-height: var(--font-lineheight-4);">Lorem ipsum</span>
-			</div>
-		</article>
-		<article>
-			<h1>Semantic props</h1>
-			<div>
-				<code>--line-height-body</code>
-				<span class="example bg-gray" style="line-height: var(--line-height-body);">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--line-height-headings</code>
-				<span class="example bg-gray" style="line-height: var(--line-height-headings);">Lorem ipsum</span>
-			</div>
-		</article>
-	</section>
+    <hr />
+    <!-- FONT-WEIGHT -->
 
-	<hr>
-	<!-- FONT-WEIGHT -->
+    <section class="sample p-container" data-property="font-weight">
+      <h2>Font weight</h2>
+      <article>
+        <h1>Primitive props</h1>
+        <div>
+          <code>--font-weight-3</code>
+          <span class="example" style="font-weight: var(--font-weight-3)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-weight-4</code>
+          <span class="example" style="font-weight: var(--font-weight-4)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-weight-5</code>
+          <span class="example" style="font-weight: var(--font-weight-5)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-weight-6</code>
+          <span class="example" style="font-weight: var(--font-weight-6)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-weight-7</code>
+          <span class="example" style="font-weight: var(--font-weight-7)"
+            >Lorem ipsum</span
+          >
+        </div>
+      </article>
+      <article>
+        <h1>Semantic props</h1>
+        <div>
+          <code>--font-weight-body-bold</code>
+          <span
+            class="example"
+            style="font-weight: var(--font-weight-body-bold)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-weight-body</code>
+          <span class="example" style="font-weight: var(--font-weight-body)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-weight-headings</code>
+          <span class="example" style="font-weight: var(--font-weight-headings)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--font-weight-light</code>
+          <span class="example" style="font-weight: var(--font-weight-light)"
+            >Lorem ipsum</span
+          >
+        </div>
+      </article>
+    </section>
 
-	<section class="sample p-container" data-property="font-weight">
-		<h2>Font weight</h2>
-		<article>
-			<h1>Primitive props</h1>
-			<div>
-				<code>--font-weight-3</code>
-				<span class="example" style="font-weight: var(--font-weight-3)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-weight-4</code>
-				<span class="example" style="font-weight: var(--font-weight-4)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-weight-5</code>
-				<span class="example" style="font-weight: var(--font-weight-5)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-weight-6</code>
-				<span class="example" style="font-weight: var(--font-weight-6)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-weight-7</code>
-				<span class="example" style="font-weight: var(--font-weight-7)">Lorem ipsum</span>
-			</div>
-		</article>
-		<article>
-			<h1>Semantic props</h1>
-			<div>
-				<code>--font-weight-body-bold</code>
-				<span class="example" style="font-weight: var(--font-weight-body-bold)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-weight-body</code>
-				<span class="example" style="font-weight: var(--font-weight-body)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-weight-headings</code>
-				<span class="example" style="font-weight: var(--font-weight-headings)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--font-weight-light</code>
-				<span class="example" style="font-weight: var(--font-weight-light)">Lorem ipsum</span>
-			</div>
-		</article>
-	</section>
+    <hr />
+    <!-- SPACE -->
 
+    <section class="sample p-container" data-property="padding-left">
+      <h2>Space</h2>
+      <article>
+        <h1>Primitive props</h1>
+        <div>
+          <code>--space-1</code>
+          <span class="example bg-gray" style="padding-left: var(--space-1)"
+            >space-1</span
+          >
+        </div>
+        <div>
+          <code>--space-2</code>
+          <span class="example bg-gray" style="padding-left: var(--space-2)"
+            >space-2</span
+          >
+        </div>
+        <div>
+          <code>--space-3</code>
+          <span class="example bg-gray" style="padding-left: var(--space-3)"
+            >space-3</span
+          >
+        </div>
+        <div>
+          <code>--space-4</code>
+          <span class="example bg-gray" style="padding-left: var(--space-4)"
+            >space-4</span
+          >
+        </div>
+        <div>
+          <code>--space-5</code>
+          <span class="example bg-gray" style="padding-left: var(--space-5)"
+            >space-5</span
+          >
+        </div>
+        <div>
+          <code>--space-6</code>
+          <span class="example bg-gray" style="padding-left: var(--space-6)"
+            >space-6</span
+          >
+        </div>
+        <div>
+          <code>--space-7</code>
+          <span class="example bg-gray" style="padding-left: var(--space-7)"
+            >space-7</span
+          >
+        </div>
+        <div>
+          <code>--space-8</code>
+          <span class="example bg-gray" style="padding-left: var(--space-8)"
+            >space-8</span
+          >
+        </div>
+        <div>
+          <code>--space-9</code>
+          <span class="example bg-gray" style="padding-left: var(--space-9)"
+            >space-9</span
+          >
+        </div>
+        <div>
+          <code>--space-1-2</code>
+          <span class="example bg-gray" style="padding-left: var(--space-1-2)"
+            >space-1-2</span
+          >
+        </div>
+        <div>
+          <code>--space-2-3</code>
+          <span class="example bg-gray" style="padding-left: var(--space-2-3)"
+            >space-2-3</span
+          >
+        </div>
+        <div>
+          <code>--space-3-4</code>
+          <span class="example bg-gray" style="padding-left: var(--space-3-4)"
+            >space-3-4</span
+          >
+        </div>
+        <div>
+          <code>--space-4-5</code>
+          <span class="example bg-gray" style="padding-left: var(--space-4-5)"
+            >space-4-5</span
+          >
+        </div>
+        <div>
+          <code>--space-5-6</code>
+          <span class="example bg-gray" style="padding-left: var(--space-5-6)"
+            >space-5-6</span
+          >
+        </div>
+        <div>
+          <code>--space-6-7</code>
+          <span class="example bg-gray" style="padding-left: var(--space-6-7)"
+            >space-6-7</span
+          >
+        </div>
+        <div>
+          <code>--space-7-8</code>
+          <span class="example bg-gray" style="padding-left: var(--space-7-8)"
+            >space-7-8</span
+          >
+        </div>
+        <div>
+          <code>--space-8-9</code>
+          <span class="example bg-gray" style="padding-left: var(--space-8-9)"
+            >space-8-9</span
+          >
+        </div>
+        <div>
+          <code>--space-3-5</code>
+          <span class="example bg-gray" style="padding-left: var(--space-3-5)"
+            >space-3-5</span
+          >
+        </div>
+        <div>
+          <code>--space-4-6</code>
+          <span class="example bg-gray" style="padding-left: var(--space-4-6)"
+            >space-4-6</span
+          >
+        </div>
+      </article>
+    </section>
 
-	<hr>
-	<!-- SPACE -->
+    <hr />
+    <!-- BREAKPOINTS -->
 
-	<section class="sample p-container" data-property="padding-left">
-		<h2>Space</h2>
-		<article>
-			<h1>Primitive props</h1>
-			<div>
-				<code>--space-1</code>
-				<span class="example bg-gray" style="padding-left: var(--space-1)">space-1</span>
-			</div>
-			<div>
-				<code>--space-2</code>
-				<span class="example bg-gray" style="padding-left: var(--space-2)">space-2</span>
-			</div>
-			<div>
-				<code>--space-3</code>
-				<span class="example bg-gray" style="padding-left: var(--space-3)">space-3</span>
-			</div>
-			<div>
-				<code>--space-4</code>
-				<span class="example bg-gray" style="padding-left: var(--space-4)">space-4</span>
-			</div>
-			<div>
-				<code>--space-5</code>
-				<span class="example bg-gray" style="padding-left: var(--space-5)">space-5</span>
-			</div>
-			<div>
-				<code>--space-6</code>
-				<span class="example bg-gray" style="padding-left: var(--space-6)">space-6</span>
-			</div>
-			<div>
-				<code>--space-7</code>
-				<span class="example bg-gray" style="padding-left: var(--space-7)">space-7</span>
-			</div>
-			<div>
-				<code>--space-8</code>
-				<span class="example bg-gray" style="padding-left: var(--space-8)">space-8</span>
-			</div>
-			<div>
-				<code>--space-9</code>
-				<span class="example bg-gray" style="padding-left: var(--space-9)">space-9</span>
-			</div>
-			<div>
-				<code>--space-1-2</code>
-				<span class="example bg-gray" style="padding-left: var(--space-1-2)">space-1-2</span>
-			</div>
-			<div>
-				<code>--space-2-3</code>
-				<span class="example bg-gray" style="padding-left: var(--space-2-3)">space-2-3</span>
-			</div>
-			<div>
-				<code>--space-3-4</code>
-				<span class="example bg-gray" style="padding-left: var(--space-3-4)">space-3-4</span>
-			</div>
-			<div>
-				<code>--space-4-5</code>
-				<span class="example bg-gray" style="padding-left: var(--space-4-5)">space-4-5</span>
-			</div>
-			<div>
-				<code>--space-5-6</code>
-				<span class="example bg-gray" style="padding-left: var(--space-5-6)">space-5-6</span>
-			</div>
-			<div>
-				<code>--space-6-7</code>
-				<span class="example bg-gray" style="padding-left: var(--space-6-7)">space-6-7</span>
-			</div>
-			<div>
-				<code>--space-7-8</code>
-				<span class="example bg-gray" style="padding-left: var(--space-7-8)">space-7-8</span>
-			</div>
-			<div>
-				<code>--space-8-9</code>
-				<span class="example bg-gray" style="padding-left: var(--space-8-9)">space-8-9</span>
-			</div>
-			<div>
-				<code>--space-3-5</code>
-				<span class="example bg-gray" style="padding-left: var(--space-3-5)">space-3-5</span>
-			</div>
-			<div>
-				<code>--space-4-6</code>
-				<span class="example bg-gray" style="padding-left: var(--space-4-6)">space-4-6</span>
-			</div>
-		</article>
-	</section>
+    <section class="sample p-container breakpoints" data-property="inline-size">
+      <h2>Breakpoints</h2>
+      <article>
+        <h1>Primitive props</h1>
+        <div>
+          <code>--size-xxs</code>
+          <span class="example bg-gray" style="inline-size: var(--size-xxs)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--size-xs</code>
+          <span class="example bg-gray" style="inline-size: var(--size-xs)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--size-sm</code>
+          <span class="example bg-gray" style="inline-size: var(--size-sm)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--size-md</code>
+          <span class="example bg-gray" style="inline-size: var(--size-md)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--size-lg</code>
+          <span class="example bg-gray" style="inline-size: var(--size-lg)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--size-xl</code>
+          <span class="example bg-gray" style="inline-size: var(--size-xl)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--size-xxl</code>
+          <span class="example bg-gray" style="inline-size: var(--size-xxl)"
+            >Lorem ipsum</span
+          >
+        </div>
+      </article>
+    </section>
 
-	<hr>
-	<!-- BREAKPOINTS -->
+    <hr />
+    <!-- TEXT WIDTH -->
 
-	<section class="sample p-container breakpoints" data-property="inline-size">
-		<h2>Breakpoints</h2>
-		<article>
-			<h1>Primitive props</h1>
-			<div>
-				<code>--size-xxs</code>
-				<span class="example bg-gray" style="inline-size: var(--size-xxs)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--size-xs</code>
-				<span class="example bg-gray" style="inline-size: var(--size-xs)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--size-sm</code>
-				<span class="example bg-gray" style="inline-size: var(--size-sm)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--size-md</code>
-				<span class="example bg-gray" style="inline-size: var(--size-md)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--size-lg</code>
-				<span class="example bg-gray" style="inline-size: var(--size-lg)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--size-xl</code>
-				<span class="example bg-gray" style="inline-size: var(--size-xl)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--size-xxl</code>
-				<span class="example bg-gray" style="inline-size: var(--size-xxl)">Lorem ipsum</span>
-			</div>
-		</article>
-	</section>
+    <section class="sample p-container" data-property="max-inline-size">
+      <h2>Text width</h2>
+      <article>
+        <h1>Primitive props</h1>
+        <div>
+          <code>--size-content-1</code>
+          <span class="example" style="max-inline-size: var(--size-content-1)">
+            Suscipit a, auctor et, lacinia vitae, nunc. Pellentesque habitant
+            morbi tristique.
+          </span>
+        </div>
+        <div>
+          <code>--size-content-2</code>
+          <span class="example" style="max-inline-size: var(--size-content-2)">
+            Suscipit a, auctor et, lacinia vitae, nunc. Pellentesque habitant
+            morbi tristique.
+          </span>
+        </div>
+        <div>
+          <code>--size-content-3</code>
+          <span class="example" style="max-inline-size: var(--size-content-3)">
+            Suscipit a, auctor et, lacinia vitae, nunc. Pellentesque habitant
+            morbi tristique.
+          </span>
+        </div>
+        <div>
+          <code>--size-header-1</code>
+          <span class="example" style="max-inline-size: var(--size-header-1)">
+            Pellentesque habitant morbi tristique
+          </span>
+        </div>
+        <div>
+          <code>--size-header-2</code>
+          <span class="example" style="max-inline-size: var(--size-header-2)">
+            Pellentesque habitant morbi tristique
+          </span>
+        </div>
+        <div>
+          <code>--size-header-3</code>
+          <span class="example" style="max-inline-size: var(--size-header-3)">
+            Pellentesque habitant morbi tristique
+          </span>
+        </div>
+      </article>
+    </section>
 
-	<hr>
-	<!-- TEXT WIDTH -->
+    <hr />
+    <!-- COLORS -->
 
-	<section class="sample p-container" data-property="max-inline-size">
-		<h2>Text width</h2>
-		<article>
-			<h1>Primitive props</h1>
-			<div>
-				<code>--size-content-1</code>
-				<span class="example" style="max-inline-size: var(--size-content-1)">
-					Suscipit a, auctor et, lacinia vitae, nunc. Pellentesque habitant morbi tristique.
-				</span>
-			</div>
-			<div>
-				<code>--size-content-2</code>
-				<span class="example" style="max-inline-size: var(--size-content-2)">
-					Suscipit a, auctor et, lacinia vitae, nunc. Pellentesque habitant morbi tristique.
-				</span>
-			</div>
-			<div>
-				<code>--size-content-3</code>
-				<span class="example" style="max-inline-size: var(--size-content-3)">
-					Suscipit a, auctor et, lacinia vitae, nunc. Pellentesque habitant morbi tristique.
-				</span>
-			</div>
-			<div>
-				<code>--size-header-1</code>
-				<span class="example" style="max-inline-size: var(--size-header-1)">
-					Pellentesque habitant morbi tristique
-				</span>
-			</div>
-			<div>
-				<code>--size-header-2</code>
-				<span class="example" style="max-inline-size: var(--size-header-2)">
-					Pellentesque habitant morbi tristique
-				</span>
-			</div>
-			<div>
-				<code>--size-header-3</code>
-				<span class="example" style="max-inline-size: var(--size-header-3)">
-					Pellentesque habitant morbi tristique
-				</span>
-			</div>
-		</article>
-	</section>
+    <section class="sample p-container" data-property="background">
+      <h2>Colors</h2>
+      <article>
+        <h1>Primitive props</h1>
+        <div>
+          <code>--gray-1</code>
+          <span class="example" style="background: var(--gray-1)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-2</code>
+          <span class="example" style="background: var(--gray-2)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-3</code>
+          <span class="example" style="background: var(--gray-3)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-4</code>
+          <span class="example" style="background: var(--gray-4)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-5</code>
+          <span class="example" style="background: var(--gray-5)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-6</code>
+          <span class="example" style="background: var(--gray-6)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-7</code>
+          <span class="example" style="background: var(--gray-7)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-8</code>
+          <span class="example" style="background: var(--gray-8)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-9</code>
+          <span class="example" style="background: var(--gray-9)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-10</code>
+          <span class="example" style="background: var(--gray-10)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-11</code>
+          <span class="example" style="background: var(--gray-11)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--gray-12</code>
+          <span class="example" style="background: var(--gray-12)"
+            >Lorem ipsum</span
+          >
+        </div>
+      </article>
+      <article>
+        <h1>Semantic props</h1>
+        <div data-property="color">
+          <code>--text-color-1</code>
+          <span class="example" style="color: var(--text-color-1)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div data-property="color">
+          <code>--text-color-2</code>
+          <span class="example" style="color: var(--text-color-2)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--surface-0</code>
+          <span class="example" style="background: var(--surface-0)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--surface-1</code>
+          <span class="example" style="background: var(--surface-1)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--surface-2</code>
+          <span class="example" style="background: var(--surface-2)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--surface-3</code>
+          <span class="example" style="background: var(--surface-3)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--surface-4</code>
+          <span class="example" style="background: var(--surface-4)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--brand-color</code>
+          <span class="example" style="background: var(--brand-color)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--brand-color-dim</code>
+          <span class="example" style="background: var(--brand-color-dim)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--brand-color-bright</code>
+          <span class="example" style="background: var(--brand-color-bright)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--accent-color</code>
+          <span class="example" style="background: var(--accent-color)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--caret-color</code>
+          <span class="example" style="background: var(--caret-color)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--focus-color</code>
+          <span class="example" style="background: var(--focus-color)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div data-property="color">
+          <code>--text-color-body</code>
+          <span class="example" style="color: var(--text-color-body)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div data-property="color">
+          <code>--text-color-headings</code>
+          <span class="example" style="color: var(--text-color-headings)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div>
+          <code>--bg-color-body</code>
+          <span class="example" style="background: var(--bg-color-body)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div data-property="color">
+          <code>--link-color</code>
+          <span class="example" style="color: var(--link-color)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div data-property="color">
+          <code>--link-color-visited</code>
+          <span class="example" style="color: var(--link-color-visited)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div data-property="color">
+          <code>--positive-color</code>
+          <span class="example" style="color: var(--positive-color)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div data-property="color">
+          <code>--negative-color</code>
+          <span class="example" style="color: var(--negative-color)"
+            >Lorem ipsum</span
+          >
+        </div>
+        <div data-property="color">
+          <code>--error-alert-color</code>
+          <span
+            class="example"
+            style="
+              color: var(--error-alert-color);
+              background: var(--error-alert-bg-color);
+            "
+          >
+            Lorem ipsum
+          </span>
+        </div>
+        <div>
+          <code>--error-alert-bg-color</code>
+          <span
+            class="example"
+            style="
+              background: var(--error-alert-bg-color);
+              color: var(--error-alert-color);
+            "
+          >
+            Lorem ipsum
+          </span>
+        </div>
+        <div>
+          <code>--scrollthumb-color</code>
+          <span class="example" style="background: var(--scrollthumb-color)"
+            >Lorem ipsum</span
+          >
+        </div>
+      </article>
+    </section>
 
-	<hr>
-	<!-- COLORS -->
+    <hr />
+    <!-- BORDERS -->
 
-	<section class="sample p-container" data-property="background">
-		<h2>Colors</h2>
-		<article>
-			<h1>Primitive props</h1>
-			<div>
-				<code>--gray-1</code>
-				<span class="example" style="background: var(--gray-1)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-2</code>
-				<span class="example" style="background: var(--gray-2)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-3</code>
-				<span class="example" style="background: var(--gray-3)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-4</code>
-				<span class="example" style="background: var(--gray-4)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-5</code>
-				<span class="example" style="background: var(--gray-5)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-6</code>
-				<span class="example" style="background: var(--gray-6)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-7</code>
-				<span class="example" style="background: var(--gray-7)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-8</code>
-				<span class="example" style="background: var(--gray-8)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-9</code>
-				<span class="example" style="background: var(--gray-9)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-10</code>
-				<span class="example" style="background: var(--gray-10)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-11</code>
-				<span class="example" style="background: var(--gray-11)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--gray-12</code>
-				<span class="example" style="background: var(--gray-12)">Lorem ipsum</span>
-			</div>
-		</article>
-		<article>
-			<h1>Semantic props</h1>
-			<div data-property="color">
-				<code>--text-color-1</code>
-				<span class="example" style="color: var(--text-color-1)">Lorem ipsum</span>
-			</div>
-			<div data-property="color">
-				<code>--text-color-2</code>
-				<span class="example" style="color: var(--text-color-2)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--surface-0</code>
-				<span class="example" style="background: var(--surface-0)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--surface-1</code>
-				<span class="example" style="background: var(--surface-1)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--surface-2</code>
-				<span class="example" style="background: var(--surface-2)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--surface-3</code>
-				<span class="example" style="background: var(--surface-3)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--surface-4</code>
-				<span class="example" style="background: var(--surface-4)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--brand-color</code>
-				<span class="example" style="background: var(--brand-color)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--brand-color-dim</code>
-				<span class="example" style="background: var(--brand-color-dim)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--brand-color-bright</code>
-				<span class="example" style="background: var(--brand-color-bright)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--accent-color</code>
-				<span class="example" style="background: var(--accent-color)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--caret-color</code>
-				<span class="example" style="background: var(--caret-color)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--focus-color</code>
-				<span class="example" style="background: var(--focus-color)">Lorem ipsum</span>
-			</div>
-			<div data-property="color">
-				<code>--text-color-body</code>
-				<span class="example" style="color: var(--text-color-body)">Lorem ipsum</span>
-			</div>
-			<div data-property="color">
-				<code>--text-color-headings</code>
-				<span class="example" style="color: var(--text-color-headings)">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>--bg-color-body</code>
-				<span class="example" style="background: var(--bg-color-body)">Lorem ipsum</span>
-			</div>
-			<div data-property="color">
-				<code>--link-color</code>
-				<span class="example" style="color: var(--link-color)">Lorem ipsum</span>
-			</div>
-			<div data-property="color">
-				<code>--link-color-visited</code>
-				<span class="example" style="color: var(--link-color-visited)">Lorem ipsum</span>
-			</div>
-			<div data-property="color">
-				<code>--positive-color</code>
-				<span class="example" style="color: var(--positive-color)">Lorem ipsum</span>
-			</div>
-			<div data-property="color">
-				<code>--negative-color</code>
-				<span class="example" style="color: var(--negative-color)">Lorem ipsum</span>
-			</div>
-			<div data-property="color">
-				<code>--error-alert-color</code>
-				<span class="example" style="color: var(--error-alert-color); background: var(--error-alert-bg-color)">
-					Lorem ipsum
-				</span>
-			</div>
-			<div>
-				<code>--error-alert-bg-color</code>
-				<span class="example" style="background: var(--error-alert-bg-color);
-				color: var(--error-alert-color)">
-					Lorem ipsum
-				</span>
-			</div>
-			<div>
-				<code>--scrollthumb-color</code>
-				<span class="example" style="background: var(--scrollthumb-color)">Lorem ipsum</span>
-			</div>
-		</article>
-	</section>
+    <section class="sample p-container">
+      <h2>Borders</h2>
+      <article>
+        <h1>Primitive props</h1>
+        <div data-property="border-width">
+          <code>--border-size-1</code>
+          <span
+            class="example"
+            style="
+              border-width: var(--border-size-1);
+              border-style: solid;
+              border-color: var(--surface-4);
+              padding: var(--space-1);
+            "
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border-width">
+          <code>--border-size-2</code>
+          <span
+            class="example"
+            style="
+              border-width: var(--border-size-2);
+              border-style: solid;
+              border-color: var(--surface-4);
+              padding: var(--space-1);
+            "
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border-radius">
+          <code>--radius-1</code>
+          <span
+            class="example"
+            style="
+              border-radius: var(--radius-1);
+              border: var(--border-size-1) solid var(--surface-4);
+              padding: var(--space-1);
+            "
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border-radius">
+          <code>--radius-2</code>
+          <span
+            class="example"
+            style="
+              border-radius: var(--radius-2);
+              border: var(--border-size-1) solid var(--surface-4);
+              padding: var(--space-1);
+            "
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border-radius">
+          <code>--radius-round</code>
+          <span
+            class="example"
+            style="
+              border-radius: var(--radius-round);
+              border: var(--border-size-1) solid var(--surface-4);
+              padding: var(--space-1);
+            "
+            >LoremIpsum</span
+          >
+        </div>
+      </article>
+      <article>
+        <h1>Semantic props</h1>
+        <div data-property="border-width">
+          <code>--border-size-default</code>
+          <span
+            class="example"
+            style="
+              border-width: var(--border-size-default);
+              border-style: solid;
+              border-color: var(--surface-4);
+              padding: var(--space-1);
+            "
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border-radius">
+          <code>--radius-default</code>
+          <span
+            class="example"
+            style="
+              border-radius: var(--radius-default);
+              border: var(--border-size-1) solid var(--surface-4);
+              padding: var(--space-1);
+            "
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border">
+          <code>--border-1</code>
+          <span
+            class="example"
+            style="border: var(--border-1); padding: var(--space-1)"
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border">
+          <code>--border-2</code>
+          <span
+            class="example"
+            style="border: var(--border-2); padding: var(--space-1)"
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border">
+          <code>--border-3</code>
+          <span
+            class="example"
+            style="border: var(--border-3); padding: var(--space-1)"
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border">
+          <code>--border-4</code>
+          <span
+            class="example"
+            style="border: var(--border-4); padding: var(--space-1)"
+            >LoremIpsum</span
+          >
+        </div>
+        <div data-property="border">
+          <code>--border-5</code>
+          <span
+            class="example"
+            style="border: var(--border-5); padding: var(--space-1)"
+            >LoremIpsum</span
+          >
+        </div>
+      </article>
+    </section>
 
-	<hr>
-	<!-- BORDERS -->
+    <hr />
+    <!-- GRID -->
 
-	<section class="sample p-container">
-		<h2>Borders</h2>
-		<article>
-			<h1>Primitive props</h1>
-			<div data-property="border-width">
-				<code>--border-size-1</code>
-				<span class="example"
-					style="border-width: var(--border-size-1); border-style: solid; border-color: var(--surface-4); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border-width">
-				<code>--border-size-2</code>
-				<span class="example"
-					style="border-width: var(--border-size-2); border-style: solid; border-color: var(--surface-4); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border-radius">
-				<code>--radius-1</code>
-				<span class="example"
-					style="border-radius: var(--radius-1); border: var(--border-size-1) solid var(--surface-4); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border-radius">
-				<code>--radius-2</code>
-				<span class="example"
-					style="border-radius: var(--radius-2); border: var(--border-size-1) solid var(--surface-4); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border-radius">
-				<code>--radius-round</code>
-				<span class="example"
-					style="border-radius: var(--radius-round); border: var(--border-size-1) solid var(--surface-4); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-		</article>
-		<article>
-			<h1>Semantic props</h1>
-			<div data-property="border-width">
-				<code>--border-size-default</code>
-				<span class="example"
-					style="border-width: var(--border-size-default); border-style: solid; border-color: var(--surface-4); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border-radius">
-				<code>--radius-default</code>
-				<span class="example"
-					style="border-radius: var(--radius-default); border: var(--border-size-1) solid var(--surface-4); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border">
-				<code>--border-1</code>
-				<span class="example" style="border: var(--border-1); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border">
-				<code>--border-2</code>
-				<span class="example" style="border: var(--border-2); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border">
-				<code>--border-3</code>
-				<span class="example" style="border: var(--border-3); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border">
-				<code>--border-4</code>
-				<span class="example" style="border: var(--border-4); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-			<div data-property="border">
-				<code>--border-5</code>
-				<span class="example" style="border: var(--border-5); padding: var(--space-1);">LoremIpsum</span>
-			</div>
-		</article>
-	</section>
+    <section class="sample p-container">
+      <h2>Grid</h2>
+      <article>
+        <h1>Semantic props</h1>
+        <div data-property="max-width">
+          <code>--grid-max-width</code>
+          <span class="example" style="max-width: var(--grid-max-width)"></span>
+        </div>
+        <div data-property="padding-inline">
+          <code>--grid-gutter</code>
+          <span
+            class="example bg-gray"
+            style="padding-inline: var(--grid-gutter)"
+          >
+            Cras rutrum porta purus. Vivamus lorem.
+          </span>
+        </div>
+      </article>
+    </section>
 
-	<hr>
-	<!-- GRID -->
+    <hr />
+    <!-- LAYOUTS -->
 
-	<section class="sample p-container">
-		<h2>Grid</h2>
-		<article>
-			<h1>Semantic props</h1>
-			<div data-property="max-width">
-				<code>--grid-max-width</code>
-				<span class="example" style="max-width: var(--grid-max-width);"></span>
-			</div>
-			<div data-property="padding-inline">
-				<code>--grid-gutter</code>
-				<span class="example bg-gray" style="padding-inline: var(--grid-gutter)">
-					Cras rutrum porta purus. Vivamus lorem.
-				</span>
-			</div>
-		</article>
-	</section>
+    <section class="layouts p-container p-stack">
+      <h2>Layouts</h2>
 
-	<hr>
-	<!-- LAYOUTS -->
+      <article class="p-flow">
+        <h3>Container</h3>
+        <div class="bg-gray">Lorem Ipsum</div>
+      </article>
+      <article class="p-flow">
+        <h3>Grid</h3>
+        <div class="p-grid grid">
+          <div class="item-1 bg-gray" style="padding: var(--space-3)">
+            <p>
+              I'm a <code>grid</code> item 8/12 columns wide on screen size
+              <code>sm</code> and above.
+            </p>
+          </div>
+          <div class="item-2 bg-gray" style="padding: var(--space-3)">
+            <p>
+              I'm a <code>grid</code> item 4/12 columns wide on screen size
+              <code>sm</code> and above.
+            </p>
+          </div>
+          <div class="item-3 bg-gray" style="padding: var(--space-3)">
+            <p>
+              I'm a <code>grid</code> item 3/12 columns wide on screen size
+              <code>sm</code> and above.
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="p-flow">
+        <h3>Cluster</h3>
+        <div class="p-cluster">
+          <div class="bg-gray">Lorem</div>
+          <div class="bg-gray">Ipsum</div>
+        </div>
+        <ul
+          class="p-cluster"
+          style="max-width: var(--size-content-2); border: var(--border-1)"
+        >
+          <li class="box">Elit</li>
+          <li class="box">Elit?</li>
+          <li class="box">Consectetur.</li>
+          <li class="box">Ipsum</li>
+          <li class="box">Ipsum.</li>
+          <li class="box">Adipisicing</li>
+          <li class="box">Elit.</li>
+        </ul>
+      </article>
+      <article class="p-flow">
+        <h3>Auto wrapping grid</h3>
+        <div class="p-stack">
+          <ul class="p-auto-grid" style="border: var(--border-1)">
+            <li class="box">Elit</li>
+            <li class="box">Elit?</li>
+            <li class="box">Consectetur.</li>
+          </ul>
+          <ul class="p-auto-grid grid1" style="border: var(--border-1)">
+            <li class="box">Elit</li>
+            <li class="box">Elit?</li>
+            <li class="box">Consectetur.</li>
+            <li class="box">Ipsum</li>
+            <li class="box">Ipsum.</li>
+            <li class="box">Adipisicing</li>
+            <li class="box">Elit.</li>
+          </ul>
+          <ul class="p-auto-grid grid2" style="border: var(--border-1)">
+            <li class="box">Elit</li>
+            <li class="box">Adipisicing</li>
+            <li class="box">Elit.</li>
+          </ul>
+          <ul class="p-auto-grid grid3" style="border: var(--border-1)">
+            <li class="box">Elit</li>
+            <li class="box">Adipisicing</li>
+            <li class="box">Elit.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="p-flow" style="--flow-space: 1em">
+        <h3>The flow</h3>
+        <div class="p-flow" style="border: var(--border-1)">
+          <h2>Lorem ipsum</h2>
+          <p>
+            Consequat, vel illum dolore eu feugiat nulla facilisis at vero eros
+            et accumsan et iusto odio dignissim qui blandit praesent luptatum
+            zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+            tempor cum soluta nobis eleifend option congue nihil imperdiet
+            doming id quod mazim placerat facer possim assum.
+          </p>
+          <h3>Legentis in iis qui</h3>
+          <p>
+            Typi non habent claritatem insitam; est usus legentis in iis qui
+            facit eorum claritatem.
+          </p>
+        </div>
+      </article>
+      <article class="p-flow">
+        <h3>The stack</h3>
+        <div class="p-auto-grid stack">
+          <ul class="p-stack">
+            <li class="box">Elit</li>
+            <li class="box">Consectetur</li>
+            <li class="box">Ipsum</li>
+            <li class="box">Adipisicing</li>
+          </ul>
+          <div class="heigher">
+            <ul class="p-stack">
+              <li class="box">Elit</li>
+              <li class="box">Consectetur</li>
+              <li class="box">Ipsum</li>
+              <li class="box align-end">Adipisicing</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="p-flow">
+        <h3>The switcher</h3>
+        <div class="p-stack">
+          <div class="p-switcher">
+            <div class="box">A</div>
+            <div class="box">B</div>
+            <div class="box">C</div>
+          </div>
+          <div class="switcher p-switcher">
+            <div class="box">A</div>
+            <div class="box">B</div>
+            <div class="box">C</div>
+          </div>
+          <div class="switcher-2 p-switcher">
+            <div class="box">A</div>
+            <div class="box">B</div>
+            <div class="box">C</div>
+          </div>
+        </div>
+      </article>
+    </section>
 
-	<section class="layouts p-container p-stack">
-		<h2>Layouts</h2>
+    <hr />
+    <!-- FONT STYLES -->
 
-		<article class="p-flow">
-			<h3>Container</h3>
-			<div class="bg-gray">Lorem Ipsum</div>
-		</article>
-		<article class="p-flow">
-			<h3>Grid</h3>
-			<div class="p-grid grid">
-				<div class="item-1 bg-gray" style="padding: var(--space-3);">
-					<p>
-						I'm a <code>grid</code> item 8/12 columns wide on screen size
-						<code>sm</code> and above.
-					</p>
-				</div>
-				<div class="item-2 bg-gray" style="padding: var(--space-3);">
-					<p>
-						I'm a <code>grid</code> item 4/12 columns wide on screen size
-						<code>sm</code> and above.
-					</p>
-				</div>
-				<div class="item-3 bg-gray" style="padding: var(--space-3);">
-					<p>
-						I'm a <code>grid</code> item 3/12 columns wide on screen size
-						<code>sm</code> and above.
-					</p>
-				</div>
-			</div>
-		</article>
-		<article class="p-flow">
-			<h3>Cluster</h3>
-			<div class="p-cluster">
-				<div class="bg-gray">Lorem</div>
-				<div class="bg-gray">Ipsum</div>
-			</div>
-			<ul class="p-cluster" style="max-width: var(--size-content-2); border: var(--border-1);">
-				<li class="box">Elit</li>
-				<li class="box">Elit?</li>
-				<li class="box">Consectetur.</li>
-				<li class="box">Ipsum</li>
-				<li class="box">Ipsum.</li>
-				<li class="box">Adipisicing</li>
-				<li class="box">Elit.</li>
-			</ul>
-		</article>
-		<article class="p-flow">
-			<h3>Auto wrapping grid</h3>
-			<div class="p-stack">
-				<ul class="p-auto-grid" style="border: var(--border-1);">
-					<li class="box">Elit</li>
-					<li class="box">Elit?</li>
-					<li class="box">Consectetur.</li>
-				</ul>
-				<ul class="p-auto-grid grid1" style="border: var(--border-1);">
-					<li class="box">Elit</li>
-					<li class="box">Elit?</li>
-					<li class="box">Consectetur.</li>
-					<li class="box">Ipsum</li>
-					<li class="box">Ipsum.</li>
-					<li class="box">Adipisicing</li>
-					<li class="box">Elit.</li>
-				</ul>
-				<ul class="p-auto-grid grid2" style="border: var(--border-1);">
-					<li class="box">Elit</li>
-					<li class="box">Adipisicing</li>
-					<li class="box">Elit.</li>
-				</ul>
-				<ul class="p-auto-grid grid3" style="border: var(--border-1);">
-					<li class="box">Elit</li>
-					<li class="box">Adipisicing</li>
-					<li class="box">Elit.</li>
-				</ul>
-			</div>
-		</article>
-		<article class="p-flow" style="--flow-space: 1em">
-			<h3>The flow</h3>
-			<div class="p-flow" style="border: var(--border-1)">
-				<h2>Lorem ipsum</h2>
-				<p>
-					Consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-					accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-					delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor
-					cum soluta nobis eleifend option congue nihil imperdiet doming id quod
-					mazim placerat facer possim assum.
-				</p>
-				<h3>Legentis in iis qui</h3>
-				<p>
-					Typi non habent claritatem insitam; est usus legentis in iis qui facit
-					eorum claritatem.
-				</p>
-			</div>
-		</article>
-		<article class="p-flow">
-			<h3>The stack</h3>
-			<div class="p-auto-grid stack">
-				<ul class="p-stack">
-					<li class="box">Elit</li>
-					<li class="box">Consectetur</li>
-					<li class="box">Ipsum</li>
-					<li class="box">Adipisicing</li>
-				</ul>
-				<div class="heigher">
-					<ul class="p-stack">
-						<li class="box">Elit</li>
-						<li class="box">Consectetur</li>
-						<li class="box">Ipsum</li>
-						<li class="box align-end">Adipisicing</li>
-					</ul>
-				</div>
-			</div>
-		</article>
-		<article class="p-flow">
-			<h3>The switcher</h3>
-			<div class="p-stack">
-				<div class="p-switcher">
-					<div class="box">A</div>
-					<div class="box">B</div>
-					<div class="box">C</div>
-				</div>
-				<div class="switcher p-switcher">
-					<div class="box">A</div>
-					<div class="box">B</div>
-					<div class="box">C</div>
-				</div>
-				<div class="switcher-2 p-switcher">
-					<div class="box">A</div>
-					<div class="box">B</div>
-					<div class="box">C</div>
-				</div>
-			</div>
-		</article>
-	</section>
+    <section class="sample p-container" data-property="font-size">
+      <h2>Font style helpers</h2>
+      <article>
+        <h1>Body text helpers</h1>
+        <div>
+          <code>.secondary-text-regular</code>
+          <span class="example p-secondary-text-regular">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.additional-text-regular</code>
+          <span class="example p-additional-text-regular">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.base-text-bold</code>
+          <span class="example p-base-text-bold">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.secondary-text-bold</code>
+          <span class="example p-secondary-text-bold">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.additional-text-bold</code>
+          <span class="example p-additional-text-bold">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.input-text</code>
+          <span class="example p-input-text">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.button-text</code>
+          <span class="example p-button-text">Lorem ipsum</span>
+        </div>
+      </article>
+      <article>
+        <h1>Headings helpers</h1>
+        <div>
+          <code>.heading-1</code>
+          <span class="example p-heading-1">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.heading-2</code>
+          <span class="example p-heading-2">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.heading-3</code>
+          <span class="example p-heading-3">Lorem ipsum</span>
+        </div>
+        <div>
+          <code>.heading-4</code>
+          <span class="example p-heading-4">Lorem ipsum</span>
+        </div>
+      </article>
+    </section>
 
-	<hr>
-	<!-- FONT STYLES -->
+    <hr />
+    <!-- BUTTONS -->
 
-	<section class="sample p-container" data-property="font-size">
-		<h2>Font style helpers</h2>
-		<article>
-			<h1>Body text helpers</h1>
-			<div>
-				<code>.secondary-text-regular</code>
-				<span class="example p-secondary-text-regular">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.additional-text-regular</code>
-				<span class="example p-additional-text-regular">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.base-text-bold</code>
-				<span class="example p-base-text-bold">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.secondary-text-bold</code>
-				<span class="example p-secondary-text-bold">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.additional-text-bold</code>
-				<span class="example p-additional-text-bold">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.input-text</code>
-				<span class="example p-input-text">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.button-text</code>
-				<span class="example p-button-text">Lorem ipsum</span>
-			</div>
-		</article>
-		<article>
-			<h1>Headings helpers</h1>
-			<div>
-				<code>.heading-1</code>
-				<span class="example p-heading-1">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.heading-2</code>
-				<span class="example p-heading-2">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.heading-3</code>
-				<span class="example p-heading-3">Lorem ipsum</span>
-			</div>
-			<div>
-				<code>.heading-4</code>
-				<span class="example p-heading-4">Lorem ipsum</span>
-			</div>
-		</article>
-	</section>
+    <section class="buttons p-container">
+      <h2>9 button types</h2>
 
-	<hr>
-	<!-- BUTTONS -->
+      <article class="p-cluster">
+        <button>Default</button>
+        <input type="button" value="<input>" />
+        <button>
+          <svg viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+            <path
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+          Icon
+        </button>
+        <button type="submit">Submit</button>
+        <button type="button">Type Button</button>
+        <button type="reset">Reset</button>
+        <button disabled>Disabled</button>
+        <button class="btn-custom">Custom</button>
+        <input type="file" />
+      </article>
 
-	<section class="buttons p-container">
-		<h2>9 button types</h2>
+      <section>
+        <h4>When inside a <code>&#60;form&#62;</code></h4>
+        <p>
+          <span class="red-squigly">Untyped buttons</span> visually match their
+          new contextual default of type submit.
+        </p>
+      </section>
 
-		<article class="p-cluster">
-			<button>Default</button>
-			<input type="button" value="<input>" />
-			<button>
-				<svg viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-					<path
-						d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-				</svg>
-				Icon
-			</button>
-			<button type="submit">Submit</button>
-			<button type="button">Type Button</button>
-			<button type="reset">Reset</button>
-			<button disabled>Disabled</button>
-			<button class="btn-custom">Custom</button>
-			<input type="file">
-		</article>
+      <form action="" class="fluid-flex">
+        <button>Default <span data-icon="cloud"></span></button>
+        <input type="button" value="<input>" />
+        <button type="submit">Submit</button>
+        <button type="button">Type Button</button>
+        <button type="reset">Reset</button>
+        <button disabled>Disabled</button>
+        <button class="btn-custom btn-large" type="button">Large Custom</button>
+      </form>
+    </section>
 
-		<section>
-			<h4>When inside a <code>&#60;form&#62;</code></h4>
-			<p>
-				<span class="red-squigly">Untyped buttons</span> visually match their new contextual default of type submit.
-			</p>
-		</section>
+    <hr />
+    <!-- FORMS -->
 
-		<form action="" class="fluid-flex">
-			<button>Default <span data-icon="cloud"></span></button>
-			<input type="button" value="<input>" />
-			<button type="submit">Submit</button>
-			<button type="button">Type Button</button>
-			<button type="reset">Reset</button>
-			<button disabled>Disabled</button>
-			<button class="btn-custom btn-large" type="button">Large Custom</button>
-		</form>
+    <header>
+      <h3>Example Vanilla Form</h3>
+      <p>
+        With just the import from Open Props, no additional classes, have great
+        looking forms.
+      </p>
+    </header>
+    <form>
+      <fieldset id="forms__input">
+        <div>
+          <label for="input__name">Text Input</label>
+          <input id="input__name" name="name" type="text" placeholder="lorem" />
+        </div>
+        <div>
+          <label for="required__input__name">Required Text Input</label>
+          <input
+            id="required__input__name"
+            name="name"
+            type="text"
+            required
+            placeholder="ipsum"
+          />
+        </div>
+        <div>
+          <label for="input__password">Password</label>
+          <input
+            id="input__password"
+            type="password"
+            autocomplete="new-password"
+            placeholder="················"
+          />
+        </div>
+        <div>
+          <label for="input__webaddress">Web Address</label>
+          <input
+            id="input__webaddress"
+            type="url"
+            placeholder="https://yoursite.com"
+            autocomplete="url"
+          />
+        </div>
+        <div>
+          <label for="input__emailaddress">Email Address</label>
+          <input
+            id="input__emailaddress"
+            type="email"
+            placeholder="name@email.com"
+            autocomplete="email"
+          />
+        </div>
+        <div>
+          <label for="input__search">Search</label>
+          <input
+            id="input__search"
+            type="search"
+            placeholder="Search for flavors"
+            list="searches"
+          />
+          <datalist id="searches">
+            <option value="Chocolate"></option>
+            <option value="Vanilla"></option>
+            <option value="Strawberry"></option>
+          </datalist>
+        </div>
+        <div>
+          <label for="input__phone">Phone Number</label>
+          <input
+            id="input__phone"
+            type="tel"
+            inputmode="numeric"
+            placeholder="999-999-9999"
+            minlength="7"
+            maxlength="12"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          />
+        </div>
+        <div>
+          <label for="input__text2">Number Input</label>
+          <input
+            id="input__text2"
+            type="number"
+            placeholder="0-100"
+            min="0"
+            max="100"
+          />
+        </div>
+        <div>
+          <label for="input__readonly">Read only</label>
+          <input readonly id="input__readonly" type="text" value="Nope!" />
+        </div>
+        <div>
+          <label for="input__disabled">Disabled</label>
+          <input disabled id="input__disabled" type="text" value="Nope!" />
+        </div>
+        <footer>
+          <menu>
+            <button type="reset">Reset</button>
+          </menu>
+          <menu>
+            <button type="button">Cancel</button>
+            <button>Submit</button>
+          </menu>
+        </footer>
+        <legend>Input fields</legend>
+      </fieldset>
+    </form>
+    <form>
+      <fieldset id="forms__select">
+        <div>
+          <label for="select">Pick an option</label>
+          <select id="select">
+            <optgroup label="Option Group">
+              <option>Option One</option>
+              <option>Option Two</option>
+              <option>Option Three</option>
+            </optgroup>
+          </select>
+        </div>
+        <legend>Select menus</legend>
+      </fieldset>
+    </form>
+    <fieldset id="forms__checkbox">
+      <legend>Checkboxes</legend>
+      <ul class="list list--bare">
+        <li>
+          <label for="checkbox1"
+            ><input
+              id="checkbox1"
+              name="checkbox"
+              type="checkbox"
+              checked="checked"
+            />
+            Choice A</label
+          >
+        </li>
+        <li>
+          <label for="checkbox2"
+            ><input id="checkbox2" name="checkbox" type="checkbox" /> Choice B,
+            something long enough to become multiline</label
+          >
+        </li>
+        <li>
+          <label for="checkbox3"
+            ><input id="checkbox3" name="checkbox" type="checkbox" /> Choice
+            C</label
+          >
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset id="forms__radio">
+      <legend>Radio buttons</legend>
+      <ul class="list list--bare">
+        <li>
+          <label for="radio1"
+            ><input
+              id="radio1"
+              name="radio"
+              type="radio"
+              class="radio"
+              checked="checked"
+            />
+            Option 1</label
+          >
+        </li>
+        <li>
+          <label for="radio2"
+            ><input id="radio2" name="radio" type="radio" class="radio" />
+            Option 2, something long enough to become multiline</label
+          >
+        </li>
+        <li>
+          <label for="radio3"
+            ><input id="radio3" name="radio" type="radio" class="radio" />
+            Option 3</label
+          >
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset id="forms__textareas">
+      <legend>Textareas</legend>
+      <textarea
+        id="textarea"
+        rows="8"
+        cols="48"
+        placeholder="Enter your message here"
+      ></textarea>
+      <footer>
+        <menu>
+          <button type="reset">Clear</button>
+        </menu>
+        <menu>
+          <button type="button">Cancel</button>
+          <button type="submit">Send</button>
+        </menu>
+      </footer>
+    </fieldset>
 
-	</section>
+    <fieldset id="forms__alone-fieldset">
+      <legend>Single</legend>
+      <label for="list__autocomplete">Text autocomplete</label>
+      <input type="text" id="list__autocomplete" list="searches" />
+    </fieldset>
 
-	<hr>
-	<!-- FORMS -->
+    <form id="login">
+      <fieldset id="signin__example">
+        <legend>Sign In</legend>
+        <div>
+          <label for="input__username">Username</label>
+          <input
+            id="input__username"
+            name="username"
+            type="text"
+            required
+            autocomplete="username"
+            placeholder="mcgyver"
+            pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"
+          />
+        </div>
+        <div>
+          <label for="input__password2">Password</label>
+          <input
+            id="input__password2"
+            type="password"
+            autocomplete="current-password"
+            required
+            placeholder="········"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+            title="Uppercase, lowercase and a number are required"
+          />
+        </div>
+        <footer>
+          <menu>
+            <button>Login</button>
+            <button type="reset">Clear</button>
+          </menu>
+        </footer>
+      </fieldset>
+    </form>
 
-	<header>
-		<h3>Example Vanilla Form</h3>
-		<p>With just the import from Open Props, no additional classes, have great looking forms.</p>
-	</header>
-	<form>
-		<fieldset id="forms__input">
-			<div>
-				<label for="input__name">Text Input</label>
-				<input id="input__name" name="name" type="text" placeholder="lorem">
-			</div>
-			<div>
-				<label for="required__input__name">Required Text Input</label>
-				<input id="required__input__name" name="name" type="text" required placeholder="ipsum">
-			</div>
-			<div>
-				<label for="input__password">Password</label>
-				<input id="input__password" type="password" autocomplete="new-password" placeholder="················">
-			</div>
-			<div>
-				<label for="input__webaddress">Web Address</label>
-				<input id="input__webaddress" type="url" placeholder="https://yoursite.com" autocomplete="url">
-			</div>
-			<div>
-				<label for="input__emailaddress">Email Address</label>
-				<input id="input__emailaddress" type="email" placeholder="name@email.com" autocomplete="email">
-			</div>
-			<div>
-				<label for="input__search">Search</label>
-				<input id="input__search" type="search" placeholder="Search for flavors" list="searches">
-				<datalist id="searches">
-					<option value="Chocolate">
-					<option value="Vanilla">
-					<option value="Strawberry">
-				</datalist>
-			</div>
-			<div>
-				<label for="input__phone">Phone Number</label>
-				<input id="input__phone" type="tel" inputmode="numeric" placeholder="999-999-9999" minlength="7" maxlength="12"
-					pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-			</div>
-			<div>
-				<label for="input__text2">Number Input</label>
-				<input id="input__text2" type="number" placeholder="0-100" min="0" max="100">
-			</div>
-			<div>
-				<label for="input__readonly">Read only</label>
-				<input readonly id="input__readonly" type="text" value="Nope!">
-			</div>
-			<div>
-				<label for="input__disabled">Disabled</label>
-				<input disabled id="input__disabled" type="text" value="Nope!">
-			</div>
-			<footer>
-				<menu>
-					<button type="reset">Reset</button>
-				</menu>
-				<menu>
-					<button type="button">Cancel</button>
-					<button>Submit</button>
-				</menu>
-			</footer>
-			<legend>Input fields</legend>
-		</fieldset>
-	</form>
-	<form>
-		<fieldset id="forms__select">
-			<div>
-				<label for="select">Pick an option</label>
-				<select id="select">
-					<optgroup label="Option Group">
-						<option>Option One</option>
-						<option>Option Two</option>
-						<option>Option Three</option>
-					</optgroup>
-				</select>
-			</div>
-			<legend>Select menus</legend>
-		</fieldset>
-	</form>
-	<fieldset id="forms__checkbox">
-		<legend>Checkboxes</legend>
-		<ul class="list list--bare">
-			<li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice
-					A</label></li>
-			<li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B, something long
-					enough to become multiline</label></li>
-			<li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
-		</ul>
-	</fieldset>
-	<fieldset id="forms__radio">
-		<legend>Radio buttons</legend>
-		<ul class="list list--bare">
-			<li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option
-					1</label></li>
-			<li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2, something long
-					enough to become multiline</label></li>
-			<li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
-		</ul>
-	</fieldset>
-	<fieldset id="forms__textareas">
-		<legend>Textareas</legend>
-		<textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
-		<footer>
-			<menu>
-				<button type="reset">Clear</button>
-			</menu>
-			<menu>
-				<button type="button">Cancel</button>
-				<button type="submit">Send</button>
-			</menu>
-		</footer>
-	</fieldset>
+    <fieldset>
+      <legend>Search</legend>
+      <section>
+        <search>
+          <form>
+            <label for="movie">Find a Movie</label>
+            <input type="search" id="movie" />
+            <button type="submit">Search</button>
+          </form>
+        </search>
+      </section>
+    </fieldset>
 
-	<fieldset id="forms__alone-fieldset">
-		<legend>Single</legend>
-		<label for="list__autocomplete">Text autocomplete</label>
-		<input type="text" id="list__autocomplete" list="searches">
-	</fieldset>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Payment</legend>
+        <div>
+          <label for="cc-name">Name on card</label>
+          <input
+            id="cc-name"
+            name="cc-name"
+            autocomplete="cc-name"
+            maxlength="50"
+            pattern="[\p{L} \-\.]+"
+            placeholder="Full name"
+            required
+          />
 
-	<form id="login">
-		<fieldset id="signin__example">
-			<legend>Sign In</legend>
-			<div>
-				<label for="input__username">Username</label>
-				<input id="input__username" name="username" type="text" required autocomplete="username" placeholder="mcgyver"
-					pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
-			</div>
-			<div>
-				<label for="input__password2">Password</label>
-				<input id="input__password2" type="password" autocomplete="current-password" required placeholder="········"
-					pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Uppercase, lowercase and a number are required">
-			</div>
-			<footer>
-				<menu>
-					<button>Login</button>
-					<button type="reset">Clear</button>
-				</menu>
-			</footer>
-		</fieldset>
-	</form>
+          <label for="cc-number">Card number</label>
+          <input
+            id="cc-number"
+            name="cc-number"
+            autocomplete="cc-number"
+            inputmode="numeric"
+            maxlength="50"
+            pattern="[\d ]{10,30}"
+            placeholder="0000 0000 0000 0000"
+            required
+          />
 
-	<fieldset>
-		<legend>Search</legend>
-		<section>
-			<search>
-				<form>
-					<label for="movie">Find a Movie</label>
-					<input type="search" id="movie">
-					<button type="submit">Search</button>
-				</form>
-			</search>
-		</section>
-	</fieldset>
+          <label for="cc-exp">Expiry date</label>
+          <input
+            id="cc-exp"
+            name="cc-exp"
+            autocomplete="cc-exp"
+            placeholder="MM/YY"
+            maxlength="5"
+            required
+            style="max-inline-size: 9ch"
+          />
 
-	<form action="#" method="post">
-		<fieldset>
-			<legend>Payment</legend>
-			<div>
-				<label for="cc-name">Name on card</label>
-				<input id="cc-name" name="cc-name" autocomplete="cc-name" maxlength="50" pattern="[\p{L} \-\.]+"
-					placeholder="Full name" required>
+          <label for="cc-csc">Security code</label>
+          <input
+            id="cc-csc"
+            name="cc-csc"
+            inputmode="numeric"
+            maxlength="3"
+            placeholder="xxx"
+            required
+            style="max-inline-size: 6ch"
+          />
+        </div>
 
-				<label for="cc-number">Card number</label>
-				<input id="cc-number" name="cc-number" autocomplete="cc-number" inputmode="numeric" maxlength="50"
-					pattern="[\d ]{10,30}" placeholder="0000 0000 0000 0000" required>
+        <footer>
+          <menu>
+            <button type="reset">Reset</button>
+          </menu>
+          <menu>
+            <button type="submit">Pay</button>
+          </menu>
+        </footer>
+      </fieldset>
+    </form>
 
-				<label for="cc-exp">Expiry date</label>
-				<input id="cc-exp" name="cc-exp" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" required
-					style="max-inline-size: 9ch">
+    <form>
+      <fieldset id="forms__html5">
+        <legend>Inputs Extended</legend>
+        <div>
+          <label for="file-in">File input</label>
+          <input
+            type="file"
+            id="file-in"
+            ondragenter="this.classList.add('dropping')"
+            ondragleave="this.classList.remove('dropping')"
+            ondrop="this.classList.remove('dropping')"
+          />
+        </div>
+        <div>
+          <label for="ic">Color input</label>
+          <input type="color" id="ic" value="#5c7cfa" />
+        </div>
+        <div>
+          <label for="ir">Range input</label>
+          <input
+            type="range"
+            id="ir"
+            value="10"
+            oninput="rangeToPercent(this)"
+            style="--track-fill: 10%"
+          />
+        </div>
+        <div>
+          <label for="ir">Progress element</label>
+          <div>
+            <progress></progress>
+            <progress value=".5">50%</progress>
+          </div>
+        </div>
+        <div>
+          <label for="idd">Date input</label>
+          <input type="date" id="idd" value="1970-01-01" />
+        </div>
+        <div>
+          <label for="idm">Month input</label>
+          <input type="month" id="idm" value="1970-01" />
+        </div>
+        <div>
+          <label for="idw">Week input</label>
+          <input type="week" id="idw" value="1970-W01" />
+        </div>
+        <div>
+          <label for="idtl">Datetime-local input</label>
+          <input type="datetime-local" id="idtl" value="1970-01-01T00:00" />
+        </div>
+      </fieldset>
+    </form>
 
-				<label for="cc-csc">Security code</label>
-				<input id="cc-csc" name="cc-csc" inputmode="numeric" maxlength="3" placeholder="xxx" required
-					style="max-inline-size: 6ch">
-			</div>
+    <hr />
+    <!-- SHOWCASE -->
 
-			<footer>
-				<menu>
-					<button type="reset">Reset</button>
-				</menu>
-				<menu>
-					<button type="submit">Pay</button>
-				</menu>
-			</footer>
-		</fieldset>
-	</form>
+    <header>
+      <h2>Normalized HTML5 Elements</h2>
+      <p>
+        Based on
+        <a href="https://cbracco.github.io/html5-test-page"
+          >this html5 test page</a
+        >.
+      </p>
+    </header>
+    <nav role="navigation">
+      <ul>
+        <li>
+          <a href="#text">Text</a>
+          <ul>
+            <li><a href="#text__headings">Headings</a></li>
+            <li><a href="#text__paragraphs">Paragraphs</a></li>
+            <li><a href="#text__blockquotes">Blockquotes</a></li>
+            <li><a href="#text__lists">Lists</a></li>
+            <li><a href="#text__hr">Horizontal rules</a></li>
+            <li><a href="#text__tables">Tabular data</a></li>
+            <li><a href="#text__code">Code</a></li>
+            <li><a href="#text__inline">Inline elements</a></li>
+            <li><a href="#text__comments">HTML Comments</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#embedded">Embedded content</a>
+          <ul>
+            <li><a href="#embedded__images">Images</a></li>
+            <li><a href="#embedded__audio">Audio</a></li>
+            <li><a href="#embedded__video">Video</a></li>
+            <li><a href="#embedded__canvas">Canvas</a></li>
+            <li><a href="#embedded__meter">Meter</a></li>
+            <li><a href="#embedded__progress">Progress</a></li>
+            <li><a href="#embedded__svg">Inline SVG</a></li>
+            <li><a href="#embedded__iframe">IFrames</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#forms">Form elements</a>
+          <ul>
+            <li><a href="#forms__input">Input fields</a></li>
+            <li><a href="#forms__select">Select menus</a></li>
+            <li><a href="#forms__checkbox">Checkboxes</a></li>
+            <li><a href="#forms__radio">Radio buttons</a></li>
+            <li><a href="#forms__textareas">Textareas</a></li>
+            <li><a href="#forms__html5">HTML5 inputs</a></li>
+            <li><a href="#forms__action">Action buttons</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-	<fieldset id="forms__html5">
-		<legend>Inputs Extended</legend>
-		<div>
-			<label for="file-in">File input</label>
-			<input type="file" id="file-in" ondragenter="this.classList.add('dropping')"
-				ondragleave="this.classList.remove('dropping')" ondrop="this.classList.remove('dropping')">
-		</div>
-		<div>
-			<label for="ic">Color input</label>
-			<input type="color" id="ic" value="#5c7cfa">
-		</div>
-		<div>
-			<label for="ir">Range input</label>
-			<input type="range" id="ir" value="10" oninput="rangeToPercent(this)" style="--track-fill: 10%">
-		</div>
-		<div>
-			<label for="ir">Progress element</label>
-			<div>
-				<progress></progress>
-				<progress value=".5">50%</progress>
-			</div>
-		</div>
-		<div>
-			<label for="idd">Date input</label>
-			<input type="date" id="idd" value="1970-01-01">
-		</div>
-		<div>
-			<label for="idm">Month input</label>
-			<input type="month" id="idm" value="1970-01">
-		</div>
-		<div>
-			<label for="idw">Week input</label>
-			<input type="week" id="idw" value="1970-W01">
-		</div>
-		<div>
-			<label for="idtl">Datetime-local input</label>
-			<input type="datetime-local" id="idtl" value="1970-01-01T00:00">
-		</div>
-	</fieldset>
-	</form>
+    <div>
+      <section id="text">
+        <article id="text__headings">
+          <div>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+          </div>
+        </article>
+        <article id="text__paragraphs">
+          <header>
+            <h1>Paragraphs</h1>
+          </header>
+          <div>
+            <p>
+              A paragraph (from the Greek paragraphos, “to write beside” or
+              “written beside”) is a self-contained unit of a discourse in
+              writing dealing with a particular point or idea. A paragraph
+              consists of one or more sentences. Though not required by the
+              syntax of any language, paragraphs are usually an expected part of
+              formal writing, used to organize longer prose.
+            </p>
+          </div>
+        </article>
+        <article id="text__blockquotes">
+          <header>
+            <h1>Blockquotes</h1>
+          </header>
+          <div>
+            <blockquote>
+              <p>
+                A block quotation (also known as a long quotation or extract) is
+                a quotation in a written document, that is set off from the main
+                text as a paragraph, or block of text.
+              </p>
+              <p>
+                It is typically distinguished visually using indentation and a
+                different typeface or smaller size quotation. It may or may not
+                include a citation, usually placed at the bottom.
+              </p>
+              <cite><a href="#!">Said no one, ever.</a></cite>
+            </blockquote>
+          </div>
+        </article>
+        <article id="text__lists">
+          <header>
+            <h1>Lists</h1>
+          </header>
+          <div>
+            <h3>Definition list</h3>
+            <dl>
+              <dt>Definition List Title</dt>
+              <dd>This is a definition list division.</dd>
 
-	<hr>
-	<!-- SHOWCASE -->
+              <dt>Definition List Title 2</dt>
+              <dd>
+                This is a definition list division item with a lot more to say.
+              </dd>
+            </dl>
+            <h3>Ordered List</h3>
+            <ol>
+              <li>List Item 1</li>
+              <li>List Item 2</li>
+              <li>List Item 3</li>
+            </ol>
+            <h3>Unordered List</h3>
+            <ul>
+              <li>List Item 1</li>
+              <li>List Item 2</li>
+              <li>List Item 3</li>
+            </ul>
+            <h3>Details</h3>
+            <details>
+              <summary>Details and summary element</summary>
 
-	<header>
-		<h2>Normalized HTML5 Elements</h2>
-		<p>Based on <a href="https://cbracco.github.io/html5-test-page">this html5 test page</a>.</p>
-	</header>
-	<nav role="navigation">
-		<ul>
-			<li>
-				<a href="#text">Text</a>
-				<ul>
-					<li><a href="#text__headings">Headings</a></li>
-					<li><a href="#text__paragraphs">Paragraphs</a></li>
-					<li><a href="#text__blockquotes">Blockquotes</a></li>
-					<li><a href="#text__lists">Lists</a></li>
-					<li><a href="#text__hr">Horizontal rules</a></li>
-					<li><a href="#text__tables">Tabular data</a></li>
-					<li><a href="#text__code">Code</a></li>
-					<li><a href="#text__inline">Inline elements</a></li>
-					<li><a href="#text__comments">HTML Comments</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#embedded">Embedded content</a>
-				<ul>
-					<li><a href="#embedded__images">Images</a></li>
-					<li><a href="#embedded__audio">Audio</a></li>
-					<li><a href="#embedded__video">Video</a></li>
-					<li><a href="#embedded__canvas">Canvas</a></li>
-					<li><a href="#embedded__meter">Meter</a></li>
-					<li><a href="#embedded__progress">Progress</a></li>
-					<li><a href="#embedded__svg">Inline SVG</a></li>
-					<li><a href="#embedded__iframe">IFrames</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#forms">Form elements</a>
-				<ul>
-					<li><a href="#forms__input">Input fields</a></li>
-					<li><a href="#forms__select">Select menus</a></li>
-					<li><a href="#forms__checkbox">Checkboxes</a></li>
-					<li><a href="#forms__radio">Radio buttons</a></li>
-					<li><a href="#forms__textareas">Textareas</a></li>
-					<li><a href="#forms__html5">HTML5 inputs</a></li>
-					<li><a href="#forms__action">Action buttons</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-
-	<div>
-		<section id="text">
-			<article id="text__headings">
-				<div>
-					<h1>Heading 1</h1>
-					<h2>Heading 2</h2>
-					<h3>Heading 3</h3>
-					<h4>Heading 4</h4>
-					<h5>Heading 5</h5>
-					<h6>Heading 6</h6>
-				</div>
-			</article>
-			<article id="text__paragraphs">
-				<header>
-					<h1>Paragraphs</h1>
-				</header>
-				<div>
-					<p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained
-						unit
-						of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more
-						sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of
-						formal writing, used to organize longer prose.</p>
-				</div>
-			</article>
-			<article id="text__blockquotes">
-				<header>
-					<h1>Blockquotes</h1>
-				</header>
-				<div>
-					<blockquote>
-						<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document,
-							that is set off from the main text as a paragraph, or block of text.</p>
-						<p>It is typically distinguished visually using indentation and a different typeface or smaller size
-							quotation. It may or may not include a citation, usually placed at the bottom.</p>
-						<cite><a href="#!">Said no one, ever.</a></cite>
-					</blockquote>
-				</div>
-			</article>
-			<article id="text__lists">
-				<header>
-					<h1>Lists</h1>
-				</header>
-				<div>
-					<h3>Definition list</h3>
-					<dl>
-						<dt>Definition List Title</dt>
-						<dd>This is a definition list division.</dd>
-
-						<dt>Definition List Title 2</dt>
-						<dd>This is a definition list division item with a lot more to say.</dd>
-					</dl>
-					<h3>Ordered List</h3>
-					<ol>
-						<li>List Item 1</li>
-						<li>List Item 2</li>
-						<li>List Item 3</li>
-					</ol>
-					<h3>Unordered List</h3>
-					<ul>
-						<li>List Item 1</li>
-						<li>List Item 2</li>
-						<li>List Item 3</li>
-					</ul>
-					<h3>Details</h3>
-					<details>
-						<summary>Details and summary element</summary>
-
-						<p>Example paragraph text.</p>
-					</details>
-				</div>
-			</article>
-			<article id="text__hr">
-				<header>
-					<h1>Horizontal rules</h1>
-				</header>
-				<div>
-					<hr>
-				</div>
-			</article>
-			<article id="text__tables">
-				<header>
-					<h1>Tabular data</h1>
-				</header>
-				<table>
-					<caption>Table Caption</caption>
-					<thead>
-						<tr>
-							<th>Table Heading 1</th>
-							<th>Table Heading 2</th>
-							<th>Table Heading 3</th>
-							<th>Table Heading 4</th>
-							<th>Table Heading 5</th>
-						</tr>
-					</thead>
-					<tfoot>
-						<tr>
-							<th>Table Footer 1</th>
-							<th>Table Footer 2</th>
-							<th>Table Footer 3</th>
-							<th>Table Footer 4</th>
-							<th>Table Footer 5</th>
-						</tr>
-					</tfoot>
-					<tbody>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-						<tr>
-							<td>Table Cell 1</td>
-							<td>Table Cell 2</td>
-							<td>Table Cell 3</td>
-							<td>Table Cell 4</td>
-							<td>Table Cell 5</td>
-						</tr>
-					</tbody>
-				</table>
-			</article>
-			<article id="text__code">
-				<header>
-					<h1>Code</h1>
-				</header>
-				<div>
-					<p><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
-					<p><strong>Inline code:</strong> <code>&lt;div&gt;code&lt;/div&gt;</code></p>
-					<p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
-					<h2>Pre-formatted text</h2>
-					<pre>P R E F O R M A T T E D T E X T
+              <p>Example paragraph text.</p>
+            </details>
+          </div>
+        </article>
+        <article id="text__hr">
+          <header>
+            <h1>Horizontal rules</h1>
+          </header>
+          <div>
+            <hr />
+          </div>
+        </article>
+        <article id="text__tables">
+          <header>
+            <h1>Tabular data</h1>
+          </header>
+          <table>
+            <caption>
+              Table Caption
+            </caption>
+            <thead>
+              <tr>
+                <th>Table Heading 1</th>
+                <th>Table Heading 2</th>
+                <th>Table Heading 3</th>
+                <th>Table Heading 4</th>
+                <th>Table Heading 5</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Table Footer 1</th>
+                <th>Table Footer 2</th>
+                <th>Table Footer 3</th>
+                <th>Table Footer 4</th>
+                <th>Table Footer 5</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+                <td>Table Cell 4</td>
+                <td>Table Cell 5</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <article id="text__code">
+          <header>
+            <h1>Code</h1>
+          </header>
+          <div>
+            <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
+            <p>
+              <strong>Inline code:</strong>
+              <code>&lt;div&gt;code&lt;/div&gt;</code>
+            </p>
+            <p>
+              <strong>Sample output:</strong>
+              <samp>This is sample output from a computer program.</samp>
+            </p>
+            <h2>Pre-formatted text</h2>
+            <pre>
+						P R E F O R M A T T E D T E X T
 						! " # $ % &amp; ' ( ) * + , - . /
 						0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
 						@ A B C D E F G H I J K L M N O
 						P Q R S T U V W X Y Z [ \ ] ^ _
 						` a b c d e f g h i j k l m n o
-						p q r s t u v w x y z { | } ~ </pre>
-				</div>
-			</article>
-			<article id="text__inline">
-				<header>
-					<h1>Inline elements</h1>
-				</header>
-				<div>
-					<p><a href="#!">This is a text link</a>.</p>
-					<p><strong>Strong is used to indicate strong importance.</strong></p>
-					<p><em>This text has added emphasis.</em></p>
-					<p>The <b>b element</b> is stylistically different text from normal text, without any special importance.
-					</p>
-					<p>The <i>i element</i> is text that is offset from the normal text.</p>
-					<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation.
-					</p>
-					<p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
-					<p><s>This text has a strikethrough</s>.</p>
-					<p>Superscript<sup>®</sup>.</p>
-					<p>Subscript for things like H<sub>2</sub>O.</p>
-					<p><small>This small text is small for for fine print, etc.</small></p>
-					<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
-					<p><q cite="./index_files/q">This text is a short inline quotation.</q></p>
-					<p><cite>This is a citation.</cite></p>
-					<p>The <dfn>dfn element</dfn> indicates a definition.</p>
-					<p>The <mark>mark element</mark> indicates a highlight.</p>
-					<p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
-					<p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
-				</div>
-			</article>
-			<article id="text__comments">
-				<header>
-					<h1>HTML Comments</h1>
-				</header>
-				<div>
-					<p>There is comment here: <!--This comment should not be displayed--></p>
-					<p>There is a comment spanning multiple tags and lines below here.</p>
-					<!--<p><a href="#!">This is a text link. But it should not be displayed in a comment</a>.</p>
+						p q r s t u v w x y z { | } ~ </pre
+            >
+          </div>
+        </article>
+        <article id="text__inline">
+          <header>
+            <h1>Inline elements</h1>
+          </header>
+          <div>
+            <p><a href="#!">This is a text link</a>.</p>
+            <p>
+              <strong>Strong is used to indicate strong importance.</strong>
+            </p>
+            <p><em>This text has added emphasis.</em></p>
+            <p>
+              The <b>b element</b> is stylistically different text from normal
+              text, without any special importance.
+            </p>
+            <p>
+              The <i>i element</i> is text that is offset from the normal text.
+            </p>
+            <p>
+              The <u>u element</u> is text with an unarticulated, though
+              explicitly rendered, non-textual annotation.
+            </p>
+            <p>
+              <del>This text is deleted</del> and
+              <ins>This text is inserted</ins>.
+            </p>
+            <p><s>This text has a strikethrough</s>.</p>
+            <p>Superscript<sup>®</sup>.</p>
+            <p>Subscript for things like H<sub>2</sub>O.</p>
+            <p>
+              <small>This small text is small for for fine print, etc.</small>
+            </p>
+            <p>
+              Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>
+            </p>
+            <p>
+              <q cite="./index_files/q"
+                >This text is a short inline quotation.</q
+              >
+            </p>
+            <p><cite>This is a citation.</cite></p>
+            <p>The <dfn>dfn element</dfn> indicates a definition.</p>
+            <p>The <mark>mark element</mark> indicates a highlight.</p>
+            <p>
+              The <var>variable element</var>, such as <var>x</var> =
+              <var>y</var>.
+            </p>
+            <p>
+              The time element:
+              <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time>
+            </p>
+          </div>
+        </article>
+        <article id="text__comments">
+          <header>
+            <h1>HTML Comments</h1>
+          </header>
+          <div>
+            <p>
+              There is comment here:
+              <!--This comment should not be displayed-->
+            </p>
+            <p>
+              There is a comment spanning multiple tags and lines below here.
+            </p>
+            <!--<p><a href="#!">This is a text link. But it should not be displayed in a comment</a>.</p>
               <p><strong>Strong is used to indicate strong importance. But, it should not be displayed in a comment</strong></p>
               <p><em>This text has added emphasis. But, it should not be displayed in a comment</em></p>-->
-				</div>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			</article>
-		</section>
-		<section id="embedded">
-			<header>
-				<h1>Embedded content</h1>
-			</header>
-			<article id="embedded__images">
-				<header>
-					<h2>Images</h2>
-				</header>
-				<div class="spaced">
-					<h5>No <code>&lt;figure&gt;</code> element</h5>
-					<p><img src="https://doodleipsum.com/420/outline?bg=7463D9&i=5493adbcd8a47597df8e1fc4b1b87733"
-							alt="Image alt text"></p>
-					<h5>Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code></h5>
-					<figure><img src="https://doodleipsum.com/420/outline?bg=7463D9&i=5493adbcd8a47597df8e1fc4b1b87733"
-							alt="Image alt text"></figure>
-					<h5>Wrapped in a <code>&lt;figure&gt;</code> element, with a <code>&lt;figcaption&gt;</code></h5>
-					<figure>
-						<img src="https://doodleipsum.com/420/outline?bg=7463D9&i=5493adbcd8a47597df8e1fc4b1b87733"
-							alt="Image alt text">
-						<figcaption>Here is a caption for this image.</figcaption>
-					</figure>
-				</div>
-			</article>
-			<article id="embedded__audio">
-				<header>
-					<h2>Audio</h2>
-				</header>
-				<div><audio controls="">audio</audio></div>
-			</article>
-			<article id="embedded__video">
-				<header>
-					<h2>Video</h2>
-				</header>
-				<div><video controls="">video</video></div>
-			</article>
-			<article id="embedded__canvas">
-				<header>
-					<h2>Canvas</h2>
-				</header>
-				<div><canvas>canvas</canvas></div>
-			</article>
-			<article id="embedded__meter">
-				<header>
-					<h2>Meter</h2>
-				</header>
-				<div><meter value="2" min="0" max="10">2 out of 10</meter></div>
-			</article>
-			<article id="embedded__progress">
-				<header>
-					<h2>Progress</h2>
-				</header>
-				<div>
-					<progress indeterminate>progress</progress>
-					<progress value=".5">progress</progress>
-				</div>
-			</article>
-			<article id="embedded__svg">
-				<header>
-					<h2>Inline SVG</h2>
-				</header>
-				<div><svg width="100px" height="100px">
-						<circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle>
-					</svg></div>
-			</article>
-			<article id="embedded__iframe">
-				<header>
-					<h2>IFrame</h2>
-				</header>
-				<div><iframe src="./index_files/index.html" height="300"></iframe></div>
-			</article>
-		</section>
-		<section id="forms">
-			<header>
-				<h1>Form elements</h1>
-			</header>
-			<form>
-				<fieldset id="forms__input">
-					<legend>Input fields</legend>
-					<p>
-						<label for="input__text">Text Input</label>
-						<input id="input__text" type="text" placeholder="Text Input">
-					</p>
-					<p>
-						<label for="input__password">Password</label>
-						<input id="input__password" type="password" placeholder="Type your Password">
-					</p>
-					<p>
-						<label for="input__webaddress">Web Address</label>
-						<input id="input__webaddress" type="url" placeholder="http://yoursite.com">
-					</p>
-					<p>
-						<label for="input__emailaddress">Email Address</label>
-						<input id="input__emailaddress" type="email" placeholder="name@email.com">
-					</p>
-					<p>
-						<label for="input__phone">Phone Number</label>
-						<input id="input__phone" type="tel" placeholder="(999) 999-9999">
-					</p>
-					<p>
-						<label for="input__search">Search</label>
-						<input id="input__search" type="search" placeholder="Enter Search Term">
-					</p>
-					<p>
-						<label for="input__text2">Number Input</label>
-						<input id="input__text2" type="number" placeholder="Enter a Number">
-					</p>
-					<p>
-						<label for="input__text3" class="error">Error</label>
-						<input id="input__text3" class="is-error" type="text" placeholder="Text Input">
-					</p>
-					<p>
-						<label for="input__text4" class="valid">Valid</label>
-						<input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
-					</p>
-				</fieldset>
-				<fieldset id="forms__select">
-					<legend>Select menus</legend>
-					<p>
-						<label for="select">Select</label>
-						<select id="select">
-							<optgroup label="Option Group">
-								<option>Option One</option>
-								<option>Option Two</option>
-								<option>Option Three</option>
-							</optgroup>
-						</select>
-					</p>
-				</fieldset>
-				<fieldset id="forms__checkbox">
-					<legend>Checkboxes</legend>
-					<ul class="list list--bare">
-						<li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
-								Choice
-								A</label></li>
-						<li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
-						<li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
-					</ul>
-				</fieldset>
-				<fieldset id="forms__radio">
-					<legend>Radio buttons</legend>
-					<ul class="list list--bare">
-						<li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked">
-								Option 1</label></li>
-						<li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2</label>
-						</li>
-						<li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label>
-						</li>
-					</ul>
-				</fieldset>
-				<fieldset id="forms__textareas">
-					<legend>Textareas</legend>
-					<p>
-						<label for="textarea">Textarea</label>
-						<textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
-					</p>
-				</fieldset>
-				<fieldset id="forms__html5">
-					<legend>HTML5 inputs</legend>
-					<p>
-						<label for="ic">Color input</label>
-						<input type="color" id="ic" value="#000000">
-					</p>
-					<p>File input <input type="file"></p>
-					<p>
-						<label for="in">Number input</label>
-						<input type="number" id="in" min="0" max="10" value="5">
-					</p>
-					<p>
-						<label for="ir">Range input</label>
-						<input type="range" id="ir" value="10">
-					</p>
-					<p>
-						<label for="ir">Progress input</label>
-						<progress></progress>
-						<progress value=".5" />50%</progress>
-					</p>
-					<p>
-						<label for="idd">Date input</label>
-						<input type="date" id="idd" value="1970-01-01">
-					</p>
-					<p>
-						<label for="idm">Month input</label>
-						<input type="month" id="idm" value="1970-01">
-					</p>
-					<p>
-						<label for="idw">Week input</label>
-						<input type="week" id="idw" value="1970-W01">
-					</p>
-					<p>
-						<label for="idt">Datetime input</label>
-						<input type="datetime" id="idt" value="1970-01-01T00:00:00Z">
-					</p>
-					<p>
-						<label for="idtl">Datetime-local input</label>
-						<input type="datetime-local" id="idtl" value="1970-01-01T00:00">
-					</p>
-				</fieldset>
-				<fieldset id="forms__action">
-					<legend>Action buttons</legend>
-					<p class="buttons-list">
-						<input type="submit" value="&lt;input type=submit&gt;">
-						<input type="button" value="&lt;input type=button&gt;">
-						<input type="reset" value="&lt;input type=reset&gt;">
-						<input type="submit" value="&lt;input disabled&gt;" disabled="">
-					</p>
-					<br>
-					<p class="buttons-list">
-						<button type="submit">&lt;button type=submit&gt;</button>
-						<button type="button">&lt;button type=button&gt;</button>
-						<button type="reset">&lt;button type=reset&gt;</button>
-						<button type="button" disabled="">&lt;button disabled&gt;</button>
-					</p>
-				</fieldset>
-			</form>
-		</section>
-	</div>
-
-
-</body>
-
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </article>
+      </section>
+      <section id="embedded">
+        <header>
+          <h1>Embedded content</h1>
+        </header>
+        <article id="embedded__images">
+          <header>
+            <h2>Images</h2>
+          </header>
+          <div class="spaced">
+            <h5>No <code>&lt;figure&gt;</code> element</h5>
+            <p>
+              <img
+                src="https://doodleipsum.com/420/outline?bg=7463D9&i=5493adbcd8a47597df8e1fc4b1b87733"
+                alt="Image alt text"
+              />
+            </p>
+            <h5>
+              Wrapped in a <code>&lt;figure&gt;</code> element, no
+              <code>&lt;figcaption&gt;</code>
+            </h5>
+            <figure>
+              <img
+                src="https://doodleipsum.com/420/outline?bg=7463D9&i=5493adbcd8a47597df8e1fc4b1b87733"
+                alt="Image alt text"
+              />
+            </figure>
+            <h5>
+              Wrapped in a <code>&lt;figure&gt;</code> element, with a
+              <code>&lt;figcaption&gt;</code>
+            </h5>
+            <figure>
+              <img
+                src="https://doodleipsum.com/420/outline?bg=7463D9&i=5493adbcd8a47597df8e1fc4b1b87733"
+                alt="Image alt text"
+              />
+              <figcaption>Here is a caption for this image.</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article id="embedded__audio">
+          <header>
+            <h2>Audio</h2>
+          </header>
+          <div><audio controls="">audio</audio></div>
+        </article>
+        <article id="embedded__video">
+          <header>
+            <h2>Video</h2>
+          </header>
+          <div><video controls="">video</video></div>
+        </article>
+        <article id="embedded__canvas">
+          <header>
+            <h2>Canvas</h2>
+          </header>
+          <div><canvas>canvas</canvas></div>
+        </article>
+        <article id="embedded__meter">
+          <header>
+            <h2>Meter</h2>
+          </header>
+          <div><meter value="2" min="0" max="10">2 out of 10</meter></div>
+        </article>
+        <article id="embedded__progress">
+          <header>
+            <h2>Progress</h2>
+          </header>
+          <div>
+            <progress indeterminate>progress</progress>
+            <progress value=".5">progress</progress>
+          </div>
+        </article>
+        <article id="embedded__svg">
+          <header>
+            <h2>Inline SVG</h2>
+          </header>
+          <div>
+            <svg width="100px" height="100px">
+              <circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle>
+            </svg>
+          </div>
+        </article>
+        <article id="embedded__iframe">
+          <header>
+            <h2>IFrame</h2>
+          </header>
+          <div>
+            <iframe src="./index_files/index.html" height="300"></iframe>
+          </div>
+        </article>
+      </section>
+      <section id="forms">
+        <header>
+          <h1>Form elements</h1>
+        </header>
+        <form>
+          <fieldset id="forms__input">
+            <legend>Input fields</legend>
+            <p>
+              <label for="input__text">Text Input</label>
+              <input id="input__text" type="text" placeholder="Text Input" />
+            </p>
+            <p>
+              <label for="input__password">Password</label>
+              <input
+                id="input__password"
+                type="password"
+                placeholder="Type your Password"
+              />
+            </p>
+            <p>
+              <label for="input__webaddress">Web Address</label>
+              <input
+                id="input__webaddress"
+                type="url"
+                placeholder="http://yoursite.com"
+              />
+            </p>
+            <p>
+              <label for="input__emailaddress">Email Address</label>
+              <input
+                id="input__emailaddress"
+                type="email"
+                placeholder="name@email.com"
+              />
+            </p>
+            <p>
+              <label for="input__phone">Phone Number</label>
+              <input
+                id="input__phone"
+                type="tel"
+                placeholder="(999) 999-9999"
+              />
+            </p>
+            <p>
+              <label for="input__search">Search</label>
+              <input
+                id="input__search"
+                type="search"
+                placeholder="Enter Search Term"
+              />
+            </p>
+            <p>
+              <label for="input__text2">Number Input</label>
+              <input
+                id="input__text2"
+                type="number"
+                placeholder="Enter a Number"
+              />
+            </p>
+            <p>
+              <label for="input__text3" class="error">Error</label>
+              <input
+                id="input__text3"
+                class="is-error"
+                type="text"
+                placeholder="Text Input"
+              />
+            </p>
+            <p>
+              <label for="input__text4" class="valid">Valid</label>
+              <input
+                id="input__text4"
+                class="is-valid"
+                type="text"
+                placeholder="Text Input"
+              />
+            </p>
+          </fieldset>
+          <fieldset id="forms__select">
+            <legend>Select menus</legend>
+            <p>
+              <label for="select">Select</label>
+              <select id="select">
+                <optgroup label="Option Group">
+                  <option>Option One</option>
+                  <option>Option Two</option>
+                  <option>Option Three</option>
+                </optgroup>
+              </select>
+            </p>
+          </fieldset>
+          <fieldset id="forms__checkbox">
+            <legend>Checkboxes</legend>
+            <ul class="list list--bare">
+              <li>
+                <label for="checkbox1"
+                  ><input
+                    id="checkbox1"
+                    name="checkbox"
+                    type="checkbox"
+                    checked="checked"
+                  />
+                  Choice A</label
+                >
+              </li>
+              <li>
+                <label for="checkbox2"
+                  ><input id="checkbox2" name="checkbox" type="checkbox" />
+                  Choice B</label
+                >
+              </li>
+              <li>
+                <label for="checkbox3"
+                  ><input id="checkbox3" name="checkbox" type="checkbox" />
+                  Choice C</label
+                >
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset id="forms__radio">
+            <legend>Radio buttons</legend>
+            <ul class="list list--bare">
+              <li>
+                <label for="radio1"
+                  ><input
+                    id="radio1"
+                    name="radio"
+                    type="radio"
+                    class="radio"
+                    checked="checked"
+                  />
+                  Option 1</label
+                >
+              </li>
+              <li>
+                <label for="radio2"
+                  ><input id="radio2" name="radio" type="radio" class="radio" />
+                  Option 2</label
+                >
+              </li>
+              <li>
+                <label for="radio3"
+                  ><input id="radio3" name="radio" type="radio" class="radio" />
+                  Option 3</label
+                >
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset id="forms__textareas">
+            <legend>Textareas</legend>
+            <p>
+              <label for="textarea">Textarea</label>
+              <textarea
+                id="textarea"
+                rows="8"
+                cols="48"
+                placeholder="Enter your message here"
+              ></textarea>
+            </p>
+          </fieldset>
+          <fieldset id="forms__html5">
+            <legend>HTML5 inputs</legend>
+            <p>
+              <label for="ic">Color input</label>
+              <input type="color" id="ic" value="#000000" />
+            </p>
+            <p>File input <input type="file" /></p>
+            <p>
+              <label for="in">Number input</label>
+              <input type="number" id="in" min="0" max="10" value="5" />
+            </p>
+            <p>
+              <label for="ir">Range input</label>
+              <input type="range" id="ir" value="10" />
+            </p>
+            <p>
+              <label for="ir">Progress input</label>
+              <progress></progress>
+              <progress value=".5">50%</progress>
+            </p>
+            <p>
+              <label for="idd">Date input</label>
+              <input type="date" id="idd" value="1970-01-01" />
+            </p>
+            <p>
+              <label for="idm">Month input</label>
+              <input type="month" id="idm" value="1970-01" />
+            </p>
+            <p>
+              <label for="idw">Week input</label>
+              <input type="week" id="idw" value="1970-W01" />
+            </p>
+            <p>
+              <label for="idt">Datetime input</label>
+              <input type="datetime" id="idt" value="1970-01-01T00:00:00Z" />
+            </p>
+            <p>
+              <label for="idtl">Datetime-local input</label>
+              <input type="datetime-local" id="idtl" value="1970-01-01T00:00" />
+            </p>
+          </fieldset>
+          <fieldset id="forms__action">
+            <legend>Action buttons</legend>
+            <p class="buttons-list">
+              <input type="submit" value="&lt;input type=submit&gt;" />
+              <input type="button" value="&lt;input type=button&gt;" />
+              <input type="reset" value="&lt;input type=reset&gt;" />
+              <input type="submit" value="&lt;input disabled&gt;" disabled="" />
+            </p>
+            <br />
+            <p class="buttons-list">
+              <button type="submit">&lt;button type=submit&gt;</button>
+              <button type="button">&lt;button type=button&gt;</button>
+              <button type="reset">&lt;button type=reset&gt;</button>
+              <button type="button" disabled="">&lt;button disabled&gt;</button>
+            </p>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+  </body>
 </html>

@@ -190,48 +190,6 @@
   block-size: auto;
 }
 
-/* Let form controls to look like other other elements. */
-:where(input, button, textarea, select),
-:where(input[type="file"])::-webkit-file-upload-button {
-  font: inherit;
-  font-size: inherit;
-  color: inherit;
-  letter-spacing: inherit;
-}
-
-::placeholder {
-  color: var(--gray-7);
-  opacity: 0.75;
-}
-
-:where(input:not([type="range"], [type="checkbox"], [type="radio"]), textarea) {
-  padding-inline: var(--space-2);
-  padding-block: var(--space-1);
-}
-
-:where(select) {
-  padding-inline: var(--space-3) 0;
-  padding-block: var(--space-1);
-}
-
-:where(
-    textarea,
-    select,
-    input:not([type="button"], [type="submit"], [type="reset"])
-  ) {
-  background-color: var(--surface-2);
-  border-radius: var(--input-radius);
-}
-
-:where(textarea) {
-  resize: block;
-}
-
-:where(input[type="checkbox"], input[type="radio"]) {
-  block-size: var(--space-2);
-  inline-size: var(--space-2);
-}
-
 :where(svg:not([width])) {
   inline-size: var(--space-8);
 }
@@ -400,22 +358,4 @@
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
-}
-
-@media (--OSdark) {
-  :where(
-      textarea,
-      select,
-      input:not([type="button"], [type="submit"], [type="reset"])
-    ) {
-    background-color: hsl(210 11% 10%);
-  }
-
-  :where(dialog) {
-    background-color: var(--surface-2);
-  }
-
-  ::placeholder {
-    color: var(--gray-6);
-  }
 }

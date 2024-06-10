@@ -102,6 +102,8 @@ export const defaultConfig = {
     "gray-10",
     "gray-11",
     "gray-12",
+    "gray-5-hsl",
+    "gray-12-hsl",
     "red-1",
     "red-2",
     "red-3",
@@ -165,4 +167,5 @@ export const defaultConfig = {
     "inner-shadow-2",
     "inner-shadow-3",
   ],
+  easing: ["ease-1", "ease-2", "ease-3", "ease-4"],
 }

@@ -3,8 +3,7 @@
 */
 
 /* Let form controls to look like other other elements. */
-:where(input, button, textarea, select),
-:where(input[type="file"])::-webkit-file-upload-button {
+:where(input:not(:is([type="button"], [type="file"])), textarea, select) {
   font: inherit;
   font-size: inherit;
   color: inherit;
@@ -16,7 +15,16 @@
   opacity: 0.75;
 }
 
-:where(input:not([type="range"], [type="checkbox"], [type="radio"]), textarea) {
+:where(
+    input:not(
+        [type="range"],
+        [type="checkbox"],
+        [type="radio"],
+        [type="button"],
+        [type="file"]
+      ),
+    textarea
+  ) {
   padding-inline: var(--space-2);
   padding-block: var(--space-1);
 }
@@ -29,7 +37,7 @@
 :where(
     textarea,
     select,
-    input:not([type="button"], [type="submit"], [type="reset"])
+    input:not([type="button"], [type="file"], [type="submit"], [type="reset"])
   ) {
   background-color: var(--surface-2);
   border-radius: var(--input-radius);
@@ -109,8 +117,8 @@ fieldset {
   counter-reset: errors;
   border-color: var(--surface-2);
   box-shadow: var(--shadow-3);
-  padding-inline: var(--size-4);
-  padding-block: var(--size-2) var(--size-3);
+  padding-inline: var(--space-4);
+  padding-block: var(--space-2) var(--space-3);
   transition: box-shadow 0.4s var(--ease-out-4);
 
   &:focus-within {
@@ -140,7 +148,7 @@ fieldset {
       block-size: 6px;
       border-radius: var(--radius-round);
       background-color: var(--red-4);
-      box-shadow: 0 0 var(--size-2) var(--red-4);
+      box-shadow: 0 0 var(--space-2) var(--red-4);
       /*       animation: var(--animation-ping); */
     }
   }
@@ -158,7 +166,7 @@ fieldset {
 
 legend {
   display: inline-flex;
-  gap: var(--size-2);
+  gap: var(--space-2);
   align-items: center;
   min-block-size: 3ch;
   border: 1px solid var(--surface-2);
@@ -338,7 +346,7 @@ input[type="file"] {
 
 :where(input[type="file"])::-webkit-file-upload-button,
 :where(input[type="file"])::file-selector-button {
-  margin: var(--size-3);
+  margin: var(--space-3);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -444,8 +452,8 @@ input[type="color"] {
   background: none;
   border: none;
   padding: 0;
-  inline-size: var(--size-8);
-  block-size: var(--size-8);
+  inline-size: var(--space-8);
+  block-size: var(--space-8);
   border-radius: var(--radius-round);
   overflow: hidden;
   box-shadow: var(--shadow-5);
@@ -527,12 +535,12 @@ select:-webkit-autofill:focus {
 fieldset,
 form > header {
   display: grid;
-  gap: var(--size-2);
+  gap: var(--space-2);
 }
 
 form {
   display: grid;
-  gap: var(--size-8);
+  gap: var(--space-4);
 }
 
 legend {
@@ -542,21 +550,21 @@ legend {
 }
 
 fieldset {
-  gap: var(--size-3);
+  gap: var(--space-3);
   max-inline-size: max-content;
 
   @media (width > 720px) {
-    gap: var(--size-2);
+    gap: var(--space-2);
   }
 
   & > div {
     display: grid;
     grid-auto-columns: 1fr;
-    gap: var(--size-2) var(--size-3);
+    gap: var(--space-2) var(--space-3);
     align-items: center;
 
     @media (width > 720px) {
-      grid-template-columns: var(--size-content-1) auto;
+      grid-template-columns: var(--space-content-1) auto;
     }
 
     & > label {
@@ -568,8 +576,8 @@ fieldset {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: var(--size-3);
-    margin-block-start: var(--size-6);
+    gap: var(--space-3);
+    margin-block-start: var(--space-6);
 
     & > menu:only-child {
       margin-inline-start: auto;
@@ -581,7 +589,7 @@ fieldset {
     margin: 0;
     list-style-type: none;
     display: grid;
-    gap: var(--size-2);
+    gap: var(--space-2);
 
     & > li {
       padding: 0;
@@ -589,8 +597,8 @@ fieldset {
       & > label {
         display: inline-flex;
         align-items: baseline;
-        gap: var(--size-4);
-        max-inline-size: var(--size-content-1);
+        gap: var(--space-4);
+        max-inline-size: var(--space-content-1);
 
         & > input {
           margin-inline-start: 0;
@@ -603,7 +611,7 @@ fieldset {
 
 search {
   & > form {
-    gap: var(--size-3);
+    gap: var(--space-3);
     grid-template-columns: minmax(20ch, 1fr) auto;
 
     & > label {
@@ -765,26 +773,26 @@ input[type="range"] {
 @media (pointer: coarse) {
   input[type="checkbox"],
   input[type="radio"] {
-    inline-size: var(--size-4);
-    block-size: var(--size-4);
+    inline-size: var(--space-4);
+    block-size: var(--space-4);
   }
 }
 
 .buttons-list {
   /* display: flex; */
-  gap: var(--size-3);
+  gap: var(--space-3);
 }
 
 #signin__example {
-  gap: var(--size-4);
+  gap: var(--space-4);
 
   & > div {
     grid-template-columns: 1fr;
-    gap: var(--size-2);
+    gap: var(--space-2);
   }
 
   & > footer {
-    margin-block-start: var(--size-2);
+    margin-block-start: var(--space-2);
 
     & > menu {
       flex-direction: row-reverse;

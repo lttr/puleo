@@ -31,26 +31,25 @@ export function fontStyles({ classPrefix, propsPrefix, fontStyleHelpers }) {
   font-weight: var(--${propsPrefix}font-weight-body);
 }`,
 
-    "button-text": `.${classPrefix}button-text {
-  font-weight: var(--${propsPrefix}font-weight-body-bold);
-  font-size: calc(1.05 * var(--${propsPrefix}font-size--2));
-}`,
-
     /* Headings text */
     "heading-1": `.${classPrefix}heading-1 {
   font-size: var(--${propsPrefix}font-size-h1);
+  font-weight: var(--${propsPrefix}font-weight-headings);
 }`,
 
     "heading-2": `.${classPrefix}heading-2 {
   font-size: var(--${propsPrefix}font-size-h2);
+  font-weight: var(--${propsPrefix}font-weight-headings);
 }`,
 
     "heading-3": `.${classPrefix}heading-3 {
   font-size: var(--${propsPrefix}font-size-h3);
+  font-weight: var(--${propsPrefix}font-weight-headings);
 }`,
 
     "heading-4": `.${classPrefix}heading-4 {
   font-size: var(--${propsPrefix}font-size-h4);
+  font-weight: var(--${propsPrefix}font-weight-headings);
 }`,
   }
   return Object.values(pickKeys(helpers, fontStyleHelpers))

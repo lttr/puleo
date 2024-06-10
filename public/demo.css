@@ -1,14 +1,15 @@
 /* temporary */
 
 .btn-custom {
-  --_bg: linear-gradient(var(--indigo-5), var(--indigo-7));
-  --_border: var(--indigo-6);
-  --_text: var(--indigo-0);
-  --_ink-shadow: 0 1px 0 var(--indigo-9);
+  --_bg: var(--brand-color-dim);
+  --_border: none;
+  --_text: white;
 }
 
 .btn-large {
-  --_size: var(--font-size-4);
+  --_size: var(--font-size-0);
+  padding-block: var(--space-4);
+  padding-inline: var(--space-5);
 }
 
 /* global demo helpers */

@@ -1,3 +1,7 @@
+/*
+* Default values for semantic props (i.e. design tokens).
+*/
+
 :where(html) {
   /* text */
   --font-family-body: sans-serif;
@@ -7,9 +11,10 @@
   --font-size-h3: var(--font-size-2);
   --font-size-h4: var(--font-size-1);
   --font-size-h5: var(--font-size-0);
-  --font-weight-body-bold: var(--font-weight-7);
+  --font-weight-body-bold: var(--font-weight-6);
   --font-weight-body: var(--font-weight-4);
-  --font-weight-headings: var(--font-weight-7);
+  --font-weight-buttons: var(--font-weight-6);
+  --font-weight-headings: var(--font-weight-6);
   --font-weight-light: var(--font-weight-3);
   --line-height-body: var(--font-lineheight-3);
   --line-height-headings: var(--font-lineheight-1);
@@ -18,14 +23,11 @@
   --text-color-1: var(--gray-12);
   --text-color-2: var(--gray-7);
 
-  --surface-1: var(--gray-0);
+  --surface-1: var(--gray-1);
   --surface-2: var(--gray-2);
   --surface-3: var(--gray-3);
   --surface-4: var(--gray-4);
 
-  --brand-color: var(--blue-6);
-  --brand-color-dim: var(--blue-10);
-  --brand-color-bright: var(--blue-2);
   --accent-color: var(--brand-color);
   --caret-color: var(--brand-color);
   --focus-color: var(--brand-color);
@@ -51,6 +53,9 @@
   /* inputs */
   --input-radius: var(--radius-default);
 
+  /* buttons */
+  --button-height-default: 2.25rem;
+
   /* borders */
   --border-size-default: var(--border-size-1);
   --radius-default: var(--radius-2);
@@ -71,9 +76,6 @@
     --surface-2: var(--gray-8);
     --surface-3: var(--gray-7);
     --surface-4: var(--gray-6);
-
-    --brand-color-dim: var(--blue-11);
-    --brand-color-bright: var(--blue-3);
 
     --bg-color-body: var(--surface-1);
 

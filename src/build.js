@@ -25,16 +25,11 @@ function insideRootSelector(groups, { rootSelector, mediaDark }) {
       }),
     " ",
   ])
-  return [
-    `${rootSelector} {`,
-    ...lines,
-    "}\n",
-    `${mediaDark} {`,
-    `  ${rootSelector} {`,
-    ...linesMediaDark,
-    "  }",
-    "}\n",
-  ]
+  const linesCSS = [`${rootSelector} {`, ...lines, "}\n"]
+  const linesMediaDarkCSS = linesMediaDark.length
+    ? [`${mediaDark} {`, `  ${rootSelector} {`, ...linesMediaDark, "  }", "}\n"]
+    : []
+  return linesCSS.concat(linesMediaDarkCSS)
 }
 
 function buildScales(config) {
@@ -61,6 +56,7 @@ function buildProps(config) {
     borderSize,
     breakpoints,
     colors,
+    easing,
     fontWeight,
     inlineSize,
     lineHeight,
@@ -76,6 +72,7 @@ function buildProps(config) {
       borderSize && openProps({ propsPrefix, names: borderSize }),
       breakpoints && openProps({ propsPrefix, names: breakpoints }),
       colors && openProps({ propsPrefix, names: colors }),
+      easing && openProps({ propsPrefix, names: easing }),
       fontWeight && openProps({ propsPrefix, names: fontWeight }),
       inlineSize && openProps({ propsPrefix, names: inlineSize }),
       lineHeight && openProps({ propsPrefix, names: lineHeight }),
@@ -99,7 +96,7 @@ function buildObjects(config) {
 
 const cssScales = buildScales({}).join("\n")
 const cssProps = buildProps({}).join("\n")
-const cssObjects = buildObjects({}).join("\n")
+const cssObjects = buildObjects({}).join("\n\n")
 
 const fileOutputScales = "./css/generated/scales.css"
 const fileOutputProps = "./css/generated/props.css"

@@ -4,14 +4,12 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   max-width: var(--${propsPrefix}grid-max-width);
   padding-inline: var(--${propsPrefix}grid-gutter);
   margin-inline: auto;
-}
-`,
+}`,
 
     grid: `.${classPrefix}grid {
   display: grid;
   gap: var(--${propsPrefix}grid-gutter);
-}
-`,
+}`,
 
     "auto-grid": `.${classPrefix}auto-grid {
   --${propsPrefix}auto-grid-min: var(--${propsPrefix}size-content-2);
@@ -24,23 +22,20 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
     var(--${propsPrefix}auto-grid-repeat),
     minmax(min(100%, var(--${propsPrefix}auto-grid-min)), 1fr)
   );
-}
-`,
+}`,
 
     flow: `.${classPrefix}flow > * + * {
   --${propsPrefix}flow-space: 1em;
 
   margin-block-start: var(--${propsPrefix}flow-space);
-}
-`,
+}`,
 
     center: `.${classPrefix}center {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-inline: auto;
-}
-`,
+}`,
 
     stack: `.${classPrefix}stack {
   --${propsPrefix}stack-space: var(--${propsPrefix}space-5);
@@ -56,8 +51,7 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   > * + * {
     margin-block-start: var(--${propsPrefix}stack-space);
   }
-}
-`,
+}`,
 
     cluster: `.${classPrefix}cluster {
   --${propsPrefix}cluster-space: var(--${propsPrefix}space-3);
@@ -66,8 +60,7 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--${propsPrefix}cluster-space);
-}
-`,
+}`,
 
     switcher: `.${classPrefix}switcher {
   --${propsPrefix}switcher-space: var(--${propsPrefix}space-6);
@@ -93,8 +86,7 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
         999
     );
   }
-}
-`,
+}`,
   }
   return Object.values(pickKeys(helpers, layoutHelpers))
 }

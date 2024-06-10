@@ -58,7 +58,7 @@ function getCSSCustomPropIndex() {
 // Anchors
 
 const toc = document.getElementById("toc")
-document.querySelectorAll("section.sample > h2").forEach((heading) => {
+document.querySelectorAll("section > h2").forEach((heading) => {
   const text = heading.textContent
   const anchor = `<div id="${text}" class="anchor">
       <h2>${text}</h2>

@@ -954,33 +954,25 @@
       <input type="file" />
     </article>
 
-    <section>
-      <form>
-        <h4>Inside a <code>&#60;form&#62;</code></h4>
-        <div class="p-cluster">
-          <button>Default</button>
-          <input type="button" value="<input>" />
-          <button type="submit">Submit</button>
-          <button type="button">Type Button</button>
-          <button type="reset">Reset</button>
-          <button disabled>Disabled</button>
-          <button class="btn-large" type="button">
-            Large
-          </button>
-        </div>
-      </form>
-    </section>
+    <form>
+      <h3 class="p-heading-4">Inside a <code>&#60;form&#62;</code></h3>
+      <div class="p-cluster">
+        <button>Default</button>
+        <input type="button" value="<input>" />
+        <button type="submit">Submit</button>
+        <button type="button">Type Button</button>
+        <button type="reset">Reset</button>
+        <button disabled>Disabled</button>
+        <button class="btn-large" type="button">Large</button>
+      </div>
+    </form>
+  </section>
 
-    <hr />
-    <!-- FORMS -->
+  <hr />
+  <!-- FORMS -->
 
-    <header>
-      <h3>Example Vanilla Form</h3>
-      <p>
-        With just the import from Open Props, no additional classes, have great
-        looking forms.
-      </p>
-    </header>
+  <section class="p-container p-flow">
+    <h2>Forms</h2>
     <form>
       <fieldset id="forms__input">
         <div>
@@ -1064,8 +1056,8 @@
             Choice A</label>
         </li>
         <li>
-          <label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox" /> Choice B,
-            something long enough to become multiline</label>
+          <label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox" /> Choice
+            B, something long enough to become multiline</label>
         </li>
         <li>
           <label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox" /> Choice
@@ -1219,10 +1211,12 @@
         </div>
       </fieldset>
     </form>
+  </section>
 
-    <hr />
-    <!-- SHOWCASE -->
+  <hr />
+  <!-- SHOWCASE -->
 
+  <section class="p-container p-flow">
     <header>
       <h2>Normalized HTML5 Elements</h2>
       <p>
@@ -1296,8 +1290,8 @@
               “written beside”) is a self-contained unit of a discourse in
               writing dealing with a particular point or idea. A paragraph
               consists of one or more sentences. Though not required by the
-              syntax of any language, paragraphs are usually an expected part of
-              formal writing, used to organize longer prose.
+              syntax of any language, paragraphs are usually an expected part
+              of formal writing, used to organize longer prose.
             </p>
           </div>
         </article>
@@ -1308,14 +1302,14 @@
           <div>
             <blockquote>
               <p>
-                A block quotation (also known as a long quotation or extract) is
-                a quotation in a written document, that is set off from the main
-                text as a paragraph, or block of text.
+                A block quotation (also known as a long quotation or extract)
+                is a quotation in a written document, that is set off from the
+                main text as a paragraph, or block of text.
               </p>
               <p>
                 It is typically distinguished visually using indentation and a
-                different typeface or smaller size quotation. It may or may not
-                include a citation, usually placed at the bottom.
+                different typeface or smaller size quotation. It may or may
+                not include a citation, usually placed at the bottom.
               </p>
               <cite><a href="#!">Said no one, ever.</a></cite>
             </blockquote>
@@ -1333,7 +1327,8 @@
 
               <dt>Definition List Title 2</dt>
               <dd>
-                This is a definition list division item with a lot more to say.
+                This is a definition list division item with a lot more to
+                say.
               </dd>
             </dl>
             <h3>Ordered List</h3>
@@ -1462,7 +1457,8 @@
               text, without any special importance.
             </p>
             <p>
-              The <i>i element</i> is text that is offset from the normal text.
+              The <i>i element</i> is text that is offset from the normal
+              text.
             </p>
             <p>
               The <u>u element</u> is text with an unarticulated, though
@@ -1479,7 +1475,8 @@
               <small>This small text is small for for fine print, etc.</small>
             </p>
             <p>
-              Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>
+              Abbreviation:
+              <abbr title="HyperText Markup Language">HTML</abbr>
             </p>
             <p>
               <q cite="./index_files/q">This text is a short inline quotation.</q>
@@ -1753,20 +1750,24 @@
               <button type="submit">&lt;button type=submit&gt;</button>
               <button type="button">&lt;button type=button&gt;</button>
               <button type="reset">&lt;button type=reset&gt;</button>
-              <button type="button" disabled="">&lt;button disabled&gt;</button>
+              <button type="button" disabled="">
+                &lt;button disabled&gt;
+              </button>
             </p>
           </fieldset>
         </form>
       </section>
-      <section>
-        <dialog>
-          <p>I am a modal dialog</p>
-          <p>Close me with escape key or this close button:</p>
-          <button>Close</button>
-        </dialog>
-        <button>Open dialog</button>
-      </section>
     </div>
+
+    <div>
+      <dialog>
+        <p>I am a modal dialog</p>
+        <p>Close me with escape key or this close button:</p>
+        <button>Close</button>
+      </dialog>
+      <button>Open dialog</button>
+    </div>
+  </section>
 </body>
 
 </html>

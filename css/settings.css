@@ -49,7 +49,7 @@
   --outline-offset: 2px;
 
   /* inputs */
-  --input-radius: var(--radius-2);
+  --input-radius: var(--radius-default);
 
   /* borders */
   --border-size-default: var(--border-size-1);

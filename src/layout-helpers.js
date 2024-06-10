@@ -54,7 +54,7 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   }
 
   > * + * {
-    margin-block-start: var(--${propsPrefix}stack-space));
+    margin-block-start: var(--${propsPrefix}stack-space);
   }
 }
 `,

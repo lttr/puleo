@@ -2,6 +2,7 @@ export const defaultConfig = {
   propsPrefix: "",
   classPrefix: "p-",
   rootSelector: ":where(html)",
+  mediaDark: "@media (--OSdark)",
   layoutHelpers: [
     "container",
     "grid",
@@ -86,7 +87,7 @@ export const defaultConfig = {
     "size-xl",
     "size-xxl",
   ],
-  borderRadius: ["radius-1", "radius-2", "radius-round"],
+  borderRadius: ["radius-1", "radius-2", "radius-3", "radius-round"],
   borderSize: ["border-size-1", "border-size-2"],
   colors: [
     "gray-1",
@@ -152,5 +153,16 @@ export const defaultConfig = {
     "font-weight-5",
     "font-weight-6",
     "font-weight-7",
+  ],
+  shadow: [
+    "shadow-1",
+    "shadow-2",
+    "shadow-3",
+    "shadow-4",
+    "shadow-5",
+    "shadow-6",
+    "inner-shadow-1",
+    "inner-shadow-2",
+    "inner-shadow-3",
   ],
 }

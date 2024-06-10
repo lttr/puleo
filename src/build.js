@@ -7,24 +7,48 @@ import { fluidLayouts } from "./layout-helpers.js"
 import { fontStyles } from "./font-style-helpers.js"
 import { openProps } from "./open-props.js"
 
-function insideRootSelector(rootSelector, groups) {
+const MEDIA_DARK_MARKER = "-@media:dark"
+function insideRootSelector(groups, { rootSelector, mediaDark }) {
+  const linesMediaDark = []
   const lines = groups.map((group) => [
-    ...group.map((rule) => `  ${rule}`),
+    ...group
+      .filter((rule) => {
+        const isRuleForMediaDark = rule.includes(MEDIA_DARK_MARKER)
+        if (isRuleForMediaDark) {
+          linesMediaDark.push(`    ${rule.replace(MEDIA_DARK_MARKER, "")}`)
+        }
+        return !isRuleForMediaDark
+      })
+      .map((rule) => {
+        return `  ${rule}`
+      }),
     " ",
   ])
-  return [`${rootSelector} {`, ...lines, "}\n"]
+  return [
+    `${rootSelector} {`,
+    ...lines,
+    "}\n",
+    `${mediaDark} {`,
+    `  ${rootSelector} {`,
+    ...linesMediaDark,
+    "  }",
+    "}\n",
+  ]
 }
 
 function buildScales(config) {
   const effectiveConfig = defu(config, defaultConfig)
-  const { fluid, fontSize, grid, propsPrefix, rootSelector, space } =
+  const { fluid, fontSize, grid, propsPrefix, rootSelector, mediaDark, space } =
     effectiveConfig
 
-  const rulesInsideRootSelector = insideRootSelector(rootSelector, [
-    space && fluidSpace({ propsPrefix, ...fluid, space }),
-    fontSize && fluidFontSize({ propsPrefix, ...fluid, fontSize }),
-    grid && fluidGrid({ propsPrefix, ...fluid, ...grid, space }),
-  ])
+  const rulesInsideRootSelector = insideRootSelector(
+    [
+      space && fluidSpace({ propsPrefix, ...fluid, space }),
+      fontSize && fluidFontSize({ propsPrefix, ...fluid, fontSize }),
+      grid && fluidGrid({ propsPrefix, ...fluid, ...grid, space }),
+    ],
+    { rootSelector, mediaDark },
+  )
 
   return [...rulesInsideRootSelector].flat().filter(Boolean)
 }
@@ -39,19 +63,40 @@ function buildProps(config) {
     fontWeight,
     inlineSize,
     lineHeight,
+    shadow,
     propsPrefix,
     rootSelector,
+    mediaDark,
   } = effectiveConfig
 
-  const rulesInsideRootSelector = insideRootSelector(rootSelector, [
-    borderRadius && openProps({ propsPrefix, names: borderRadius }),
-    borderSize && openProps({ propsPrefix, names: borderSize }),
-    breakpoints && openProps({ propsPrefix, names: breakpoints }),
-    colors && openProps({ propsPrefix, names: colors }),
-    fontWeight && openProps({ propsPrefix, names: fontWeight }),
-    inlineSize && openProps({ propsPrefix, names: inlineSize }),
-    lineHeight && openProps({ propsPrefix, names: lineHeight }),
-  ])
+  function handleShadows(names) {
+    const prerequisites = [
+      "shadow-color",
+      "shadow-strength",
+      "inner-shadow-highlight",
+      "shadow-color-@media:dark",
+      "shadow-strength-@media:dark",
+      "inner-shadow-highlight-@media:dark",
+    ]
+    return [
+      ...openProps({ propsPrefix, names: prerequisites }),
+      ...openProps({ propsPrefix, names }),
+    ]
+  }
+
+  const rulesInsideRootSelector = insideRootSelector(
+    [
+      borderRadius && openProps({ propsPrefix, names: borderRadius }),
+      borderSize && openProps({ propsPrefix, names: borderSize }),
+      breakpoints && openProps({ propsPrefix, names: breakpoints }),
+      colors && openProps({ propsPrefix, names: colors }),
+      fontWeight && openProps({ propsPrefix, names: fontWeight }),
+      inlineSize && openProps({ propsPrefix, names: inlineSize }),
+      lineHeight && openProps({ propsPrefix, names: lineHeight }),
+      shadow && handleShadows(shadow),
+    ],
+    { rootSelector, mediaDark },
+  )
 
   return [...rulesInsideRootSelector].flat().filter(Boolean)
 }

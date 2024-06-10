@@ -75,3 +75,17 @@ document.querySelectorAll("section.sample > h2").forEach((heading) => {
     `<li class="p-secondary-text-regular"><a href="#${text}">${text}</li>`,
   )
 })
+
+// Dialog
+
+const dialog = document.querySelector("dialog")
+const showButton = document.querySelector("dialog + button")
+const closeButton = document.querySelector("dialog button")
+
+showButton.addEventListener("click", () => {
+  dialog.showModal()
+})
+
+closeButton.addEventListener("click", () => {
+  dialog.close()
+})

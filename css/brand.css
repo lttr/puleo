@@ -1,0 +1,31 @@
+/*
+* Based on Open Props: brand.css
+*/
+
+:where(html) {
+  scrollbar-color: var(--scrollthumb-color) transparent;
+  accent-color: var(--brand-color, var(--link-color));
+  caret-color: var(--brand-color, var(--link-color));
+  color: var(--text-color-1);
+  background-color: var(--bg-color-body);
+}
+
+:where(a[href]) {
+  color: var(--brand-color, var(--link-color));
+
+  @media (--OSdark) {
+    color: var(--link-color);
+  }
+
+  &:where(:visited) {
+    color: var(--link-color-visited);
+
+    @media (--OSdark) {
+      color: var(--link-color);
+    }
+  }
+}
+
+:focus-visible {
+  outline-color: var(--focus-color, var(--link-color));
+}

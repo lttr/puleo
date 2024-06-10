@@ -6,6 +6,7 @@ import { fluidSpace, fluidFontSize, fluidGrid } from "./fluid-calculator.js"
 import { fluidLayouts } from "./layout-helpers.js"
 import { fontStyles } from "./font-style-helpers.js"
 import { openProps } from "./open-props.js"
+import { handleShadows } from "./shadows.js"
 
 const MEDIA_DARK_MARKER = "-@media:dark"
 function insideRootSelector(groups, { rootSelector, mediaDark }) {
@@ -69,21 +70,6 @@ function buildProps(config) {
     mediaDark,
   } = effectiveConfig
 
-  function handleShadows(names) {
-    const prerequisites = [
-      "shadow-color",
-      "shadow-strength",
-      "inner-shadow-highlight",
-      "shadow-color-@media:dark",
-      "shadow-strength-@media:dark",
-      "inner-shadow-highlight-@media:dark",
-    ]
-    return [
-      ...openProps({ propsPrefix, names: prerequisites }),
-      ...openProps({ propsPrefix, names }),
-    ]
-  }
-
   const rulesInsideRootSelector = insideRootSelector(
     [
       borderRadius && openProps({ propsPrefix, names: borderRadius }),
@@ -93,7 +79,7 @@ function buildProps(config) {
       fontWeight && openProps({ propsPrefix, names: fontWeight }),
       inlineSize && openProps({ propsPrefix, names: inlineSize }),
       lineHeight && openProps({ propsPrefix, names: lineHeight }),
-      shadow && handleShadows(shadow),
+      shadow && handleShadows(shadow, propsPrefix),
     ],
     { rootSelector, mediaDark },
   )

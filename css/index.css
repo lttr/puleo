@@ -1,9 +1,13 @@
+/*
+* Building blocks (CSS custom properties)
+*/
 @import url("./generated/props.css");
 @import url("./generated/scales.css");
-@import url("./settings.css");
 
+/*
+* Resets and base styles (generic styles and element specific styles)
+*/
 @import url("./theme.css");
-@import url("./brand.css");
 @import url("./normalize.css");
 
 @import url("./tables.css");
@@ -11,3 +15,10 @@
 @import url("./forms.css");
 
 @import url("./generated/objects.css");
+
+/*
+* Settings are placed at the end since it is expected
+* to be overridden by the user.
+*/
+@import url("./settings.css");
+@import url("./brand.css");

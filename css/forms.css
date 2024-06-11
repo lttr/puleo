@@ -5,7 +5,7 @@
 /* Let form controls to look like other other elements. */
 :where(input:not(:is([type="button"], [type="file"])), textarea, select) {
   font: inherit;
-  font-size: inherit;
+  font-size: var(--font-size--1);
   color: inherit;
   letter-spacing: inherit;
 }
@@ -22,11 +22,11 @@
         [type="radio"],
         [type="button"],
         [type="file"]
-      ),
-    textarea
+      )
   ) {
-  padding-inline: var(--space-2);
-  padding-block: var(--space-1);
+  padding-block: 0.75ch;
+  padding-inline: var(--space-3);
+  height: var(--button-height-default);
 }
 
 :where(select) {
@@ -48,8 +48,8 @@
 }
 
 :where(input[type="checkbox"], input[type="radio"]) {
-  block-size: var(--space-2);
-  inline-size: var(--space-2);
+  block-size: var(--space-4);
+  inline-size: var(--space-4);
 }
 
 @media (--OSdark) {
@@ -194,9 +194,9 @@ legend {
       )
   ) {
   /* todo: touch-callout */
-  line-height: 2.5;
-  padding-block: 0;
-  padding-inline: 1.75ch;
+  line-height: var(--font-lineheight-4);
+  padding-block: var(--space-1);
+  padding-inline: var(--space-4);
   transition:
     background-color 0.5s var(--ease-3),
     outline-offset 145ms var(--ease-2);
@@ -281,7 +281,7 @@ input:not(
   ),
 textarea,
 select {
-  color: var(--text-1);
+  color: var(--text-color-body);
 
   @media (prefers-color-scheme: light) {
     background-color: white;
@@ -312,7 +312,7 @@ input[disabled] {
   cursor: not-allowed;
 }
 
-[disabled] {
+input[disabled] {
   opacity: 0.5;
   box-shadow: none;
   cursor: auto;
@@ -324,35 +324,6 @@ input[disabled] {
   }
   to {
     box-shadow: 0 0 0 25px #0000;
-  }
-}
-
-input[type="file"] {
-  /*  find and remove this from normalize  */
-  border: none;
-
-  @media (prefers-color-scheme: light) {
-    box-shadow: none;
-  }
-
-  &.dropping {
-    outline: 2px dashed var(--link);
-
-    @media (prefers-reduced-motion: no-preference) {
-      animation: drop-zone 1.5s var(--ease-out-5) infinite;
-    }
-  }
-}
-
-:where(input[type="file"])::-webkit-file-upload-button,
-:where(input[type="file"])::file-selector-button {
-  margin: var(--space-3);
-}
-
-@media (prefers-color-scheme: dark) {
-  :where(input[type="file"])::-webkit-file-upload-button,
-  :where(input[type="file"])::file-selector-button {
-    border-color: transparent;
   }
 }
 
@@ -514,13 +485,13 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   /* todo: add checkmark icon */
-  -webkit-text-fill-color: var(--text-1);
+  -webkit-text-fill-color: var(--text-color-body);
   -webkit-box-shadow: 0 0 0px 1e5px var(--gray-11) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
 ::placeholder {
-  color: var(--text-2);
+  color: var(--text-color-2);
   font-style: italic;
 
   @media (prefers-color-scheme: dark) {
@@ -541,6 +512,11 @@ form > header {
 form {
   display: grid;
   gap: var(--space-4);
+}
+
+form label {
+  font-size: var(--font-size--1);
+  font-weight: var(--font-weight-body-bold);
 }
 
 legend {

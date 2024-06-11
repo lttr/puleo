@@ -140,6 +140,7 @@ export const defaultConfig = {
     "blue-10",
     "blue-11",
     "blue-12",
+    "purple-3",
     "purple-7",
   ],
   lineHeight: [
@@ -166,6 +167,7 @@ export const defaultConfig = {
     "inner-shadow-1",
     "inner-shadow-2",
     "inner-shadow-3",
+    "inner-shadow-4",
   ],
   easing: ["ease-1", "ease-2", "ease-3", "ease-4"],
 }

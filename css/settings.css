@@ -22,11 +22,19 @@
   /* colors */
   --text-color-1: var(--gray-12);
   --text-color-2: var(--gray-7);
+  --text-color-1-inverse: var(--gray-1);
+  --text-color-2-inverse: var(--gray-4);
 
+  --surface-0: white;
   --surface-1: var(--gray-1);
   --surface-2: var(--gray-2);
   --surface-3: var(--gray-3);
   --surface-4: var(--gray-4);
+  --surface-0-inverse: var(--gray-10);
+  --surface-1-inverse: var(--gray-9);
+  --surface-2-inverse: var(--gray-8);
+  --surface-3-inverse: var(--gray-7);
+  --surface-4-inverse: var(--gray-6);
 
   --accent-color: var(--brand-color);
   --caret-color: var(--brand-color);
@@ -36,10 +44,10 @@
   --text-color-headings: var(--text-color-1);
   --bg-color-body: var(--surface-0);
 
-  --link-color: inherit;
+  --link-color: var(--blue-8);
   --link-color-visited: var(--purple-7);
 
-  --positive-color: var(--green-8);
+  --positive-color: var(--green-9);
   --negative-color: var(--red-8);
 
   --error-alert-color: var(--red-11);
@@ -70,12 +78,19 @@
   :where(html) {
     --text-color-1: var(--gray-1);
     --text-color-2: var(--gray-4);
+    --text-color-1-inverse: var(--gray-12);
+    --text-color-2-inverse: var(--gray-7);
 
     --surface-0: var(--gray-10);
     --surface-1: var(--gray-9);
     --surface-2: var(--gray-8);
     --surface-3: var(--gray-7);
     --surface-4: var(--gray-6);
+    --surface-0-inverse: white;
+    --surface-1-inverse: var(--gray-1);
+    --surface-2-inverse: var(--gray-2);
+    --surface-3-inverse: var(--gray-3);
+    --surface-4-inverse: var(--gray-4);
 
     --bg-color-body: var(--surface-1);
 
@@ -86,6 +101,9 @@
     --error-alert-color: var(--red-1);
     --error-alert-bg-color: var(--red-11);
 
-    --link-color-visited: var(--blue-3);
+    --link-color: var(--blue-4);
+    --link-color-visited: var(--purple-3);
+
+    --focus-color: var(--brand-color-bright);
   }
 }

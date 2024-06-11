@@ -671,6 +671,14 @@
             ">Lorem ipsum</span>
       </div>
       <div data-property="box-shadow">
+        <code>--inner-shadow-4</code>
+        <span class="example" style="
+              box-shadow: var(--inner-shadow-4);
+              padding: var(--space-1);
+              border-radius: var(--radius-default);
+            ">Lorem ipsum</span>
+      </div>
+      <div data-property="box-shadow">
         <code>--shadow-1</code>
         <span class="example" style="
               box-shadow: var(--shadow-1);
@@ -951,6 +959,7 @@
       <button type="reset">Reset</button>
       <button disabled>Disabled</button>
       <button class="btn-custom">Custom</button>
+      <a href="#" class="p-button">Link as button</a>
       <input type="file" />
     </article>
 
@@ -1033,6 +1042,14 @@
         <legend>Input fields</legend>
       </fieldset>
     </form>
+
+    <form>
+      <div><label for="email-send">Email</label></div>
+      <div class="p-cluster" style="--cluster-space: var(--space-2)">
+        <input id="email-send" type="text" /><button>Send</button>
+      </div>
+    </form>
+
     <form>
       <fieldset id="forms__select">
         <div>

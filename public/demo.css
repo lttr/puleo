@@ -1,13 +1,14 @@
 /* temporary */
 
 .btn-custom {
-  --_bg: var(--brand-color-dim);
-  --_border: none;
-  --_text: white;
+  --_bg-color: var(--brand-color);
+  --_bg-hover: var(--brand-color-bright);
+  --_bg-active: var(--brand-color-dim);
+  --_text-color: white;
 }
 
 .btn-large {
-  --_size: var(--font-size-0);
+  --_font-size: var(--font-size-0);
   padding-block: var(--space-4);
   padding-inline: var(--space-5);
 }

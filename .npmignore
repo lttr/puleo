@@ -1,2 +1,7 @@
 examples/
 public/
+.node-version
+.prettierignore
+.stylelintignore
+eslint.config.js
+stylelint.config.js

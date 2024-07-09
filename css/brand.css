@@ -4,10 +4,8 @@
 * Default values for brand specific props.
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..700;1,300..700&display=swap");
-
 :where(html) {
-  --font-family-body: "Raleway", sans-serif;
+  --font-family-body: sans-serif;
 
   --brand-color: var(--blue-7);
   --brand-color-dim: var(--blue-8);

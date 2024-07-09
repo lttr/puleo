@@ -44,7 +44,7 @@
     "start": "browser-sync start --server --files . --no-notify --serveStatic ./public",
     "watch": "run-p watch:**",
     "watch:postcss": "postcss --watch 'css/**/*.css' --dir output/ --ext post.css",
-    "watch:generate": "nodemon --ext js --exec pnpm run generate"
+    "watch:generate": "nodemon --ext js --exec pnpm generate"
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.1",

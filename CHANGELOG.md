@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.0.6...v0.1.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Remove font that was imported by default ([6033530](https://github.com/lttr/puleo/commit/6033530))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Remove font that was imported by default ([6033530](https://github.com/lttr/puleo/commit/6033530))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.0.5...v0.0.6)

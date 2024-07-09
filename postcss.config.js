@@ -6,7 +6,7 @@ import darkThemeClass from "postcss-dark-theme-class"
 const plugins = [
   postcssImport(),
   postcssGlobalData({
-    files: ["./node_modules/open-props/media.min.css"],
+    files: ["./node_modules/open-props/src/props.media.css"],
   }),
   postcssPresetEnv(
     // Options for postcss-preset-env: https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env#options

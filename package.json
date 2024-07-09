@@ -16,7 +16,7 @@
   "style": "output/puleo.min.css",
   "type": "module",
   "scripts": {
-    "build": "npm run generate && run-p build:**",
+    "build": "pnpm generate && run-p build:**",
     "build:objects": "postcss css/generated/objects.css -o output/objects.post.css",
     "build:objects:min": "postcss css/generated/objects.css -o output/objects.min.css --config ./nano",
     "build:props": "postcss css/generated/props.css -o output/props.post.css",
@@ -32,17 +32,19 @@
     "build:postcss": "postcss 'css/**/*.css' --dir output/ --ext post.css",
     "build:postcss:min": "postcss 'css/**/*.css' --dir output/ --ext post.css --config ./nano",
     "build:examples": "postcss examples/css-features.css -o examples/css-features.post.css",
+    "build:media": "cp ./node_modules/open-props/src/props.media.css output/media.css",
     "clean": "rm -rf output/*",
     "generate": "node src/build.js",
     "dev": "run-p watch start",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:styles": "stylelint '**/*.css'",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pnpm build",
+    "release": "pnpm lint && pnpm build && changelogen --release --push && pnpm publish",
     "start": "browser-sync start --server --files . --no-notify --serveStatic ./public",
     "watch": "run-p watch:**",
     "watch:postcss": "postcss --watch 'css/**/*.css' --dir output/ --ext post.css",
-    "watch:generate": "nodemon --ext js --exec npm run generate"
+    "watch:generate": "nodemon --ext js --exec pnpm run generate"
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.1",

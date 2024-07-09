@@ -2,7 +2,7 @@
   "name": "@lttr/puleo",
   "author": "Lukas Trumm",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/lttr/puleo"
@@ -49,6 +49,7 @@
   "devDependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
     "browser-sync": "^3.0.2",
+    "changelogen": "^0.5.5",
     "cssnano": "^7.0.2",
     "defu": "^6.1.4",
     "eslint": "^9.4.0",

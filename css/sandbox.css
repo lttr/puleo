@@ -1,0 +1,31 @@
+/* https://youtu.be/ob_M_qXeDVE?si=4tiYZWC5InMsgx77&t=453 */
+ul:where([role="list"]) {
+  list-style: none;
+}
+
+/* or */
+ul {
+  list-style-type: "";
+}
+
+/* avoid using display: contents */
+
+/* 
+* Why and how: https://www.tpgi.com/the-anatomy-of-visually-hidden/
+* Example:
+* - Skip links (when receive focus, e.g. from keyboard, they will be visible)
+*/
+.visually-hidden:not(:focus):not(:active) {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* Decorative images in css: alt text after slash, empty string work like
+*  on the <img> tag */
+.example {
+  content: "" / "";
+}

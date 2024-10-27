@@ -72,6 +72,14 @@
   --border-3: var(--border-size-1) solid var(--surface-4);
   --border-4: var(--border-size-1) solid var(--text-color-2);
   --border-5: var(--border-size-1) solid var(--text-color-1);
+
+  /* inline-size */
+  /* keep max-inline-size initial by default, this is opt-in */
+  /* --max-inline-size-h1: var(--size-header-1); */
+  /* --max-inline-size-h2: var(--size-header-2); */
+  /* --max-inline-size-other-headings: var(--size-header-3); */
+  /* --max-inline-size-elements: var(--size-content-2); */
+  /* --max-inline-size-p: var(--size-content-3); */
 }
 
 @media (--OSdark) {

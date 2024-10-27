@@ -95,12 +95,12 @@
 
 :where(h1) {
   font-size: var(--font-size-h1);
-  max-inline-size: var(--size-header-1);
+  max-inline-size: var(--max-inline-size-h1, initial);
 }
 
 :where(h2) {
   font-size: var(--font-size-h2);
-  max-inline-size: var(--size-header-2);
+  max-inline-size: var(--max-inline-size-h2, initial);
 }
 
 :where(h3) {
@@ -116,7 +116,7 @@
 }
 
 :where(h3, h4, h5, h6, dt) {
-  max-inline-size: var(--size-header-3);
+  max-inline-size: var(--max-inline-size-other-headings, initial);
 }
 
 :where(p, ul, ol, dl, h6) {
@@ -242,11 +242,12 @@
 }
 
 :where(li, dd, figcaption) {
-  max-inline-size: var(--size-content-2);
+  max-inline-size: var(--max-inline-size-elements, initial);
+  text-wrap: pretty;
 }
 
 :where(p) {
-  max-inline-size: var(--size-content-3);
+  max-inline-size: var(--max-inline-size-p, initial);
   text-wrap: pretty;
 }
 
@@ -260,7 +261,6 @@
 
 :where(small) {
   font-size: max(0.5em, var(--font-size-0));
-  max-inline-size: var(--size-content-1);
 }
 
 :where(hr) {
@@ -289,7 +289,7 @@
   gap: var(--space-3);
   padding-block: var(--space-3);
   padding-inline: var(--space-4);
-  max-inline-size: var(--size-content-2);
+  max-inline-size: var(--max-inline-size-elements, initial);
 }
 
 :where(:not(blockquote) > cite) {

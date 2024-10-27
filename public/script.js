@@ -1,27 +1,40 @@
-// const rootStyles = window.getComputedStyle(document.documentElement)
-const propElements = document.querySelectorAll("section.sample article code")
-const cssIndex = Object.fromEntries(getCSSCustomPropIndex())
+function calculateStyleValues() {
+  // const rootStyles = window.getComputedStyle(document.documentElement)
+  const propElements = document.querySelectorAll(
+    "section.sample article code:first-of-type",
+  )
+  const cssIndex = Object.fromEntries(getCSSCustomPropIndex())
 
-for (const propElement of propElements) {
-  const propName = propElement.textContent.trim()
-  // const rootValue = rootStyles.getPropertyValue(propName)
+  for (const propElement of propElements) {
+    const propName = propElement.textContent.trim()
+    // const rootValue = rootStyles.getPropertyValue(propName)
 
-  const exampleElement = propElement.parentNode.querySelector(".example")
-  let elementStyle = ""
-  let cssProperty = ""
-  if (exampleElement) {
-    const elementStyles = window.getComputedStyle(exampleElement)
-    cssProperty = exampleElement.closest("[data-property]")?.dataset["property"]
-    elementStyle = elementStyles[cssProperty]
-  }
+    const exampleElement = propElement?.parentElement?.querySelector(".example")
+    let elementStyle = ""
+    let cssProperty = ""
+    if (exampleElement) {
+      const elementStyles = window.getComputedStyle(exampleElement)
+      cssProperty =
+        exampleElement.closest("[data-property]")?.dataset["property"]
+      elementStyle = elementStyles[cssProperty]
+    }
 
-  const propString = cssIndex[propName]
-  const valueHTML = `
+    const propString = cssIndex[propName]
+    const valueHTML = `
 <code class="value" title="Given custom property value: ${propString}">${propString}</code>
 <code class="value" title="Computed value of property '${cssProperty}': ${elementStyle}">${cssProperty} = ${elementStyle}</code>
   `
-  propElement.insertAdjacentHTML("afterend", valueHTML)
+    if (propElement?.parentElement?.querySelector(".calculated")) {
+      propElement.parentElement.querySelector(".calculated").innerHTML =
+        valueHTML
+    }
+  }
 }
+calculateStyleValues()
+
+window.addEventListener("resize", () => {
+  calculateStyleValues()
+})
 
 /** Source: https://css-tricks.com/how-to-get-all-custom-properties-on-a-page-in-javascript/ */
 function getCSSCustomPropIndex() {

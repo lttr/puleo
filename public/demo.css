@@ -92,6 +92,10 @@ html {
   align-items: center;
 }
 
+.sample article .calculated {
+  display: flex;
+}
+
 .sample code {
   display: inline-block;
   text-align: end;

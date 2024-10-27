@@ -105,14 +105,6 @@
   }
 }
 
-body::after {
-  content: var(--icon-tel-editing) var(--icon-password-editing)
-    var(--icon-user-editing) var(--icon-arrow-up);
-  opacity: 0;
-  position: absolute;
-  z-index: -1;
-}
-
 fieldset {
   counter-reset: errors;
   border-color: var(--surface-2);

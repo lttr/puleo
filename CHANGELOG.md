@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.1
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.2.0...v0.2.1)
+
+### 🏡 Chore
+
+- Remove unneeded body::after content ([b0edf67](https://github.com/lttr/puleo/commit/b0edf67))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.2.0
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.1.0...v0.2.0)

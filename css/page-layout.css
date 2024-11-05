@@ -70,6 +70,10 @@
     var(--content) [content-end]
     var(--popout) [popout-end]
     var(--full) [full-end];
+
+  /* Prevents a situation where there is not enough content to fill the vertical
+   * space and rows try to stretch. */
+  grid-auto-rows: max-content;
 }
 
 /* If not specified with other classes otherwise, the elements inside the layout

@@ -324,17 +324,17 @@
 }
 
 :where(del) {
-  background: var(--red-9);
-  color: var(--red-2);
+  background: var(--error-alert-bg-color);
+  color: var(--error-alert-color);
 }
 
 :where(ins) {
-  background: var(--green-9);
-  color: var(--green-1);
+  background: var(--green-1);
+  color: var(--green-11);
 }
 
 :where(abbr) {
-  text-decoration-color: var(--blue-5);
+  text-decoration-color: var(--text-color-2);
 }
 
 :where(dialog) {

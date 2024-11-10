@@ -206,3 +206,9 @@ body:has(.controls input:checked) .sample code.value {
 }
 
 /* buttons */
+
+/* tables */
+
+.table-wrapper {
+  overflow-x: auto;
+}

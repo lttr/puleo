@@ -65,7 +65,7 @@
   outline-width: 2px;
   outline-style: solid;
 
-  &:not(:active) {
+  &:where(:not(:active)) {
     outline-offset: var(--outline-offset);
   }
 }
@@ -241,7 +241,7 @@
   padding-inline-start: var(--space-2);
 }
 
-:where(li, dd, figcaption) {
+:where(li, dd) {
   max-inline-size: var(--max-inline-size-elements, initial);
   text-wrap: pretty;
 }
@@ -271,11 +271,13 @@
 
 :where(figure) {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-3);
   place-items: center;
 
   & > :where(figcaption) {
-    font-size: var(--font-size-1);
+    max-inline-size: var(--max-inline-size-elements, initial);
+    color: var(--text-color-2);
+    font-size: var(--font-size-0);
     text-wrap: balance;
   }
 }

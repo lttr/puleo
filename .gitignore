@@ -3,4 +3,5 @@ output
 generated
 
 *.min.css
-*.post.css
+*.min.css
+*.css.map

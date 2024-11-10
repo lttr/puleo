@@ -33,5 +33,13 @@ const plugins = [
 ]
 
 export default {
+  map: {
+    // Inline source maps in the compiled CSS file
+    inline: false,
+    // Generate a separate source map file
+    annotation: true,
+    // Include original source content in source maps
+    sourcesContent: true,
+  },
   plugins,
 }

@@ -102,3 +102,29 @@ showButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   dialog.close()
 })
+
+// Contrast
+
+const contrastElements = document.querySelectorAll(".contrast-number")
+
+for (const contrastNumber of contrastElements) {
+  const contrastField =
+    contrastNumber.parentElement.querySelector(".contrast-field")
+  contrastField.textContent =
+    `${contrastField.style.color} on ${contrastField.style.background}`
+      .replaceAll("var(", "")
+      .replaceAll(")", "")
+      .replaceAll("--", "")
+
+  const elementStyles = window.getComputedStyle(contrastField)
+  // eslint-disable-next-line no-undef
+  const fg = new Color(elementStyles.color)
+  // eslint-disable-next-line no-undef
+  const bg = new Color(elementStyles.backgroundColor)
+  const contrast = fg.contrast(bg, "WCAG21")
+  if (contrast < 4.5) {
+    contrastNumber.textContent = `${contrast.toFixed(1)} !!!`
+  } else {
+    contrastNumber.textContent = contrast.toFixed(1)
+  }
+}

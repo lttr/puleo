@@ -16,28 +16,23 @@
   ),
 :where(input[type="file"])::-webkit-file-upload-button,
 :where(input[type="file"])::file-selector-button {
-  /* API */
   --_font-size: var(--font-size--1);
   --_bg-color: var(--surface-2-inverse);
-  --_bg-hover: var(--surface-3-inverse);
-  --_bg-active: var(--surface-1-inverse);
+  --_bg-color-hover: var(--surface-3-inverse);
+  --_bg-color-active: var(--surface-2-inverse);
   --_text-color: var(--text-color-1-inverse);
-
-  /* Internal state */
-  --_border: var(--_bg);
-  --_text: var(--_text-color);
-  --_bg: var(--_bg-color);
+  --_border-color: var(--_bg-color);
   --_icon-size: 3ch;
-  --_icon-color: var(--surface-1);
+  --_icon-color: var(--_text-color);
 
   height: var(--button-height-default);
   font-size: var(--_font-size);
-  background-color: var(--_bg);
-  color: var(--_text);
-  border: var(--border-size-1) solid var(--_border);
+  background-color: var(--_bg-color);
+  color: var(--_text-color);
+  border: var(--border-size-1) solid var(--_border-color);
   box-shadow:
     var(--shadow-2),
-    0 1px var(--surface-3);
+    0 0 1px 1px var(--surface-3);
 
   display: inline-flex;
   justify-content: center;
@@ -48,7 +43,7 @@
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-buttons);
   border-radius: var(--radius-default);
-  padding-block: 0.75ch;
+  padding-block: 0.75ch; /* Does not take effect since height is set */
   padding-inline: var(--space-3);
 
   user-select: none;
@@ -56,16 +51,35 @@
   -webkit-touch-callout: none;
 
   @media (--OSdark) {
-    --_bg-hover: var(--surface-1-inverse);
-    --_bg-active: var(--surface-3-inverse);
+    --_text-color: var(--text-color-1);
+    --_bg-color: var(--surface-3);
+    --_bg-color-hover: var(--surface-2);
+    --_bg-color-active: var(--surface-3);
+    box-shadow: var(--shadow-2);
   }
 
   @media (--motionOK) {
     transition:
-      border-color 0.5s var(--ease-3),
-      box-shadow 145ms var(--ease-4),
-      outline-offset 145ms var(--ease-4);
+      border-color 120ms var(--ease-3),
+      box-shadow 120ms var(--ease-4),
+      outline-offset 120ms var(--ease-4);
   }
+}
+
+:where(.p-button-secondary) {
+  --_text-color: var(--text-color-1);
+  --_bg-color: var(--surface-0);
+  --_bg-color-hover: var(--surface-2);
+  --_bg-color-active: var(--surface-1);
+  --_border-color: var(--surface-2);
+  box-shadow: var(--shadow-2);
+}
+
+:where(.p-button-brand) {
+  --_text-color: var(--text-color-1-inverse);
+  --_bg-color: var(--brand-color);
+  --_bg-color-hover: var(--brand-color-bright);
+  --_bg-color-active: var(--brand-color);
 }
 
 :where(
@@ -75,23 +89,23 @@
   ) {
   /* disabled */
   &[disabled] {
-    --_bg: var(--surface-2);
-    --_border: var(--surface-2);
-    --_text: var(--gray-7);
+    --_bg-color: var(--surface-2);
+    --_border-color: var(--surface-2);
+    --_text-color: var(--gray-7);
     cursor: not-allowed;
     box-shadow: var(--shadow-1);
 
     @media (--OSdark) {
-      --_text: var(--gray-5);
+      --_text-color: var(--gray-5);
     }
   }
 
   &:where(:hover) {
-    --_bg: var(--_bg-hover);
+    --_bg-color: var(--_bg-color-hover);
   }
 
   &:where(:active) {
-    --_bg: var(--_bg-active);
+    --_bg-color: var(--_bg-color-active);
   }
 
   /* icons */
@@ -99,7 +113,7 @@
     flex-shrink: 0;
     block-size: var(--_icon-size);
     inline-size: var(--_icon-size);
-    color: var(--_bg);
+    color: var(--_bg-color);
     fill: var(--_icon-color);
 
     @media (--OSdark) {
@@ -110,21 +124,24 @@
 
 /* red reset */
 :where([type="reset"]) {
-  --_text: var(--red-3);
+  --_text-color: var(--red-9);
+
+  --_bg-color: var(--surface-0);
+  --_bg-color-hover: var(--surface-2);
+  --_bg-color-active: var(--surface-1);
+  --_border-color: var(--surface-2);
+  box-shadow: var(--shadow-2);
 
   &:focus-visible {
     outline-color: var(--red-6);
   }
 
   @media (--OSdark) {
-    --_text: var(--red-9);
-    --_border: var(--surface-3);
+    --_text-color: var(--red-4);
   }
 }
 
 :where(a.p-button) {
-  color: var(--text-color-1-inverse);
-
   &:hover {
     text-decoration: none;
   }
@@ -145,7 +162,7 @@
   font-weight: var(--font-weight-buttons);
   line-height: var(--line-height-headings);
 
-  &.dropping {
+  &.p-dropping {
     border: 1px solid transparent;
     box-shadow: none;
     outline: 2px dashed var(--text-color-2);

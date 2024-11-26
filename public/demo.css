@@ -9,10 +9,10 @@ html {
 /* temporary */
 
 .btn-custom {
-  --_bg-color: var(--brand-color);
-  --_bg-hover: var(--brand-color-bright);
-  --_bg-active: var(--brand-color-dim);
-  --_text-color: white;
+  --_bg-color: var(--green-9);
+  --_bg-hover: var(--green-8);
+  --_bg-active: var(--green-10);
+  --_text-color: var(--text-color-1-inverse);
 }
 
 .btn-large {

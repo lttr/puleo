@@ -13,7 +13,6 @@
   --font-size-h5: var(--font-size-0);
   --font-weight-body-bold: var(--font-weight-6);
   --font-weight-body: var(--font-weight-4);
-  --font-weight-buttons: var(--font-weight-6);
   --font-weight-headings: var(--font-weight-6);
   --font-weight-light: var(--font-weight-3);
   --line-height-body: var(--font-lineheight-3);
@@ -53,16 +52,21 @@
   --error-alert-color: var(--red-11);
   --error-alert-bg-color: var(--red-1);
 
+  --positive-alert-color: var(--green-11);
+  --positive-alert-bg-color: var(--green-1);
+
   --scrollthumb-color: var(--gray-7);
 
   /* a11y */
   --outline-offset: 2px;
 
-  /* inputs */
+  /* forms and inputs */
   --input-radius: var(--radius-default);
+  --font-weight-label: var(--font-weight-5);
 
   /* buttons */
   --button-height-default: 2.25rem;
+  --font-weight-buttons: var(--font-weight-6);
 
   /* borders */
   --border-size-default: var(--border-size-1);
@@ -108,6 +112,8 @@
     --negative-color: var(--red-6);
     --error-alert-color: var(--red-1);
     --error-alert-bg-color: var(--red-11);
+    --positive-alert-color: var(--green-11);
+    --positive-alert-bg-color: var(--green-1);
 
     --link-color: var(--blue-4);
     --link-color-visited: var(--purple-3);

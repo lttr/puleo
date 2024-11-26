@@ -318,11 +318,6 @@
   border-end-end-radius: 0;
 }
 
-:where(fieldset) {
-  border-radius: var(--radius-default);
-  border: var(--border-size-1) solid var(--surface-4);
-}
-
 :where(del) {
   background: var(--error-alert-bg-color);
   color: var(--error-alert-color);

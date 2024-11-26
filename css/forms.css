@@ -2,6 +2,39 @@
 * Forms inputs normalization
 */
 
+/*
+* Form elements:
+*
+* textarea
+* input type=text
+* input type=password
+* input type=url
+* input type=email
+* input type=tel
+* input type=search
+* input type=number
+* input type=color
+* input type=checkbox
+* input type=radio
+* input type=file
+* input type=date
+* input type=time
+* input type=month
+* input type=week
+* input type=range
+* input type=datetime-local
+* input type=search
+* select
+* button
+* input type=submit
+* input type=reset
+* input type=button
+* fieldset
+* legend
+* label
+* datalist
+*/
+
 /* Let form controls to look like other other elements. */
 :where(input:not(:is([type="button"], [type="file"])), textarea, select) {
   font: inherit;

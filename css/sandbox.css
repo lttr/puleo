@@ -1,13 +1,3 @@
-/* https://youtu.be/ob_M_qXeDVE?si=4tiYZWC5InMsgx77&t=453 */
-ul:where([role="list"]) {
-  list-style: none;
-}
-
-/* or */
-ul {
-  list-style-type: "";
-}
-
 /* avoid using display: contents */
 
 /* 

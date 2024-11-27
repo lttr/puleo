@@ -17,6 +17,8 @@
 
 @import url("./generated/objects.css");
 
+@import url("./prose.css");
+
 /*
 * Settings are placed at the end since it is expected
 * to be overridden by the user.

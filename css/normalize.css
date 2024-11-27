@@ -202,6 +202,7 @@
 :where(code, kbd, samp, pre) {
   font-family: var(--font-mono);
 }
+
 :where(:not(pre) > code, kbd) {
   white-space: nowrap;
 }
@@ -270,32 +271,25 @@
 }
 
 :where(figure) {
-  display: grid;
-  gap: var(--space-3);
-  place-items: center;
-
-  & > :where(figcaption) {
+  :where(figcaption) {
+    margin-block-start: var(--space-3);
     max-inline-size: var(--max-inline-size-elements, initial);
     color: var(--text-color-2);
-    font-size: var(--font-size-0);
+    font-size: var(--font-size--1);
     text-wrap: balance;
+    text-align: center;
   }
-}
-
-:where(blockquote, :not(blockquote) > cite) {
-  border-inline-start-width: var(--border-size-3);
 }
 
 :where(blockquote) {
   display: grid;
   gap: var(--space-3);
+  border-inline-start-width: var(--border-size-3);
+  border-inline-start-color: var(--text-color-2);
   padding-block: var(--space-3);
   padding-inline: var(--space-4);
   max-inline-size: var(--max-inline-size-elements, initial);
-}
-
-:where(:not(blockquote) > cite) {
-  padding-inline-start: var(--space-2);
+  font-style: italic;
 }
 
 :where(summary) {
@@ -316,11 +310,6 @@
   margin-bottom: var(--space-2);
   border-end-start-radius: 0;
   border-end-end-radius: 0;
-}
-
-:where(fieldset) {
-  border-radius: var(--radius-default);
-  border: var(--border-size-1) solid var(--surface-4);
 }
 
 :where(del) {
@@ -365,4 +354,17 @@
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
+}
+
+/*
+* With list-style-type: "" screen readers announce the list as a list, even
+* though there are no visible list markers. Use a list only when it is useful to
+* be announced as a list.
+*
+* Webkit position: https://bugs.webkit.org/show_bug.cgi?id=170179
+*/
+:where(ul) {
+  list-style-type: "";
+  margin-inline: 0;
+  padding-inline: 0;
 }

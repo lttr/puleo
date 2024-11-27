@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v0.3.0
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.2.1...v0.3.0)
+
+### 🚀 Enhancements
+
+- Grid-auto-rows in page-layout ([e3f790d](https://github.com/lttr/puleo/commit/e3f790d))
+- Make tables look reasonable out of the box ([750dc60](https://github.com/lttr/puleo/commit/750dc60))
+- Improve some contrasts ([5285f10](https://github.com/lttr/puleo/commit/5285f10))
+- Add color contrast section ([b64add1](https://github.com/lttr/puleo/commit/b64add1))
+- ⚠️  Rework forms and buttons ([8055def](https://github.com/lttr/puleo/commit/8055def))
+- Add prose utility ([1722219](https://github.com/lttr/puleo/commit/1722219))
+
+### 🏡 Chore
+
+- Enable source maps ([a9cdb93](https://github.com/lttr/puleo/commit/a9cdb93))
+- Change gitignore ([b019fb7](https://github.com/lttr/puleo/commit/b019fb7))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Rework forms and buttons ([8055def](https://github.com/lttr/puleo/commit/8055def))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.2.1
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.2.0...v0.2.1)

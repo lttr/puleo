@@ -1692,9 +1692,34 @@
     <hr />
     <!-- BUTTONS -->
 
-    <section class="p-container p-flow">
+    <section class="sample p-container p-flow">
       <h2>Buttons</h2>
 
+      <article>
+        <div>
+          <code>.button</code><span class="calculated"></span>
+          <span class="example">
+            <button>Primary importance</button>
+          </span>
+        </div>
+        <div>
+          <code>.button-secondary</code><span class="calculated"></span>
+          <span class="example">
+            <button class="p-button-secondary">Secondary importance</button>
+          </span>
+        </div>
+        <div>
+          <code>.button-brand</code><span class="calculated"></span>
+          <span class="example">
+            <button class="p-button-brand">Brand button</button>
+          </span>
+        </div>
+      </article>
+    </section>
+
+    <br />
+
+    <section class="p-container p-flow">
       <article class="p-cluster">
         <button>Default</button>
         <input type="button" value="<input>" />
@@ -1710,6 +1735,7 @@
         <button type="button">Type Button</button>
         <button type="reset">Reset</button>
         <button disabled>Disabled</button>
+        <button class="p-button-brand">Brand</button>
         <button class="btn-custom">Custom</button>
         <a href="#" class="p-button">Link as button</a>
         <input type="file" />
@@ -1799,9 +1825,62 @@
 
     <section class="p-container p-flow">
       <h2>Forms</h2>
+      <hr />
+      <h3>Form structure</h3>
       <form>
-        <fieldset id="forms__input">
-          <div>
+        <fieldset>
+          <legend>Section 1</legend>
+
+          <div class="p-form-group">
+            <label for="section1-text1">Text Input 1</label>
+            <input
+              type="text"
+              id="section1-text1"
+              placeholder="lorem impsum"
+              required
+            />
+          </div>
+          <div class="p-form-group">
+            <label for="section1-text2">Text Input 2</label>
+            <input type="text" id="section1-text2" placeholder="lorem impsum" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Section 2</legend>
+          <div class="p-cluster">
+            <input
+              type="radio"
+              name="section2-radio"
+              id="section2-radio1"
+              placeholder="lorem impsum"
+            />
+            <label for="section2-radio1">Option 1</label>
+          </div>
+          <div class="p-cluster">
+            <input
+              type="radio"
+              name="section2-radio"
+              id="section2-radio2"
+              placeholder="lorem impsum"
+            />
+            <label for="section2-radio2">Option 2</label>
+          </div>
+          <div class="p-cluster">
+            <input
+              type="radio"
+              name="section2-radio"
+              id="section2-radio3"
+              placeholder="lorem impsum"
+            />
+            <label for="section2-radio3">Option 3</label>
+          </div>
+        </fieldset>
+      </form>
+      <hr />
+      <form>
+        <fieldset>
+          <legend>Input fields legend</legend>
+          <div class="p-form-group">
             <label for="input__name">Text Input</label>
             <input
               id="input__name"
@@ -1810,7 +1889,7 @@
               placeholder="lorem"
             />
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="required__input__name">Required Text Input</label>
             <input
               id="required__input__name"
@@ -1820,7 +1899,7 @@
               placeholder="ipsum"
             />
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="input__password">Password</label>
             <input
               id="input__password"
@@ -1829,7 +1908,7 @@
               placeholder="················"
             />
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="input__webaddress">Web Address</label>
             <input
               id="input__webaddress"
@@ -1838,7 +1917,7 @@
               autocomplete="url"
             />
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="input__emailaddress">Email Address</label>
             <input
               id="input__emailaddress"
@@ -1847,7 +1926,7 @@
               autocomplete="email"
             />
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="input__search">Search</label>
             <input
               id="input__search"
@@ -1861,7 +1940,7 @@
               <option value="Strawberry"></option>
             </datalist>
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="input__phone">Phone Number</label>
             <input
               id="input__phone"
@@ -1873,7 +1952,7 @@
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             />
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="input__text2">Number Input</label>
             <input
               id="input__text2"
@@ -1883,11 +1962,11 @@
               max="100"
             />
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="input__readonly">Read only</label>
             <input readonly id="input__readonly" type="text" value="Nope!" />
           </div>
-          <div>
+          <div class="p-form-group">
             <label for="input__disabled">Disabled</label>
             <input disabled id="input__disabled" type="text" value="Nope!" />
           </div>
@@ -1900,9 +1979,9 @@
               <button>Submit</button>
             </menu>
           </footer>
-          <legend>Input fields</legend>
         </fieldset>
       </form>
+      <hr />
 
       <form>
         <div><label for="email-send">Email</label></div>
@@ -1943,7 +2022,8 @@
           <li>
             <label for="checkbox2"
               ><input id="checkbox2" name="checkbox" type="checkbox" /> Choice
-              B, something long enough to become multiline</label
+              B, something long enough to become multiline even even
+              longer</label
             >
           </li>
           <li>
@@ -2009,8 +2089,8 @@
       </fieldset>
 
       <form id="login">
-        <fieldset id="signin__example">
-          <legend>Sign In</legend>
+        <fieldset>
+          <!-- <legend>Sign In</legend> -->
           <div>
             <label for="input__username">Username</label>
             <input
@@ -2126,9 +2206,9 @@
             <input
               type="file"
               id="file-in"
-              ondragenter="this.classList.add('dropping')"
-              ondragleave="this.classList.remove('dropping')"
-              ondrop="this.classList.remove('dropping')"
+              ondragenter="this.classList.add('p-dropping')"
+              ondragleave="this.classList.remove('p-dropping')"
+              ondrop="this.classList.remove('p-dropping')"
             />
           </div>
           <div>
@@ -2785,7 +2865,7 @@
             </fieldset>
             <fieldset id="forms__action">
               <legend>Action buttons</legend>
-              <p class="buttons-list">
+              <p class="p-cluster">
                 <input type="submit" value="&lt;input type=submit&gt;" />
                 <input type="button" value="&lt;input type=button&gt;" />
                 <input type="reset" value="&lt;input type=reset&gt;" />
@@ -2796,7 +2876,7 @@
                 />
               </p>
               <br />
-              <p class="buttons-list">
+              <p class="p-cluster">
                 <button type="submit">&lt;button type=submit&gt;</button>
                 <button type="button">&lt;button type=button&gt;</button>
                 <button type="reset">&lt;button type=reset&gt;</button>

@@ -1992,7 +1992,8 @@
 
       <form>
         <fieldset id="forms__select">
-          <div>
+          <legend>Select menus</legend>
+          <div class="p-form-group">
             <label for="select">Pick an option</label>
             <select id="select">
               <optgroup label="Option Group">
@@ -2002,75 +2003,63 @@
               </optgroup>
             </select>
           </div>
-          <legend>Select menus</legend>
         </fieldset>
       </form>
       <fieldset id="forms__checkbox">
         <legend>Checkboxes</legend>
-        <ul class="list list--bare">
-          <li>
-            <label for="checkbox1"
-              ><input
-                id="checkbox1"
-                name="checkbox"
-                type="checkbox"
-                checked="checked"
-              />
-              Choice A</label
-            >
-          </li>
-          <li>
-            <label for="checkbox2"
-              ><input id="checkbox2" name="checkbox" type="checkbox" /> Choice
-              B, something long enough to become multiline even even
-              longer</label
-            >
-          </li>
-          <li>
-            <label for="checkbox3"
-              ><input id="checkbox3" name="checkbox" type="checkbox" /> Choice
-              C</label
-            >
-          </li>
-        </ul>
+        <div class="p-form-group">
+          <label for="checkbox1"
+            ><input
+              id="checkbox1"
+              name="checkbox"
+              type="checkbox"
+              checked="checked"
+            />
+            Choice A</label
+          >
+          <label for="checkbox2"
+            ><input id="checkbox2" name="checkbox" type="checkbox" /> Choice B,
+            something long enough to become multiline even even longer</label
+          >
+          <label for="checkbox3"
+            ><input id="checkbox3" name="checkbox" type="checkbox" /> Choice
+            C</label
+          >
+        </div>
       </fieldset>
       <fieldset id="forms__radio">
         <legend>Radio buttons</legend>
-        <ul class="list list--bare">
-          <li>
-            <label for="radio1"
-              ><input
-                id="radio1"
-                name="radio"
-                type="radio"
-                class="radio"
-                checked="checked"
-              />
-              Option 1</label
-            >
-          </li>
-          <li>
-            <label for="radio2"
-              ><input id="radio2" name="radio" type="radio" class="radio" />
-              Option 2, something long enough to become multiline</label
-            >
-          </li>
-          <li>
-            <label for="radio3"
-              ><input id="radio3" name="radio" type="radio" class="radio" />
-              Option 3</label
-            >
-          </li>
-        </ul>
+        <div class="p-form-group">
+          <label for="radio1"
+            ><input
+              id="radio1"
+              name="radio"
+              type="radio"
+              class="radio"
+              checked="checked"
+            />
+            Option 1</label
+          >
+          <label for="radio2"
+            ><input id="radio2" name="radio" type="radio" class="radio" />
+            Option 2, something long enough to become multiline</label
+          >
+
+          <label for="radio3"
+            ><input id="radio3" name="radio" type="radio" class="radio" />
+            Option 3</label
+          >
+        </div>
       </fieldset>
       <fieldset id="forms__textareas">
         <legend>Textareas</legend>
-        <textarea
-          id="textarea"
-          rows="8"
-          cols="48"
-          placeholder="Enter your message here"
-        ></textarea>
+        <div class="p-form-group">
+          <textarea
+            id="textarea"
+            rows="6"
+            placeholder="Enter your message here"
+          ></textarea>
+        </div>
         <footer>
           <menu>
             <button type="reset">Clear</button>
@@ -2404,59 +2393,61 @@
             <header>
               <h1>Tabular data</h1>
             </header>
-            <table>
-              <caption>
-                Table Caption
-              </caption>
-              <thead>
-                <tr>
-                  <th>Table Heading 1</th>
-                  <th>Table Heading 2</th>
-                  <th>Table Heading 3</th>
-                  <th>Table Heading 4</th>
-                  <th>Table Heading 5</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Table Footer 1</th>
-                  <th>Table Footer 2</th>
-                  <th>Table Footer 3</th>
-                  <th>Table Footer 4</th>
-                  <th>Table Footer 5</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>Table Cell 1</td>
-                  <td>Table Cell 2</td>
-                  <td>Table Cell 3</td>
-                  <td>Table Cell 4</td>
-                  <td>Table Cell 5</td>
-                </tr>
-                <tr>
-                  <td>Table Cell 1</td>
-                  <td>Table Cell 2</td>
-                  <td>Table Cell 3</td>
-                  <td>Table Cell 4</td>
-                  <td>Table Cell 5</td>
-                </tr>
-                <tr>
-                  <td>Table Cell 1</td>
-                  <td>Table Cell 2</td>
-                  <td>Table Cell 3</td>
-                  <td>Table Cell 4</td>
-                  <td>Table Cell 5</td>
-                </tr>
-                <tr>
-                  <td>Table Cell 1</td>
-                  <td>Table Cell 2</td>
-                  <td>Table Cell 3</td>
-                  <td>Table Cell 4</td>
-                  <td>Table Cell 5</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-wrapper">
+              <table>
+                <caption>
+                  Table Caption
+                </caption>
+                <thead>
+                  <tr>
+                    <th>Table Heading 1</th>
+                    <th>Table Heading 2</th>
+                    <th>Table Heading 3</th>
+                    <th>Table Heading 4</th>
+                    <th>Table Heading 5</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Table Footer 1</th>
+                    <th>Table Footer 2</th>
+                    <th>Table Footer 3</th>
+                    <th>Table Footer 4</th>
+                    <th>Table Footer 5</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </article>
           <article id="text__code">
             <header>
@@ -2813,7 +2804,6 @@
                 <textarea
                   id="textarea"
                   rows="8"
-                  cols="48"
                   placeholder="Enter your message here"
                 ></textarea>
               </p>

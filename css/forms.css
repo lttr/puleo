@@ -1,11 +1,12 @@
 /*
 * Forms inputs normalization
 *
-* A simplified version of custom forms by Adam Argyle: https://codepen.io/argyleink/pen/RwxJKQa/2256560bf93a131b58b5774e840d51f0
+* This is a simplified version of custom forms by Adam Argyle:
+* https://codepen.io/argyleink/pen/RwxJKQa/2256560bf93a131b58b5774e840d51f0
 */
 
 /*
-* Form elements:
+* Affected form elements, for reference:
 *
 * form
 * textarea
@@ -19,7 +20,6 @@
 * input type=color
 * input type=checkbox
 * input type=radio
-* input type=file
 * input type=date
 * input type=time
 * input type=month
@@ -28,18 +28,35 @@
 * input type=datetime-local
 * input type=search
 * select
-* button
-* input type=submit
-* input type=reset
-* input type=button
 * fieldset
 * legend
 * label
 * datalist
+* 
+* These are styled in buttons.css:
+*
+* button
+* input type=file
+* input type=submit
+* input type=reset
+* input type=button
 */
 
+/*
+* Inputs normalization
+*/
+
+:where(label) {
+  font-size: var(--font-size--1);
+  font-weight: var(--font-weight-label);
+}
+
 /* Let form controls to look like other other elements. */
-:where(input:not(:is([type="button"], [type="file"])), textarea, select) {
+:where(
+    input:not([type="button"], [type="file"], [type="reset"], [type="submit"]),
+    textarea,
+    select
+  ) {
   font: inherit;
   font-size: var(--font-size--1);
   color: inherit;
@@ -47,82 +64,15 @@
 }
 
 :where(
-    input:not([type="range"], [type="checkbox"], [type="radio"], [type="file"])
+    input:not([type="range"], [type="checkbox"], [type="radio"], [type="file"]),
+    select
   ) {
+  /* Default height is made the same as button elements */
   height: var(--button-height-default);
 }
 
-form {
-  display: grid;
-  gap: var(--space-4);
-}
-
-label {
-  font-size: var(--font-size--1);
-  font-weight: var(--font-weight-label);
-}
-
-/**
-* A form group wrapping a label, an input and additional hints or messages.
-* Vertical layout for all viewports.
-*/
-:where(.p-form-group) {
-  display: grid;
-  grid-auto-columns: 1fr;
-  gap: var(--space-2) var(--space-3);
-  align-items: center;
-}
-
-:where(fieldset) {
-  display: grid;
-  gap: var(--space-3);
-  max-inline-size: max-content;
-  border: none;
-  padding-inline: 0;
-
-  legend {
-    color: var(--text-color-2);
-    font-weight: var(--font-weight-body-bold);
-    font-size: var(--font-size--1);
-    padding-inline: 0;
-    margin-block-end: var(--space-3);
-  }
-
-  footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: var(--space-3);
-    margin-block-start: var(--space-4);
-
-    menu:only-child {
-      margin-inline-start: auto;
-    }
-  }
-
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    display: grid;
-    gap: var(--space-2);
-
-    li {
-      padding: 0;
-
-      label {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-3);
-        max-inline-size: var(--size-content-2);
-      }
-
-      input {
-        margin-inline-start: 0;
-        flex-shrink: 0;
-      }
-    }
-  }
+:where(input, textarea) {
+  --input-dark-surface: var(--gray-11);
 }
 
 :where(
@@ -144,13 +94,17 @@ label {
   padding-block: var(--space-1);
 }
 
-input:is(
-    [type="text"],
-    [type="password"],
-    [type="url"],
-    [type="email"],
-    [type="tel"],
-    [type="search"]
+:where(
+    input:is(
+        [type="text"],
+        [type="password"],
+        [type="url"],
+        [type="email"],
+        [type="tel"],
+        [type="search"]
+      ),
+    select,
+    textarea
   ) {
   flex-shrink: 1;
   min-inline-size: 5ch;
@@ -162,11 +116,38 @@ input:is(
     select,
     input:not([type="button"], [type="file"], [type="submit"], [type="reset"])
   ) {
-  background-color: var(--surface-2);
   border-radius: var(--input-radius);
 }
 
+:where(
+    input:not(
+        [disabled],
+        [readonly],
+        [type="file"],
+        [type="button"],
+        [type="submit"],
+        [type="reset"],
+        [type="checkbox"],
+        [type="radio"]
+      ),
+    select,
+    textarea
+  ) {
+  background-color: var(--surface-0);
+
+  &:not(select):is(:hover, :focus-within) {
+    @media (--OSdark) {
+      background-color: var(--input-dark-surface);
+    }
+  }
+
+  &:not(:focus-within):user-invalid {
+    border: 1px solid var(--negative-color);
+  }
+}
+
 :where(textarea) {
+  min-block-size: 3rem;
   resize: block;
 }
 
@@ -175,165 +156,131 @@ input:is(
   inline-size: var(--space-4);
 }
 
-@media (--OSdark) {
-  :where(
-      textarea,
-      select,
-      input:not([type="button"], [type="submit"], [type="reset"])
-    ) {
-    background-color: var(--surface-0);
-  }
+::placeholder {
+  font-style: italic;
+}
 
-  :where(dialog) {
-    background-color: var(--surface-2);
-  }
+:where(input[readonly], input[disabled]) {
+  background-color: var(--surface-2);
+  cursor: not-allowed;
+}
 
-  ::placeholder {
-    color: var(--gray-6);
+:where(input[disabled]) {
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+/* Checkboxes and radio buttons are made bigger on touch devices. */
+@media (pointer: coarse) {
+  :where(input[type="checkbox"], input[type="radio"]) {
+    inline-size: var(--space-5);
+    block-size: var(--space-5);
   }
 }
 
-/* custom forms */
-
 :where(
+    select,
+    textarea,
     input:not(
         [type="button"],
-        [type="checkbox"],
-        [type="color"],
+        [type="submit"],
+        [type="reset"],
         [type="file"],
-        [type="number"],
+        [type="checkbox"],
         [type="radio"],
-        [type="range"],
-
+        [type="color"],
+        [type="range"]
       )
   ) {
-  line-height: var(--font-lineheight-4);
-  padding-block: var(--space-1);
   transition:
-    background-color 0.5s var(--ease-3),
+    background-color 350ms var(--ease-3),
     outline-offset 145ms var(--ease-2);
 
-  :placeholder-shown {
-    text-overflow: ellipsis;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    &:not(:placeholder-shown):invalid:not(:focus) {
-      animation: var(--animation-shake-x);
-      animation-duration: 0.4s;
-    }
-  }
-}
-
-:where(
-    input:not(
-        input[type="button"],
-        input[type="range"],
-        input[type="color"],
-        input[type="checkbox"],
-        input[type="radio"]
-      ),
-    textarea,
-    select
-  ) {
   box-shadow:
     var(--shadow-2),
     0 0 1px 1px var(--surface-3);
 
-  @media (prefers-color-scheme: dark) {
+  @media (--OSdark) {
     box-shadow:
       var(--inner-shadow-2),
-      0 1px 0px 0px var(--dark-surface) inset,
+      0 1px 0px 0px var(--input-dark-surface) inset,
       0 -0.5px 0px 0px var(--surface-2) inset;
   }
 }
 
-:where(input, textarea) {
-  --dark-surface: var(--gray-11);
+/*
+* Layout
+*/
+
+:where(form) {
+  display: grid;
+  gap: var(--space-4);
 }
 
-[readonly]:focus {
-  outline: none;
-}
+/**
+* A form group wrapping a label, an input and additional hints or messages.
+* Vertical layout for all viewports.
+*/
+:where(.p-form-group) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 
-input:not(
-    [disabled],
-    [readonly],
-    [type="file"],
-    [type="button"],
-    [type="submit"],
-    [type="reset"],
-    [type="checkbox"],
-    [type="radio"]
-  ),
-textarea,
-select {
-  color: var(--text-color-body);
+  label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    max-inline-size: var(--size-content-2);
+    text-wrap: balance;
 
-  @media (prefers-color-scheme: light) {
-    background-color: white;
-  }
-
-  &:is(:hover, :focus-within) {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--dark-surface);
+    &:not(:last-child):has([type="radio"], [type="checkbox"]) {
+      margin-block-end: var(--space-2);
     }
   }
 
-  &:not(:placeholder-shown, :not([placeholder])):invalid {
-    background-position: calc(100% - 1.5ch) center;
+  input:is([type="radio"], [type="checkbox"]) {
+    flex-shrink: 0;
+  }
+}
+
+/**
+* Fieldset groups form controls with consistent spacing, max width and a heading
+* (legend).
+*
+* Structure:
+* <fieldset>
+*   <legend>Title</legend>
+*   <!-- form controls -->
+*   <footer>
+*     <menu><!-- actions --></menu>
+*   </footer>
+* </fieldset>
+*/
+:where(fieldset) {
+  display: grid;
+  gap: var(--space-3);
+  max-inline-size: var(--size-content-2);
+  border: none;
+  padding-inline: 0;
+
+  :where(legend) {
+    color: var(--text-color-2);
+    font-weight: var(--font-weight-body-bold);
+    font-size: var(--font-size--1);
+    padding-inline: 0;
+    margin-block-end: var(--space-3);
+    text-wrap: balance;
   }
 
-  &:not(:focus-within):not(:placeholder-shown):invalid {
-    text-decoration: underline wavy var(--red-6);
+  :where(footer) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-block-start: var(--space-4);
 
-    @media (prefers-color-scheme: dark) {
-      text-decoration: underline wavy var(--red-4);
+    :where(menu:only-child) {
+      margin-inline-start: auto;
     }
-  }
-}
-
-input[readonly],
-input[disabled] {
-  cursor: not-allowed;
-}
-
-input[disabled] {
-  opacity: 0.5;
-  box-shadow: none;
-  cursor: auto;
-}
-
-input[type="search"] {
-  background-position: 1.5ch center;
-  border-radius: var(--radius-round);
-
-  &::-webkit-search-cancel-button {
-    margin-right: -5px;
-    padding: 0.1ch;
-  }
-
-  &[list]:placeholder-shown {
-    background-position:
-      1.5ch center,
-      calc(100% - 1.25ch) center;
-    background-size: auto, 2.25ch;
-  }
-}
-
-:where(select) {
-  font-size: var(--font-size--1);
-  height: var(--button-height-default);
-}
-
-:where(::placeholder) {
-  color: var(--gray-6);
-  font-style: italic;
-}
-
-@media (pointer: coarse) {
-  :where(input[type="checkbox"], input[type="radio"]) {
-    inline-size: var(--space-4);
-    block-size: var(--space-4);
   }
 }

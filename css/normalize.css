@@ -367,4 +367,9 @@
   list-style-type: "";
   margin-inline: 0;
   padding-inline: 0;
+
+  :where(li) {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
 }

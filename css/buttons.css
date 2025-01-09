@@ -85,7 +85,7 @@
 :where(
     .p-button,
     button,
-    input:is([type="button"], [type="submit"], [type="reset"])
+    input:is([type="button"], [type="submit"], [type="reset"], [type="file"])
   ) {
   /* disabled */
   &[disabled] {
@@ -100,12 +100,12 @@
     }
   }
 
-  &:where(:hover) {
-    --_bg-color: var(--_bg-color-hover);
+  &:where(:not(:disabled):hover) {
+    background-color: var(--_bg-color-hover);
   }
 
-  &:where(:active) {
-    --_bg-color: var(--_bg-color-active);
+  &:where(:not(:disabled):active) {
+    background-color: var(--_bg-color-active);
   }
 
   /* icons */
@@ -181,5 +181,13 @@
 
   @media (--OSdark) {
     border-color: transparent;
+  }
+
+  &:hover {
+    background-color: var(--_bg-color-hover);
+  }
+
+  &:active {
+    background-color: var(--_bg-color-active);
   }
 }

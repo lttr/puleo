@@ -10,8 +10,8 @@ html {
 
 .btn-custom {
   --_bg-color: var(--green-9);
-  --_bg-hover: var(--green-8);
-  --_bg-active: var(--green-10);
+  --_bg-color-hover: var(--green-8);
+  --_bg-color-active: var(--green-10);
   --_text-color: var(--text-color-1-inverse);
 }
 
@@ -90,6 +90,8 @@ html {
 .sample article > div {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
 .sample article .calculated {
@@ -99,7 +101,7 @@ html {
 .sample code {
   display: inline-block;
   text-align: end;
-  margin-right: var(--space-4);
+  margin-right: var(--space-2);
   inline-size: clamp(10ch, 10ch + 7vw, 30ch);
   font-size: var(--font-size--1);
 }

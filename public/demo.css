@@ -122,6 +122,19 @@ body:has(.controls input:checked) .sample code.value {
   display: block;
 }
 
+@media (max-width: 500px) {
+  .sample article > div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2px;
+  }
+
+  .sample code {
+    text-align: start;
+  }
+}
+
 /* layouts */
 
 .layouts ul {

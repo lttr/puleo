@@ -4,7 +4,7 @@
   margin-inline: auto;
 
   /* like p-flow utility but bigger vertical gaps */
-  :where(* + *:not(figcaption, hr)) {
+  * + *:not(figcaption, hr, li, .p-not-prose *) {
     margin-block-start: 1.2em;
   }
 

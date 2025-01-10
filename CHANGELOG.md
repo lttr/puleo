@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.5.0
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.4.0...v0.5.0)
+
+### 🩹 Fixes
+
+- ⚠️  Custom property fallbacks ([a6844c9](https://github.com/lttr/puleo/commit/a6844c9))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Custom property fallbacks ([a6844c9](https://github.com/lttr/puleo/commit/a6844c9))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.4.0
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.3.0...v0.4.0)

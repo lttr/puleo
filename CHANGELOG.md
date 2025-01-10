@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.4.0
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.3.0...v0.4.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Remove unnecessary form styles ([55995e6](https://github.com/lttr/puleo/commit/55995e6))
+- Add some configurability for forms ([997a664](https://github.com/lttr/puleo/commit/997a664))
+- Add exception class for prose ([3a13b8b](https://github.com/lttr/puleo/commit/3a13b8b))
+
+### 🏡 Chore
+
+- Add comments and update demo ([cb7a862](https://github.com/lttr/puleo/commit/cb7a862))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Remove unnecessary form styles ([55995e6](https://github.com/lttr/puleo/commit/55995e6))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.3.0
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.2.1...v0.3.0)

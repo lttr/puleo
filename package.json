@@ -30,7 +30,7 @@
     "build:puleo": "postcss css/index.css -o output/puleo.post.css",
     "build:puleo:min": "postcss css/index.css -o output/puleo.min.css --config ./nano",
     "build:postcss": "postcss 'css/**/*.css' --dir output/ --ext post.css",
-    "build:postcss:min": "postcss 'css/**/*.css' --dir output/ --ext post.css --config ./nano",
+    "build:postcss:min": "postcss 'css/**/*.css' --dir output/ --ext min.css --config ./nano",
     "build:examples": "postcss examples/css-features.css -o examples/css-features.post.css",
     "build:media": "cp ./node_modules/open-props/src/props.media.css output/media.css",
     "clean": "rm -rf output/*",

@@ -1,17 +1,23 @@
+import { css } from "./utils.js"
+
 export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   const helpers = {
-    container: `.${classPrefix}container {
-  max-width: var(--${propsPrefix}grid-max-width);
-  padding-inline: var(--${propsPrefix}grid-gutter);
-  margin-inline: auto;
-}`,
+    container: css`
+      .${classPrefix}container {
+        max-width: var(--${propsPrefix}grid-max-width);
+        padding-inline: var(--${propsPrefix}grid-gutter);
+        margin-inline: auto;
+      }
+    `,
 
-    grid: `.${classPrefix}grid {
-  display: grid;
-  gap: var(--${propsPrefix}grid-gutter);
-}`,
+    grid: css`
+      .${classPrefix}grid {
+        display: grid;
+        gap: var(--${propsPrefix}grid-gutter);
+      }
+    `,
 
-    "auto-grid": `.${classPrefix}auto-grid {
+    "auto-grid": css`.${classPrefix}auto-grid {
   --${propsPrefix}auto-grid-min: var(--${propsPrefix}size-content-2);
   --${propsPrefix}auto-grid-repeat: auto-fit;
 
@@ -24,20 +30,22 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   );
 }`,
 
-    flow: `.${classPrefix}flow > * + * {
+    flow: css`.${classPrefix}flow > * + * {
   --${propsPrefix}flow-space: 1em;
 
   margin-block-start: var(--${propsPrefix}flow-space);
 }`,
 
-    center: `.${classPrefix}center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-inline: auto;
-}`,
+    center: css`
+      .${classPrefix}center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-inline: auto;
+      }
+    `,
 
-    stack: `.${classPrefix}stack {
+    stack: css`.${classPrefix}stack {
   --${propsPrefix}stack-space: var(--${propsPrefix}space-5);
 
   display: flex;
@@ -53,7 +61,7 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   }
 }`,
 
-    cluster: `.${classPrefix}cluster {
+    cluster: css`.${classPrefix}cluster {
   --${propsPrefix}cluster-space: var(--${propsPrefix}space-3);
 
   display: flex;
@@ -62,7 +70,7 @@ export function fluidLayouts({ classPrefix, propsPrefix, layoutHelpers }) {
   gap: var(--${propsPrefix}cluster-space);
 }`,
 
-    switcher: `.${classPrefix}switcher {
+    switcher: css`.${classPrefix}switcher {
   --${propsPrefix}switcher-space: var(--${propsPrefix}space-6);
   --${propsPrefix}switcher-treshold: var(--${propsPrefix}size-content-3);
 

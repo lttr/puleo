@@ -47,28 +47,28 @@
     "watch:generate": "nodemon --ext js --exec pnpm generate"
   },
   "devDependencies": {
-    "@csstools/postcss-global-data": "^2.1.1",
-    "browser-sync": "^3.0.2",
-    "changelogen": "^0.5.5",
-    "cssnano": "^7.0.2",
+    "@csstools/postcss-global-data": "^3.1.0",
+    "browser-sync": "^3.0.4",
+    "changelogen": "^0.6.2",
+    "cssnano": "^7.1.1",
     "defu": "^6.1.4",
-    "eslint": "^9.4.0",
-    "eslint-config-prettier": "^9.1.0",
-    "globals": "^15.3.0",
-    "nodemon": "^3.1.3",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.10",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0",
-    "postcss-dark-theme-class": "^1.3.0",
-    "postcss-import": "^16.1.0",
-    "postcss-preset-env": "^9.5.14",
-    "prettier": "^3.3.1",
-    "stylelint": "^16.6.1",
-    "stylelint-config-recommended": "^14.0.0",
-    "stylelint-config-standard": "^36.0.0"
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-dark-theme-class": "^2.0.0",
+    "postcss-import": "^16.1.1",
+    "postcss-preset-env": "^10.3.1",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.24.0",
+    "stylelint-config-recommended": "^17.0.0",
+    "stylelint-config-standard": "^39.0.0"
   },
   "dependencies": {
-    "open-props": "^1.7.4"
+    "open-props": "^1.7.16"
   },
   "packageManager": "pnpm@10.15.1"
 }

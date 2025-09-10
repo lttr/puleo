@@ -24,4 +24,4 @@
 * to be overridden by the user.
 */
 @import url("./settings.css");
-@import url("./brand.css");
+@import url("./generated/brand.css");

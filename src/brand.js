@@ -1,10 +1,16 @@
-/*
+import { constructRootSelector } from "./utils.js"
+
+export function generateBrand(config) {
+  const { useWhere, rootSelector } = config
+  const selector = constructRootSelector(useWhere, rootSelector)
+
+  return `/*
 * Based on Open Props: brand.css
 *
 * Default values for brand specific props.
 */
 
-:where(html) {
+${selector} {
   --font-family-body: sans-serif;
 
   --brand-color: var(--blue-7);
@@ -16,4 +22,6 @@
   caret-color: var(--brand-color, var(--link-color));
   color: var(--text-color-1);
   background-color: var(--bg-color-body);
+}
+`
 }

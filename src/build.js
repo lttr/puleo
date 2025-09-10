@@ -7,12 +7,10 @@ import { fluidLayouts } from "./layout-helpers.js"
 import { fontStyles } from "./font-style-helpers.js"
 import { openProps } from "./open-props.js"
 import { handleShadows } from "./shadows.js"
+import { generateBrand } from "./brand.js"
+import { constructRootSelector } from "./utils.js"
 
 const MEDIA_DARK_MARKER = "-@media:dark"
-
-function constructRootSelector(useWhere, rootSelector) {
-  return useWhere ? `:where(${rootSelector})` : rootSelector
-}
 function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
   const linesMediaDark = []
   const lines = groups.map((group) => [
@@ -111,11 +109,14 @@ function buildObjects(config) {
 const cssScales = buildScales({}).join("\n")
 const cssProps = buildProps({}).join("\n")
 const cssObjects = buildObjects({}).join("\n\n")
+const cssBrand = generateBrand(defaultConfig)
 
 const fileOutputScales = "./css/generated/scales.css"
 const fileOutputProps = "./css/generated/props.css"
 const fileOutputObjects = "./css/generated/objects.css"
+const fileOutputBrand = "./css/generated/brand.css"
 
 writeFileSync(fileOutputScales, cssScales)
 writeFileSync(fileOutputProps, cssProps)
 writeFileSync(fileOutputObjects, cssObjects)
+writeFileSync(fileOutputBrand, cssBrand)

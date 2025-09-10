@@ -66,6 +66,7 @@
   }
 }
 
+/* Importance primary/secondary */
 :where(.p-button-secondary) {
   --_text-color: var(--text-color-1);
   --_bg-color: var(--surface-0);
@@ -75,6 +76,7 @@
   box-shadow: var(--shadow-2);
 }
 
+/* Variant brand */
 :where(.p-button-brand) {
   --_text-color: var(--text-color-1-inverse);
   --_bg-color: var(--brand-color);

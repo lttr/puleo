@@ -11,7 +11,7 @@ import { handleShadows } from "./shadows.js"
 const MEDIA_DARK_MARKER = "-@media:dark"
 
 function constructRootSelector(useWhere, rootSelector) {
-  return useWhere ? `:where(${rootSelector})` : rootSelector;
+  return useWhere ? `:where(${rootSelector})` : rootSelector
 }
 function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
   const linesMediaDark = []
@@ -29,7 +29,7 @@ function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
       }),
     " ",
   ])
-  const selector = constructRootSelector(useWhere, rootSelector);
+  const selector = constructRootSelector(useWhere, rootSelector)
   const linesCSS = [`${selector} {`, ...lines, "}\n"]
   const linesMediaDarkCSS = linesMediaDark.length
     ? [`${mediaDark} {`, `  ${selector} {`, ...linesMediaDark, "  }", "}\n"]
@@ -39,8 +39,16 @@ function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
 
 function buildScales(config) {
   const effectiveConfig = defu(config, defaultConfig)
-  const { fluid, fontSize, grid, propsPrefix, useWhere, rootSelector, mediaDark, space } =
-    effectiveConfig
+  const {
+    fluid,
+    fontSize,
+    grid,
+    propsPrefix,
+    useWhere,
+    rootSelector,
+    mediaDark,
+    space,
+  } = effectiveConfig
 
   const rulesInsideRootSelector = insideRootSelector(
     [

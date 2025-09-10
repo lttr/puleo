@@ -53,10 +53,10 @@
 
 /* Let form controls to look like other other elements. */
 :where(
-    input:not([type="button"], [type="file"], [type="reset"], [type="submit"]),
-    textarea,
-    select
-  ) {
+  input:not([type="button"], [type="file"], [type="reset"], [type="submit"]),
+  textarea,
+  select
+) {
   font: inherit;
   font-size: var(--font-size--1);
   color: inherit;
@@ -64,9 +64,9 @@
 }
 
 :where(
-    input:not([type="range"], [type="checkbox"], [type="radio"], [type="file"]),
-    select
-  ) {
+  input:not([type="range"], [type="checkbox"], [type="radio"], [type="file"]),
+  select
+) {
   /* Default height is made the same as button elements */
   height: var(--button-height-default);
 }
@@ -76,63 +76,63 @@
 }
 
 :where(
-    [type="text"],
-    [type="number"],
-    [type="password"],
-    [type="url"],
-    [type="email"],
-    [type="tel"],
-    [type="search"],
-    [type="date"],
-    [type="month"],
-    [type="week"],
-    [type="datetime-local"],
-    select,
-    textarea
-  ) {
+  [type="text"],
+  [type="number"],
+  [type="password"],
+  [type="url"],
+  [type="email"],
+  [type="tel"],
+  [type="search"],
+  [type="date"],
+  [type="month"],
+  [type="week"],
+  [type="datetime-local"],
+  select,
+  textarea
+) {
   padding-inline: var(--input-padding-inline, var(--space-2));
   padding-block: var(--input-padding-block, var(--space-1));
 }
 
 :where(
-    input:is(
-        [type="text"],
-        [type="password"],
-        [type="url"],
-        [type="email"],
-        [type="tel"],
-        [type="search"]
-      ),
-    select,
-    textarea
-  ) {
+  input:is(
+    [type="text"],
+    [type="password"],
+    [type="url"],
+    [type="email"],
+    [type="tel"],
+    [type="search"]
+  ),
+  select,
+  textarea
+) {
   flex-shrink: 1;
   min-inline-size: 5ch;
   max-inline-size: 100%;
 }
 
 :where(
-    textarea,
-    select,
-    input:not([type="button"], [type="file"], [type="submit"], [type="reset"])
-  ) {
+  textarea,
+  select,
+  input:not([type="button"], [type="file"], [type="submit"], [type="reset"])
+) {
   border-radius: var(--input-radius);
 }
 
 :where(
-    input:not(
-        [disabled],
-        [readonly],
-        [type="file"],
-        [type="button"],
-        [type="submit"],
-        [type="reset"],
-        [type="checkbox"],
-        [type="radio"]
-      ),
-    select,
-    textarea
-  ) {
+  input:not(
+    [disabled],
+    [readonly],
+    [type="file"],
+    [type="button"],
+    [type="submit"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"]
+  ),
+  select,
+  textarea
+) {
   background-color: var(--surface-0);
 
   &:not(select):is(:hover, :focus-within) {
@@ -179,19 +179,19 @@
 }
 
 :where(
-    select,
-    textarea,
-    input:not(
-        [type="button"],
-        [type="submit"],
-        [type="reset"],
-        [type="file"],
-        [type="checkbox"],
-        [type="radio"],
-        [type="color"],
-        [type="range"]
-      )
-  ) {
+  select,
+  textarea,
+  input:not(
+    [type="button"],
+    [type="submit"],
+    [type="reset"],
+    [type="file"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="color"],
+    [type="range"]
+  )
+) {
   transition:
     background-color 350ms var(--ease-3),
     outline-offset 145ms var(--ease-2);

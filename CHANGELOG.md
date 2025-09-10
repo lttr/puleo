@@ -1,17 +1,16 @@
 # Changelog
 
-
 ## v0.5.0
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.4.0...v0.5.0)
 
 ### 🩹 Fixes
 
-- ⚠️  Custom property fallbacks ([a6844c9](https://github.com/lttr/puleo/commit/a6844c9))
+- ⚠️ Custom property fallbacks ([a6844c9](https://github.com/lttr/puleo/commit/a6844c9))
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Custom property fallbacks ([a6844c9](https://github.com/lttr/puleo/commit/a6844c9))
+- ⚠️ Custom property fallbacks ([a6844c9](https://github.com/lttr/puleo/commit/a6844c9))
 
 ### ❤️ Contributors
 
@@ -23,7 +22,7 @@
 
 ### 🚀 Enhancements
 
-- ⚠️  Remove unnecessary form styles ([55995e6](https://github.com/lttr/puleo/commit/55995e6))
+- ⚠️ Remove unnecessary form styles ([55995e6](https://github.com/lttr/puleo/commit/55995e6))
 - Add some configurability for forms ([997a664](https://github.com/lttr/puleo/commit/997a664))
 - Add exception class for prose ([3a13b8b](https://github.com/lttr/puleo/commit/3a13b8b))
 
@@ -33,7 +32,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Remove unnecessary form styles ([55995e6](https://github.com/lttr/puleo/commit/55995e6))
+- ⚠️ Remove unnecessary form styles ([55995e6](https://github.com/lttr/puleo/commit/55995e6))
 
 ### ❤️ Contributors
 
@@ -49,7 +48,7 @@
 - Make tables look reasonable out of the box ([750dc60](https://github.com/lttr/puleo/commit/750dc60))
 - Improve some contrasts ([5285f10](https://github.com/lttr/puleo/commit/5285f10))
 - Add color contrast section ([b64add1](https://github.com/lttr/puleo/commit/b64add1))
-- ⚠️  Rework forms and buttons ([8055def](https://github.com/lttr/puleo/commit/8055def))
+- ⚠️ Rework forms and buttons ([8055def](https://github.com/lttr/puleo/commit/8055def))
 - Add prose utility ([1722219](https://github.com/lttr/puleo/commit/1722219))
 
 ### 🏡 Chore
@@ -59,7 +58,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Rework forms and buttons ([8055def](https://github.com/lttr/puleo/commit/8055def))
+- ⚠️ Rework forms and buttons ([8055def](https://github.com/lttr/puleo/commit/8055def))
 
 ### ❤️ Contributors
 
@@ -84,7 +83,7 @@
 ### 🚀 Enhancements
 
 - Page layout utilities ([e296644](https://github.com/lttr/puleo/commit/e296644))
-- ⚠️  Max inline size for headers and other elements is now opt-in, initial by default ([960f4ba](https://github.com/lttr/puleo/commit/960f4ba))
+- ⚠️ Max inline size for headers and other elements is now opt-in, initial by default ([960f4ba](https://github.com/lttr/puleo/commit/960f4ba))
 - Add more border-radius values ([023e5e9](https://github.com/lttr/puleo/commit/023e5e9))
 
 ### 🏡 Chore
@@ -94,7 +93,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Max inline size for headers and other elements is now opt-in, initial by default ([960f4ba](https://github.com/lttr/puleo/commit/960f4ba))
+- ⚠️ Max inline size for headers and other elements is now opt-in, initial by default ([960f4ba](https://github.com/lttr/puleo/commit/960f4ba))
 
 ### ❤️ Contributors
 
@@ -106,11 +105,11 @@
 
 ### 🚀 Enhancements
 
-- ⚠️  Remove font that was imported by default ([6033530](https://github.com/lttr/puleo/commit/6033530))
+- ⚠️ Remove font that was imported by default ([6033530](https://github.com/lttr/puleo/commit/6033530))
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Remove font that was imported by default ([6033530](https://github.com/lttr/puleo/commit/6033530))
+- ⚠️ Remove font that was imported by default ([6033530](https://github.com/lttr/puleo/commit/6033530))
 
 ### ❤️ Contributors
 
@@ -139,4 +138,3 @@
 ### ❤️ Contributors
 
 - Lukas Trumm <lukas.trumm@gmail.com>
-

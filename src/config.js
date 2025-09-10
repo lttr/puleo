@@ -1,7 +1,8 @@
 export const defaultConfig = {
   propsPrefix: "",
   classPrefix: "p-",
-  rootSelector: ":where(html)",
+  useWhere: true,
+  rootSelector: "html",
   mediaDark: "@media (--OSdark)",
   layoutHelpers: [
     "container",

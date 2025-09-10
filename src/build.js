@@ -9,7 +9,11 @@ import { openProps } from "./open-props.js"
 import { handleShadows } from "./shadows.js"
 
 const MEDIA_DARK_MARKER = "-@media:dark"
-function insideRootSelector(groups, { rootSelector, mediaDark }) {
+
+function constructRootSelector(useWhere, rootSelector) {
+  return useWhere ? `:where(${rootSelector})` : rootSelector;
+}
+function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
   const linesMediaDark = []
   const lines = groups.map((group) => [
     ...group
@@ -25,16 +29,17 @@ function insideRootSelector(groups, { rootSelector, mediaDark }) {
       }),
     " ",
   ])
-  const linesCSS = [`${rootSelector} {`, ...lines, "}\n"]
+  const selector = constructRootSelector(useWhere, rootSelector);
+  const linesCSS = [`${selector} {`, ...lines, "}\n"]
   const linesMediaDarkCSS = linesMediaDark.length
-    ? [`${mediaDark} {`, `  ${rootSelector} {`, ...linesMediaDark, "  }", "}\n"]
+    ? [`${mediaDark} {`, `  ${selector} {`, ...linesMediaDark, "  }", "}\n"]
     : []
   return linesCSS.concat(linesMediaDarkCSS)
 }
 
 function buildScales(config) {
   const effectiveConfig = defu(config, defaultConfig)
-  const { fluid, fontSize, grid, propsPrefix, rootSelector, mediaDark, space } =
+  const { fluid, fontSize, grid, propsPrefix, useWhere, rootSelector, mediaDark, space } =
     effectiveConfig
 
   const rulesInsideRootSelector = insideRootSelector(
@@ -43,7 +48,7 @@ function buildScales(config) {
       fontSize && fluidFontSize({ propsPrefix, ...fluid, fontSize }),
       grid && fluidGrid({ propsPrefix, ...fluid, ...grid, space }),
     ],
-    { rootSelector, mediaDark },
+    { useWhere, rootSelector, mediaDark },
   )
 
   return [...rulesInsideRootSelector].flat().filter(Boolean)
@@ -62,6 +67,7 @@ function buildProps(config) {
     lineHeight,
     shadow,
     propsPrefix,
+    useWhere,
     rootSelector,
     mediaDark,
   } = effectiveConfig
@@ -78,7 +84,7 @@ function buildProps(config) {
       lineHeight && openProps({ propsPrefix, names: lineHeight }),
       shadow && handleShadows(shadow, propsPrefix),
     ],
-    { rootSelector, mediaDark },
+    { useWhere, rootSelector, mediaDark },
   )
 
   return [...rulesInsideRootSelector].flat().filter(Boolean)

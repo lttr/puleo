@@ -1,4 +1,4 @@
-import { createRootSelector, createWhere, css } from "./utils.js"
+import { createRootSelector, createWhere, css } from "../utils.js"
 
 export function generateNormalize(config) {
   const { useWhere, rootSelector: rootSelectorConfig } = config

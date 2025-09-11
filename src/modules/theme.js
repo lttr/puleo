@@ -1,4 +1,4 @@
-import { createRootSelector, css } from "./utils.js"
+import { createRootSelector, css } from "../utils.js"
 
 export function generateTheme(config) {
   const { useWhere, rootSelector: rootSelectorConfig, mediaDark } = config

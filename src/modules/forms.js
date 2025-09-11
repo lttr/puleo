@@ -1,4 +1,4 @@
-import { createWhere, css } from "./utils.js"
+import { createWhere, css } from "../utils.js"
 
 export function generateForms(config) {
   const { useWhere, mediaDark } = config

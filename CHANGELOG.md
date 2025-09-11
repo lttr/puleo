@@ -7,7 +7,7 @@
 ### 🚀 Enhancements
 
 - Split rootSelector config into useWhere and rootSelector ([c4c76f2](https://github.com/lttr/puleo/commit/c4c76f2))
-- ⚠️  Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
+- ⚠️ Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
 - Let PostCSS plugin know about :where config ([cbf67bf](https://github.com/lttr/puleo/commit/cbf67bf))
 
 ### 🩹 Fixes
@@ -37,7 +37,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
+- ⚠️ Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
 
 ### ❤️ Contributors
 

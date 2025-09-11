@@ -2,8 +2,16 @@ export function customProperty(propsPrefix, name, value) {
   return `--${propsPrefix}${name}: ${value};`
 }
 
-export function constructRootSelector(useWhere, rootSelector) {
-  return useWhere ? `:where(${rootSelector})` : rootSelector
+export function createWhere(useWhere) {
+  return (selector) => (useWhere ? `:where(${selector})` : selector)
+}
+
+export function where(useWhere, selector) {
+  return useWhere ? `:where(${selector})` : selector
+}
+
+export function createRootSelector(useWhere, rootSelector) {
+  return where(useWhere, rootSelector)
 }
 
 // Tagged template literal for CSS - improves syntax highlighting and formatting

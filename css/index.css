@@ -7,21 +7,21 @@
 /*
 * Resets and base styles (generic styles and element specific styles)
 */
-@import url("./theme.css");
-@import url("./normalize.css");
+@import url("./generated/theme.css");
+@import url("./generated/normalize.css");
 
-@import url("./page-layout.css");
-@import url("./tables.css");
-@import url("./buttons.css");
-@import url("./forms.css");
+@import url("./generated/page-layout.css");
+@import url("./generated/tables.css");
+@import url("./generated/buttons.css");
+@import url("./generated/forms.css");
 
 @import url("./generated/objects.css");
 
-@import url("./prose.css");
+@import url("./generated/prose.css");
 
 /*
 * Settings are placed at the end since it is expected
 * to be overridden by the user.
 */
-@import url("./settings.css");
+@import url("./generated/settings.css");
 @import url("./generated/brand.css");

@@ -1,7 +1,8 @@
-import { where, css } from "./utils.js"
+import { createWhere, css } from "./utils.js"
 
 export function generateButtons(config) {
   const { useWhere, mediaDark } = config
+  const where = createWhere(useWhere)
 
   return css`
     /* Based on Open Props buttons.css */
@@ -9,21 +10,19 @@ export function generateButtons(config) {
 
     /* Let form controls to look like other elements. */
     ${where(
-      useWhere,
       'button, input:is([type="button"], [type="submit"], [type="reset"])',
     )},
-    ${where(useWhere, 'input[type="file"]::-webkit-file-upload-button')},
-    ${where(useWhere, 'input[type="file"]::file-selector-button')} {
+    ${where('input[type="file"]::-webkit-file-upload-button')},
+    ${where('input[type="file"]::file-selector-button')} {
       font: inherit;
       letter-spacing: inherit;
     }
 
     ${where(
-      useWhere,
       '.p-button, button, input:is([type="button"], [type="submit"], [type="reset"])',
     )},
-    ${where(useWhere, 'input[type="file"]::-webkit-file-upload-button')},
-    ${where(useWhere, 'input[type="file"]::file-selector-button')} {
+    ${where('input[type="file"]::-webkit-file-upload-button')},
+    ${where('input[type="file"]::file-selector-button')} {
       --_font-size: var(--font-size--1);
       --_bg-color: var(--surface-2-inverse);
       --_bg-color-hover: var(--surface-3-inverse);
@@ -75,7 +74,7 @@ export function generateButtons(config) {
     }
 
     /* Importance primary/secondary */
-    ${where(useWhere, ".p-button-secondary")} {
+    ${where(".p-button-secondary")} {
       --_text-color: var(--text-color-1);
       --_bg-color: var(--surface-0);
       --_bg-color-hover: var(--surface-2);
@@ -85,7 +84,7 @@ export function generateButtons(config) {
     }
 
     /* Variant brand */
-    ${where(useWhere, ".p-button-brand")} {
+    ${where(".p-button-brand")} {
       --_text-color: var(--text-color-1-inverse);
       --_bg-color: var(--brand-color);
       --_bg-color-hover: var(--brand-color-bright);
@@ -93,7 +92,6 @@ export function generateButtons(config) {
     }
 
     ${where(
-      useWhere,
       '.p-button, button, input:is([type="button"], [type="submit"], [type="reset"], [type="file"])',
     )} {
       /* disabled */
@@ -109,16 +107,16 @@ export function generateButtons(config) {
         }
       }
 
-      &${where(useWhere, ":not(:disabled):hover")} {
+      &${where(":not(:disabled):hover")} {
         background-color: var(--_bg-color-hover);
       }
 
-      &${where(useWhere, ":not(:disabled):active")} {
+      &${where(":not(:disabled):active")} {
         background-color: var(--_bg-color-active);
       }
 
       /* icons */
-      & > ${where(useWhere, "svg")} {
+      & > ${where("svg")} {
         flex-shrink: 0;
         block-size: var(--_icon-size);
         inline-size: var(--_icon-size);
@@ -132,7 +130,7 @@ export function generateButtons(config) {
     }
 
     /* red reset */
-    ${where(useWhere, '[type="reset"]')} {
+    ${where('[type="reset"]')} {
       --_text-color: var(--red-9);
 
       --_bg-color: var(--surface-0);
@@ -150,14 +148,14 @@ export function generateButtons(config) {
       }
     }
 
-    ${where(useWhere, "a.p-button")} {
+    ${where("a.p-button")} {
       &:hover {
         text-decoration: none;
       }
     }
 
     /* file input */
-    ${where(useWhere, 'input[type="file"]')} {
+    ${where('input[type="file"]')} {
       max-inline-size: 100%;
       padding-inline: var(--space-1);
       padding-block: 0;
@@ -182,8 +180,8 @@ export function generateButtons(config) {
       }
     }
 
-    ${where(useWhere, 'input[type="file"]::-webkit-file-upload-button')},
-    ${where(useWhere, 'input[type="file"]::file-selector-button')} {
+    ${where('input[type="file"]::-webkit-file-upload-button')},
+    ${where('input[type="file"]::file-selector-button')} {
       margin-inline-end: var(--space-2);
       cursor: pointer;
       margin: var(--space-3);

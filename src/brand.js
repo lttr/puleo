@@ -1,8 +1,8 @@
-import { constructRootSelector, css } from "./utils.js"
+import { createRootSelector, css } from "./utils.js"
 
 export function generateBrand(config) {
-  const { useWhere, rootSelector } = config
-  const selector = constructRootSelector(useWhere, rootSelector)
+  const { useWhere, rootSelector: rootSelectorConfig } = config
+  const rootSelector = createRootSelector(useWhere, rootSelectorConfig)
 
   return css`
     /*
@@ -10,7 +10,7 @@ export function generateBrand(config) {
     *
     * Default values for brand specific props.
     */
-    ${selector} {
+    ${rootSelector} {
       --font-family-body: sans-serif;
 
       --brand-color: var(--blue-7);

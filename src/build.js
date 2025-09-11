@@ -8,7 +8,15 @@ import { fontStyles } from "./font-style-helpers.js"
 import { openProps } from "./open-props.js"
 import { handleShadows } from "./shadows.js"
 import { generateBrand } from "./brand.js"
-import { constructRootSelector } from "./utils.js"
+import { generateTheme } from "./theme.js"
+import { generateSettings } from "./settings.js"
+import { generateNormalize } from "./normalize.js"
+import { generatePageLayout } from "./page-layout.js"
+import { generateTables } from "./tables.js"
+import { generateButtons } from "./buttons.js"
+import { generateForms } from "./forms.js"
+import { generateProse } from "./prose.js"
+import { createRootSelector } from "./utils.js"
 
 const MEDIA_DARK_MARKER = "-@media:dark"
 function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
@@ -27,10 +35,16 @@ function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
       }),
     " ",
   ])
-  const selector = constructRootSelector(useWhere, rootSelector)
-  const linesCSS = [`${selector} {`, ...lines, "}\n"]
+  const rootSelectorStyled = createRootSelector(useWhere, rootSelector)
+  const linesCSS = [`${rootSelectorStyled} {`, ...lines, "}\n"]
   const linesMediaDarkCSS = linesMediaDark.length
-    ? [`${mediaDark} {`, `  ${selector} {`, ...linesMediaDark, "  }", "}\n"]
+    ? [
+        `${mediaDark} {`,
+        `  ${rootSelectorStyled} {`,
+        ...linesMediaDark,
+        "  }",
+        "}\n",
+      ]
     : []
   return linesCSS.concat(linesMediaDarkCSS)
 }
@@ -110,13 +124,37 @@ const cssScales = buildScales({}).join("\n")
 const cssProps = buildProps({}).join("\n")
 const cssObjects = buildObjects({}).join("\n\n")
 const cssBrand = generateBrand(defaultConfig)
+const cssTheme = generateTheme(defaultConfig)
+const cssSettings = generateSettings(defaultConfig)
+const cssNormalize = generateNormalize(defaultConfig)
+const cssPageLayout = generatePageLayout(defaultConfig)
+const cssTables = generateTables(defaultConfig)
+const cssButtons = generateButtons(defaultConfig)
+const cssForms = generateForms(defaultConfig)
+const cssProse = generateProse(defaultConfig)
 
 const fileOutputScales = "./css/generated/scales.css"
 const fileOutputProps = "./css/generated/props.css"
 const fileOutputObjects = "./css/generated/objects.css"
 const fileOutputBrand = "./css/generated/brand.css"
+const fileOutputTheme = "./css/generated/theme.css"
+const fileOutputSettings = "./css/generated/settings.css"
+const fileOutputNormalize = "./css/generated/normalize.css"
+const fileOutputPageLayout = "./css/generated/page-layout.css"
+const fileOutputTables = "./css/generated/tables.css"
+const fileOutputButtons = "./css/generated/buttons.css"
+const fileOutputForms = "./css/generated/forms.css"
+const fileOutputProse = "./css/generated/prose.css"
 
 writeFileSync(fileOutputScales, cssScales)
 writeFileSync(fileOutputProps, cssProps)
 writeFileSync(fileOutputObjects, cssObjects)
 writeFileSync(fileOutputBrand, cssBrand)
+writeFileSync(fileOutputTheme, cssTheme)
+writeFileSync(fileOutputSettings, cssSettings)
+writeFileSync(fileOutputNormalize, cssNormalize)
+writeFileSync(fileOutputPageLayout, cssPageLayout)
+writeFileSync(fileOutputTables, cssTables)
+writeFileSync(fileOutputButtons, cssButtons)
+writeFileSync(fileOutputForms, cssForms)
+writeFileSync(fileOutputProse, cssProse)

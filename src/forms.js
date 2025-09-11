@@ -1,7 +1,8 @@
-import { where, css } from "./utils.js"
+import { createWhere, css } from "./utils.js"
 
 export function generateForms(config) {
   const { useWhere, mediaDark } = config
+  const where = createWhere(useWhere)
 
   return css`
     /*
@@ -11,14 +12,13 @@ export function generateForms(config) {
     * https://codepen.io/argyleink/pen/RwxJKQa/2256560bf93a131b58b5774e840d51f0
     */
 
-    ${where(useWhere, "label")} {
+    ${where("label")} {
       font-size: var(--font-size--1);
       font-weight: var(--font-weight-label);
     }
 
     /* Let form controls to look like other other elements. */
     ${where(
-      useWhere,
       'input:not([type="button"], [type="file"], [type="reset"], [type="submit"]), textarea, select',
     )} {
       font: inherit;
@@ -28,19 +28,17 @@ export function generateForms(config) {
     }
 
     ${where(
-      useWhere,
       'input:not([type="range"], [type="checkbox"], [type="radio"], [type="file"]), select',
     )} {
       /* Default height is made the same as button elements */
       height: var(--button-height-default);
     }
 
-    ${where(useWhere, "input, textarea")} {
+    ${where("input, textarea")} {
       --input-dark-surface: var(--gray-11);
     }
 
     ${where(
-      useWhere,
       '[type="text"], [type="number"], [type="password"], [type="url"], [type="email"], [type="tel"], [type="search"], [type="date"], [type="month"], [type="week"], [type="datetime-local"], select, textarea',
     )} {
       padding-inline: var(--input-padding-inline, var(--space-2));
@@ -80,12 +78,12 @@ export function generateForms(config) {
       }
     }
 
-    ${where(useWhere, "textarea")} {
+    ${where("textarea")} {
       min-block-size: 3rem;
       resize: block;
     }
 
-    ${where(useWhere, 'input[type="checkbox"], input[type="radio"]')} {
+    ${where('input[type="checkbox"], input[type="radio"]')} {
       block-size: var(--space-4);
       inline-size: var(--space-4);
     }
@@ -94,26 +92,25 @@ export function generateForms(config) {
       font-style: italic;
     }
 
-    ${where(useWhere, "input[readonly], input[disabled]")} {
+    ${where("input[readonly], input[disabled]")} {
       background-color: var(--surface-2);
       cursor: not-allowed;
     }
 
-    ${where(useWhere, "input[disabled]")} {
+    ${where("input[disabled]")} {
       opacity: 0.5;
       box-shadow: none;
     }
 
     /* Checkboxes and radio buttons are made bigger on touch devices. */
     @media (pointer: coarse) {
-      ${where(useWhere, 'input[type="checkbox"], input[type="radio"]')} {
+      ${where('input[type="checkbox"], input[type="radio"]')} {
         inline-size: var(--space-5);
         block-size: var(--space-5);
       }
     }
 
     ${where(
-      useWhere,
       'select, textarea, input:not([type="button"], [type="submit"], [type="reset"], [type="file"], [type="checkbox"], [type="radio"], [type="color"], [type="range"])',
     )} {
       transition:
@@ -136,7 +133,7 @@ export function generateForms(config) {
     * Layout
     */
 
-    ${where(useWhere, "form")} {
+    ${where("form")} {
       display: grid;
       gap: var(--form-gap, var(--space-4));
     }
@@ -145,7 +142,7 @@ export function generateForms(config) {
     * A form group wrapping a label, an input and additional hints or messages.
     * Vertical layout for all viewports.
     */
-    ${where(useWhere, ".p-form-group")} {
+    ${where(".p-form-group")} {
       display: flex;
       flex-direction: column;
       gap: var(--space-2);
@@ -180,14 +177,14 @@ export function generateForms(config) {
     *   </footer>
     * </fieldset>
     */
-    ${where(useWhere, "fieldset")} {
+    ${where("fieldset")} {
       display: grid;
       gap: var(--space-3);
       max-inline-size: var(--size-content-2);
       border: none;
       padding-inline: 0;
 
-      ${where(useWhere, "legend")} {
+      ${where("legend")} {
         color: var(--text-color-2);
         font-weight: var(--font-weight-body-bold);
         font-size: var(--font-size-0);
@@ -196,14 +193,14 @@ export function generateForms(config) {
         text-wrap: balance;
       }
 
-      ${where(useWhere, "footer")} {
+      ${where("footer")} {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         gap: var(--space-3);
         margin-block-start: var(--space-4);
 
-        ${where(useWhere, "menu:only-child")} {
+        ${where("menu:only-child")} {
           margin-inline-start: auto;
         }
       }

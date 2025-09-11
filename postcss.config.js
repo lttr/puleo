@@ -2,6 +2,7 @@ import postcssPresetEnv from "postcss-preset-env"
 import postcssImport from "postcss-import"
 import postcssGlobalData from "@csstools/postcss-global-data"
 import darkThemeClass from "postcss-dark-theme-class"
+import { defaultConfig } from "./src/config.js"
 
 const plugins = [
   postcssImport(),
@@ -28,7 +29,7 @@ const plugins = [
   ),
   // Enables to control dark theme via a class
   darkThemeClass({
-    where: true,
+    where: defaultConfig.useWhere,
   }),
 ]
 

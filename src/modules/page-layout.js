@@ -1,6 +1,6 @@
-import { createRootSelector, css } from "../utils.js"
+import { css } from "../utils.js"
 
-export function generatePageLayout(config) {
+export function generatePageLayout() {
   return css`
     /* Sources:
     * https://layout-breakouts-builder.vercel.app/

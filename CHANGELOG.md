@@ -1,5 +1,48 @@
 # Changelog
 
+## v0.6.0
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.5.0...v0.6.0)
+
+### 🚀 Enhancements
+
+- Split rootSelector config into useWhere and rootSelector ([c4c76f2](https://github.com/lttr/puleo/commit/c4c76f2))
+- ⚠️  Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
+- Let PostCSS plugin know about :where config ([cbf67bf](https://github.com/lttr/puleo/commit/cbf67bf))
+
+### 🩹 Fixes
+
+- Convert CSS files to JavaScript generators with proper quote handling ([99fd37f](https://github.com/lttr/puleo/commit/99fd37f))
+
+### 💅 Refactors
+
+- Convert brand.css to JavaScript generator ([c66900a](https://github.com/lttr/puleo/commit/c66900a))
+- Add CSS template literal utility with dedent ([0cc95db](https://github.com/lttr/puleo/commit/0cc95db))
+- Simplify where functions and eliminate duplication ([fb58d9f](https://github.com/lttr/puleo/commit/fb58d9f))
+- Extract build functions into separate modules ([00e8b9d](https://github.com/lttr/puleo/commit/00e8b9d))
+- Use configurable where option from defaultConfig ([5e7de56](https://github.com/lttr/puleo/commit/5e7de56))
+
+### 📖 Documentation
+
+- Add CLAUDE.md with project guidance and update button styles ([0c9f1f9](https://github.com/lttr/puleo/commit/0c9f1f9))
+
+### 🏡 Chore
+
+- Update node version ([e168842](https://github.com/lttr/puleo/commit/e168842))
+- Update pnpm version ([77dae18](https://github.com/lttr/puleo/commit/77dae18))
+- Apply eslint:fix and prettier ([15c2252](https://github.com/lttr/puleo/commit/15c2252))
+- Add verify script and improve format script ([7f6ecd7](https://github.com/lttr/puleo/commit/7f6ecd7))
+- Verify before release ([d7812d3](https://github.com/lttr/puleo/commit/d7812d3))
+- Clean unused vars ([4af8718](https://github.com/lttr/puleo/commit/4af8718))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.5.0
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.4.0...v0.5.0)

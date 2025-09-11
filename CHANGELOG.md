@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.6.1
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.6.0...v0.6.1)
+
+### 🚀 Enhancements
+
+- Support alternative output with :host selector ([03811de](https://github.com/lttr/puleo/commit/03811de))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.6.0
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.5.0...v0.6.0)

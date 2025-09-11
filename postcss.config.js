@@ -29,7 +29,8 @@ const plugins = [
   ),
   // Enables to control dark theme via a class
   darkThemeClass({
-    where: defaultConfig.useWhere,
+    useWhere: defaultConfig.useWhere,
+    rootSelector: defaultConfig.rootSelector,
   }),
 ]
 

@@ -1,0 +1,212 @@
+import { where, css } from "./utils.js"
+
+export function generateForms(config) {
+  const { useWhere, mediaDark } = config
+
+  return css`
+    /*
+    * Forms inputs normalization
+    *
+    * This is a simplified version of custom forms by Adam Argyle:
+    * https://codepen.io/argyleink/pen/RwxJKQa/2256560bf93a131b58b5774e840d51f0
+    */
+
+    ${where(useWhere, "label")} {
+      font-size: var(--font-size--1);
+      font-weight: var(--font-weight-label);
+    }
+
+    /* Let form controls to look like other other elements. */
+    ${where(
+      useWhere,
+      'input:not([type="button"], [type="file"], [type="reset"], [type="submit"]), textarea, select',
+    )} {
+      font: inherit;
+      font-size: var(--font-size--1);
+      color: inherit;
+      letter-spacing: inherit;
+    }
+
+    ${where(
+      useWhere,
+      'input:not([type="range"], [type="checkbox"], [type="radio"], [type="file"]), select',
+    )} {
+      /* Default height is made the same as button elements */
+      height: var(--button-height-default);
+    }
+
+    ${where(useWhere, "input, textarea")} {
+      --input-dark-surface: var(--gray-11);
+    }
+
+    ${where(
+      useWhere,
+      '[type="text"], [type="number"], [type="password"], [type="url"], [type="email"], [type="tel"], [type="search"], [type="date"], [type="month"], [type="week"], [type="datetime-local"], select, textarea',
+    )} {
+      padding-inline: var(--input-padding-inline, var(--space-2));
+      padding-block: var(--input-padding-block, var(--space-1));
+    }
+
+    ${where(
+      useWhere,
+      'input:is([type="text"], [type="password"], [type="url"], [type="email"], [type="tel"], [type="search"]), select, textarea',
+    )} {
+      flex-shrink: 1;
+      min-inline-size: 5ch;
+      max-inline-size: 100%;
+    }
+
+    ${where(
+      useWhere,
+      'textarea, select, input:not([type="button"], [type="file"], [type="submit"], [type="reset"])',
+    )} {
+      border-radius: var(--input-radius);
+    }
+
+    ${where(
+      useWhere,
+      'input:not([disabled], [readonly], [type="file"], [type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"]), select, textarea',
+    )} {
+      background-color: var(--surface-0);
+
+      &:not(select):is(:hover, :focus-within) {
+        ${mediaDark} {
+          background-color: var(--input-dark-surface);
+        }
+      }
+
+      &:not(:focus-within):user-invalid {
+        border: 1px solid var(--negative-color);
+      }
+    }
+
+    ${where(useWhere, "textarea")} {
+      min-block-size: 3rem;
+      resize: block;
+    }
+
+    ${where(useWhere, 'input[type="checkbox"], input[type="radio"]')} {
+      block-size: var(--space-4);
+      inline-size: var(--space-4);
+    }
+
+    ::placeholder {
+      font-style: italic;
+    }
+
+    ${where(useWhere, "input[readonly], input[disabled]")} {
+      background-color: var(--surface-2);
+      cursor: not-allowed;
+    }
+
+    ${where(useWhere, "input[disabled]")} {
+      opacity: 0.5;
+      box-shadow: none;
+    }
+
+    /* Checkboxes and radio buttons are made bigger on touch devices. */
+    @media (pointer: coarse) {
+      ${where(useWhere, 'input[type="checkbox"], input[type="radio"]')} {
+        inline-size: var(--space-5);
+        block-size: var(--space-5);
+      }
+    }
+
+    ${where(
+      useWhere,
+      'select, textarea, input:not([type="button"], [type="submit"], [type="reset"], [type="file"], [type="checkbox"], [type="radio"], [type="color"], [type="range"])',
+    )} {
+      transition:
+        background-color 350ms var(--ease-3),
+        outline-offset 145ms var(--ease-2);
+
+      box-shadow:
+        var(--shadow-2),
+        0 0 1px 1px var(--surface-3);
+
+      ${mediaDark} {
+        box-shadow:
+          var(--inner-shadow-2),
+          0 1px 0px 0px var(--input-dark-surface) inset,
+          0 -0.5px 0px 0px var(--surface-2) inset;
+      }
+    }
+
+    /*
+    * Layout
+    */
+
+    ${where(useWhere, "form")} {
+      display: grid;
+      gap: var(--form-gap, var(--space-4));
+    }
+
+    /**
+    * A form group wrapping a label, an input and additional hints or messages.
+    * Vertical layout for all viewports.
+    */
+    ${where(useWhere, ".p-form-group")} {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+
+      label {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-3);
+        max-inline-size: var(--size-content-2);
+        text-wrap: balance;
+
+        &:not(:last-child):has([type="radio"], [type="checkbox"]) {
+          margin-block-end: var(--space-2);
+        }
+      }
+
+      input:is([type="radio"], [type="checkbox"]) {
+        flex-shrink: 0;
+      }
+    }
+
+    /**
+    * Fieldset groups form controls with consistent spacing, max width and a heading
+    * (legend).
+    *
+    * Structure:
+    * <fieldset>
+    *   <legend>Title</legend>
+    *   <!-- form controls -->
+    *   <footer>
+    *     <menu><!-- actions --></menu>
+    *   </footer>
+    * </fieldset>
+    */
+    ${where(useWhere, "fieldset")} {
+      display: grid;
+      gap: var(--space-3);
+      max-inline-size: var(--size-content-2);
+      border: none;
+      padding-inline: 0;
+
+      ${where(useWhere, "legend")} {
+        color: var(--text-color-2);
+        font-weight: var(--font-weight-body-bold);
+        font-size: var(--font-size-0);
+        padding-inline: 0;
+        margin-block-end: var(--space-3);
+        text-wrap: balance;
+      }
+
+      ${where(useWhere, "footer")} {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--space-3);
+        margin-block-start: var(--space-4);
+
+        ${where(useWhere, "menu:only-child")} {
+          margin-inline-start: auto;
+        }
+      }
+    }
+  `
+}

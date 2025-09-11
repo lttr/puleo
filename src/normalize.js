@@ -1,0 +1,370 @@
+import { constructRootSelector, where, css } from "./utils.js"
+
+export function generateNormalize(config) {
+  const { useWhere, rootSelector } = config
+  const selector = constructRootSelector(useWhere, rootSelector)
+
+  return css`
+    /*
+    * Based on Open Props: normalize.css and normalize.src.css
+    */
+
+    *,
+    ::before,
+    ::after {
+      /* Is a design mistake in CSS, source: https://wiki.csswg.org/ideas/mistakes */
+      box-sizing: border-box;
+    }
+
+    /*
+    * Remove default margins because it is more predictable to use layout utilities
+    * for consistent spacing.
+    *
+    * margin: 0 for dialog would not place the dialog in the center of a viewport.
+    */
+    ${where(useWhere, ":not(dialog)")} {
+      margin: 0;
+    }
+
+    ${where(useWhere, ":not(fieldset, progress, meter)")} {
+      border-width: 0;
+      border-style: solid;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+    }
+
+    ${selector} {
+      block-size: 100%;
+      font-family: var(--font-family-body);
+
+      /*
+      * From [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height)
+      * Accessibility concerns: Use a minimum value of 1.5 for line-height for main
+      * paragraph content. 
+      */
+      line-height: var(--line-height-body);
+
+      /* 
+      * From [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust):
+      * ...on a properly designed responsive site the text-size-adjust behavior is not
+      * needed, so developers can elect to turn it off by specifying a value of none.
+      * also see https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+      */
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+
+      @media (--motionOK) {
+        scroll-behavior: smooth;
+      }
+    }
+
+    @media (--motionOK) {
+      ${where(useWhere, ":focus-visible")} {
+        transition: outline-offset 145ms var(--ease-2);
+      }
+      ${where(useWhere, ":not(:active):focus-visible")} {
+        transition-duration: 0.25s;
+      }
+    }
+
+    ${where(useWhere, ":focus-visible")} {
+      outline-color: var(--focus-color, var(--link-color));
+      outline-width: 2px;
+      outline-style: solid;
+
+      &${where(useWhere, ":not(:active)")} {
+        outline-offset: var(--outline-offset);
+      }
+    }
+
+    ${where(useWhere, "body")} {
+      min-block-size: 100%;
+      /* Base font size that inherits. */
+      font-size: var(--font-size-body);
+      background-color: var(--bg-color-body);
+    }
+
+    ${where(useWhere, "p, h1, h2, h3, h4, h5, h6")} {
+      /* Soft wrap overflowing words when possible to prevent horizontal scrolling. */
+      overflow-wrap: break-word;
+    }
+
+    /* Set shorter line heights on headings and interactive elements */
+    ${where(useWhere, "button, input, label")} {
+      line-height: var(--font-lineheight-1);
+    }
+
+    ${where(useWhere, "h1, h2, h3, h4, h5, h6")} {
+      line-height: var(--line-height-headings);
+      font-weight: var(--font-weight-headings);
+      text-wrap: balance;
+    }
+
+    ${where(useWhere, "h1")} {
+      font-size: var(--font-size-h1);
+      max-inline-size: var(--max-inline-size-h1, initial);
+    }
+
+    ${where(useWhere, "h2")} {
+      font-size: var(--font-size-h2);
+      max-inline-size: var(--max-inline-size-h2, initial);
+    }
+
+    ${where(useWhere, "h3")} {
+      font-size: var(--font-size-h3);
+    }
+
+    ${where(useWhere, "h4")} {
+      font-size: var(--font-size-h4);
+    }
+
+    ${where(useWhere, "h5")} {
+      font-size: var(--font-size-h5);
+    }
+
+    ${where(useWhere, "h3, h4, h5, h6, dt")} {
+      max-inline-size: var(--max-inline-size-other-headings, initial);
+    }
+
+    ${where(useWhere, "p, ul, ol, dl, h6")} {
+      font-size: var(--font-size-0);
+    }
+
+    ${where(useWhere, "a, u, ins, abbr")} {
+      text-underline-offset: 2px;
+    }
+
+    ${where(
+      useWhere,
+      'a[href], area, button, input:not([type="text"], [type="email"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="url"]), label[for], select, summary, [tabindex]:not([tabindex*="-"])',
+    )} {
+      cursor: pointer;
+    }
+
+    ${where(
+      useWhere,
+      'a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])',
+    )} {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    ${where(useWhere, "a")} {
+      padding-inline: var(--space-1);
+      margin-inline: calc(var(--space-1) * -1);
+      padding-block: var(--space-1);
+      margin-block: calc(var(--space-1) * -1);
+
+      &${where(useWhere, "[href]")} {
+        color: var(--link-color);
+        text-decoration-color: var(--link-color);
+
+        &${where(useWhere, ":visited")} {
+          color: var(--link-color-visited);
+          text-decoration-color: var(--link-color-visited);
+        }
+      }
+
+      &${where(useWhere, ":not(:hover)")} {
+        text-decoration: inherit;
+      }
+    }
+
+    ${where(
+      useWhere,
+      "img, svg, video, canvas, audio, iframe, embed, object",
+    )} {
+      /* Don't consider these objects as inline. */
+      display: block;
+    }
+
+    ${where(useWhere, "img, svg, video")} {
+      /* Don't overflow from its container */
+      max-inline-size: 100%;
+      block-size: auto;
+    }
+
+    ${where(useWhere, "svg:not([width])")} {
+      inline-size: var(--space-8);
+    }
+
+    ${where(useWhere, "code, kbd, samp, pre")} {
+      font-family: var(--font-mono);
+    }
+
+    ${where(useWhere, ":not(pre) > code, kbd")} {
+      white-space: nowrap;
+    }
+
+    ${where(useWhere, "pre")} {
+      white-space: pre;
+      min-inline-size: 0;
+      max-inline-size: max-content;
+      writing-mode: lr;
+      direction: ltr;
+    }
+
+    ${where(useWhere, ":not(pre) > code")} {
+      padding: var(--space-1) var(--space-2);
+      background: var(--surface-2);
+      border-radius: var(--radius-2);
+      writing-mode: lr;
+    }
+
+    ${where(useWhere, "kbd, var")} {
+      padding: var(--space-1) var(--space-2);
+      border-width: var(--border-size-1);
+      border-color: var(--surface-4);
+      border-radius: var(--radius-2);
+    }
+
+    ${where(useWhere, "mark")} {
+      border-radius: var(--radius-2);
+      padding-inline: var(--space-1);
+    }
+
+    ${where(useWhere, "ol, ul")} {
+      padding-inline-start: var(--space-6);
+    }
+
+    ${where(useWhere, "li")} {
+      padding-inline-start: var(--space-2);
+    }
+
+    ${where(useWhere, "li, dd")} {
+      max-inline-size: var(--max-inline-size-elements, initial);
+      text-wrap: pretty;
+    }
+
+    ${where(useWhere, "p")} {
+      max-inline-size: var(--max-inline-size-p, initial);
+      text-wrap: pretty;
+    }
+
+    ${where(useWhere, "dt, summary")} {
+      font-weight: var(--font-weight-body-bold);
+    }
+
+    ${where(useWhere, "dt:not(:first-of-type)")} {
+      margin-block-start: var(--space-5);
+    }
+
+    ${where(useWhere, "small")} {
+      font-size: max(0.5em, var(--font-size-0));
+    }
+
+    ${where(useWhere, "hr")} {
+      margin-block: var(--space-5);
+      height: var(--border-size-1);
+      background-color: var(--surface-3);
+    }
+
+    ${where(useWhere, "figure")} {
+      ${where(useWhere, "figcaption")} {
+        margin-block-start: var(--space-3);
+        max-inline-size: var(--max-inline-size-elements, initial);
+        color: var(--text-color-2);
+        font-size: var(--font-size--1);
+        text-wrap: balance;
+        text-align: center;
+      }
+    }
+
+    ${where(useWhere, "blockquote")} {
+      display: grid;
+      gap: var(--space-3);
+      border-inline-start-width: var(--border-size-3);
+      border-inline-start-color: var(--text-color-2);
+      padding-block: var(--space-3);
+      padding-inline: var(--space-4);
+      max-inline-size: var(--max-inline-size-elements, initial);
+      font-style: italic;
+    }
+
+    ${where(useWhere, "summary")} {
+      background: var(--bg-color-body);
+      padding: var(--space-2) var(--space-3);
+      margin: calc(var(--space-2) * -1) calc(var(--space-3) * -1);
+      border-radius: var(--radius-default);
+    }
+
+    ${where(useWhere, "details")} {
+      padding-inline: var(--space-3);
+      padding-block: var(--space-2);
+      background: var(--surface-1);
+      border-radius: var(--radius-default);
+    }
+
+    ${where(useWhere, "details[open] > summary")} {
+      margin-bottom: var(--space-2);
+      border-end-start-radius: 0;
+      border-end-end-radius: 0;
+    }
+
+    ${where(useWhere, "del")} {
+      background: var(--error-alert-bg-color);
+      color: var(--error-alert-color);
+    }
+
+    ${where(useWhere, "ins")} {
+      background: var(--green-1);
+      color: var(--green-11);
+    }
+
+    ${where(useWhere, "abbr")} {
+      text-decoration-color: var(--text-color-2);
+    }
+
+    ${where(useWhere, "dialog")} {
+      background-color: var(--surface-1);
+      color: inherit;
+      border-radius: var(--radius-default);
+      box-shadow: var(--shadow-6);
+
+      &::backdrop {
+        backdrop-filter: blur(25px);
+      }
+    }
+
+    ${where(useWhere, "html:has(dialog[open])")} {
+      overflow: hidden;
+    }
+
+    ${where(useWhere, "menu")} {
+      padding-inline-start: 0;
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    ${where(useWhere, "sup")} {
+      font-size: 0.5em;
+    }
+
+    /* Anything that has been anchored to should have extra scroll margin */
+    :target {
+      scroll-margin-block: 5ex;
+    }
+
+    /*
+    * With list-style-type: "" screen readers announce the list as a list, even
+    * though there are no visible list markers. Use a list only when it is useful to
+    * be announced as a list.
+    *
+    * Webkit position: https://bugs.webkit.org/show_bug.cgi?id=170179
+    * 
+    * For reverting this list reset: wrap a list inside a tag with class \`p-prose\`.
+    * This idea asumes that a list is more often needed unstyled and a styled list
+    * is more often used in an user generated content.
+    */
+    ${where(useWhere, "ul")} {
+      list-style-type: "";
+      margin-inline: 0;
+      padding-inline: 0;
+
+      ${where(useWhere, "li")} {
+        margin-inline: 0;
+        padding-inline: 0;
+      }
+    }
+  `
+}

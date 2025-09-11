@@ -37,7 +37,7 @@
     "lint:styles": "stylelint '**/*.css'",
     "lint": "run-p lint:*",
     "prepublishOnly": "pnpm build",
-    "release": "pnpm lint && pnpm build && changelogen --release --push && pnpm publish",
+    "release": "pnpm verify && changelogen --release --push && pnpm publish",
     "start": "browser-sync start --server --files . --no-notify --serveStatic ./public",
     "test": "exit 0",
     "verify": "pnpm format && pnpm lint && pnpm build && pnpm test",

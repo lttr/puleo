@@ -1,7 +1,7 @@
 import { createWhere, css } from "../utils.js"
 
 export function generateButtons(config) {
-  const { useWhere, mediaDark } = config
+  const { useWhere, mediaDark, classPrefix } = config
   const where = createWhere(useWhere)
 
   return css`
@@ -19,7 +19,7 @@ export function generateButtons(config) {
     }
 
     ${where(
-      '.p-button, button, input:is([type="button"], [type="submit"], [type="reset"])',
+      `.${classPrefix}button, button, input:is([type="button"], [type="submit"], [type="reset"])`,
     )},
     ${where('input[type="file"]::-webkit-file-upload-button')},
     ${where('input[type="file"]::file-selector-button')} {
@@ -74,7 +74,7 @@ export function generateButtons(config) {
     }
 
     /* Importance primary/secondary */
-    ${where(".p-button-secondary")} {
+    ${where(`.${classPrefix}button-secondary`)} {
       --_text-color: var(--text-color-1);
       --_bg-color: var(--surface-0);
       --_bg-color-hover: var(--surface-2);
@@ -84,7 +84,7 @@ export function generateButtons(config) {
     }
 
     /* Variant brand */
-    ${where(".p-button-brand")} {
+    ${where(`.${classPrefix}button-brand`)} {
       --_text-color: var(--text-color-1-inverse);
       --_bg-color: var(--brand-color);
       --_bg-color-hover: var(--brand-color-bright);
@@ -92,7 +92,7 @@ export function generateButtons(config) {
     }
 
     ${where(
-      '.p-button, button, input:is([type="button"], [type="submit"], [type="reset"], [type="file"])',
+      `.${classPrefix}button, button, input:is([type="button"], [type="submit"], [type="reset"], [type="file"])`,
     )} {
       /* disabled */
       &[disabled] {
@@ -148,7 +148,7 @@ export function generateButtons(config) {
       }
     }
 
-    ${where("a.p-button")} {
+    ${where(`a.${classPrefix}button`)} {
       &:hover {
         text-decoration: none;
       }
@@ -169,7 +169,7 @@ export function generateButtons(config) {
       font-weight: var(--font-weight-buttons);
       line-height: var(--line-height-headings);
 
-      &.p-dropping {
+      &.${classPrefix}dropping {
         border: 1px solid transparent;
         box-shadow: none;
         outline: 2px dashed var(--text-color-2);

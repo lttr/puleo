@@ -1,6 +1,7 @@
 import { css } from "../utils.js"
 
-export function generatePageLayout() {
+export function generatePageLayout(config) {
+  const { classPrefix } = config
   return css`
     /* Sources:
     * https://layout-breakouts-builder.vercel.app/
@@ -15,7 +16,7 @@ export function generatePageLayout() {
     /*   initial-value: 4; */
     /* } */
 
-    :is(.p-page-layout, .p-full-bg) {
+    :is(.${classPrefix}page-layout, .${classPrefix}full-bg) {
       --minimum-content-padding: var(--grid-gutter);
       --popout-multiplier: 4;
 
@@ -82,72 +83,72 @@ export function generatePageLayout() {
 
     /* If not specified with other classes otherwise, the elements inside the layout
      * will span the middle content area. */
-    :is(.p-page-layout, .p-full-bg) > * {
+    :is(.${classPrefix}page-layout, .${classPrefix}full-bg) > * {
       grid-column: content;
     }
 
     /** CLASSES **/
 
-    .p-inset {
+    .${classPrefix}inset {
       grid-column: inset;
     }
-    .p-inset-start {
+    .${classPrefix}inset-start {
       grid-column-start: inset-start;
     }
-    .p-inset-end {
+    .${classPrefix}inset-end {
       grid-column-end: inset-end;
     }
-    .p-inset-padded {
+    .${classPrefix}inset-padded {
       grid-column: inset;
       padding-inline: calc(2 * var(--minimum-content-padding));
     }
 
-    .p-content {
+    .${classPrefix}content {
       grid-column: content;
     }
-    .p-content-start {
+    .${classPrefix}content-start {
       grid-column-start: content-start;
     }
-    .p-content-end {
+    .${classPrefix}content-end {
       grid-column-end: content-end;
     }
-    .p-content-padded {
+    .${classPrefix}content-padded {
       grid-column: content;
       padding-inline: calc(2 * var(--minimum-content-padding));
     }
 
     @media (--sm-n-below) {
-      .p-content-padded {
+      .${classPrefix}content-padded {
         grid-column: full;
         border-radius: 0;
         padding-inline: var(--minimum-content-padding);
       }
     }
 
-    .p-popout {
+    .${classPrefix}popout {
       grid-column: popout;
     }
-    .p-popout-start {
+    .${classPrefix}popout-start {
       grid-column-start: popout-start;
     }
-    .p-popout-end {
+    .${classPrefix}popout-end {
       grid-column-end: popout-end;
     }
-    .p-popout-padded {
+    .${classPrefix}popout-padded {
       grid-column: popout;
       padding-inline: calc(2 * var(--minimum-content-padding));
     }
 
-    .p-full {
+    .${classPrefix}full {
       grid-column: full;
       border-radius: 0;
     }
-    .p-full-start {
+    .${classPrefix}full-start {
       grid-column-start: full-start;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    .p-full-end {
+    .${classPrefix}full-end {
       grid-column-end: full-end;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
@@ -157,12 +158,12 @@ export function generatePageLayout() {
      *
      * Background spans the full width, while the content remains in the middle
      * content track. */
-    .p-full-bg {
+    .${classPrefix}full-bg {
       grid-column: full;
     }
 
     /* Spans the full width, content is padded a little on both sides. */
-    .p-full-padded {
+    .${classPrefix}full-padded {
       grid-column: full;
       padding-inline: var(--minimum-content-padding);
     }
@@ -172,13 +173,13 @@ export function generatePageLayout() {
       * 
       * Example:
       * 
-      * <div class="p-layout-wrapper">
+      * <div class="${classPrefix}layout-wrapper">
       *   <header>...</header>
       *   <main>...</main>
       *   <footer>...</footer>
       * </div>
      */
-    .p-layout-wrapper {
+    .${classPrefix}layout-wrapper {
       display: grid;
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;

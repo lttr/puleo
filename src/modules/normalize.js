@@ -362,7 +362,7 @@ export function generateNormalize(config) {
     *
     * Webkit position: https://bugs.webkit.org/show_bug.cgi?id=170179
     * 
-    * For reverting this list reset: wrap a list inside a tag with class \`p-prose\`.
+    * For reverting this list reset: wrap a list inside a tag with class configured as \`classPrefix + "prose"\`.
     * This idea asumes that a list is more often needed unstyled and a styled list
     * is more often used in an user generated content.
     */

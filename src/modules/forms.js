@@ -1,7 +1,7 @@
 import { createWhere, css } from "../utils.js"
 
 export function generateForms(config) {
-  const { useWhere, mediaDark } = config
+  const { useWhere, mediaDark, classPrefix } = config
   const where = createWhere(useWhere)
 
   return css`
@@ -142,7 +142,7 @@ export function generateForms(config) {
     * A form group wrapping a label, an input and additional hints or messages.
     * Vertical layout for all viewports.
     */
-    ${where(".p-form-group")} {
+    ${where(`.${classPrefix}form-group`)} {
       display: flex;
       flex-direction: column;
       gap: var(--space-2);

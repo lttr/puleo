@@ -9,7 +9,7 @@ export function generateProse(config) {
       max-inline-size: var(--size-measure, var(--size-content-3));
       margin-inline: auto;
 
-      /* like p-flow utility but bigger vertical gaps */
+      /* like ${classPrefix}flow utility but bigger vertical gaps */
       * + *:not(figcaption, hr, li, .${classPrefix}not-prose *) {
         margin-block-start: 1.2em;
       }

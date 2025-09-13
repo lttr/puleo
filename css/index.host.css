@@ -1,0 +1,27 @@
+/*
+* Building blocks (CSS custom properties)
+*/
+@import url("./generated/props.host.css");
+@import url("./generated/scales.host.css");
+
+/*
+* Resets and base styles (generic styles and element specific styles)
+*/
+@import url("./generated/theme.host.css");
+@import url("./generated/normalize.host.css");
+
+@import url("./generated/page-layout.host.css");
+@import url("./generated/tables.host.css");
+@import url("./generated/buttons.host.css");
+@import url("./generated/forms.host.css");
+
+@import url("./generated/objects.host.css");
+
+@import url("./generated/prose.host.css");
+
+/*
+* Settings are placed at the end since it is expected
+* to be overridden by the user.
+*/
+@import url("./generated/settings.host.css");
+@import url("./generated/brand.host.css");

@@ -17,6 +17,7 @@ import { buildObjects } from "./modules/objects.js"
 
 function build(customConfig = {}) {
   const config = defu(customConfig, defaultConfig)
+  const suffix = config.rootSelector === ":host" ? ".host" : ""
 
   const cssScales = buildScales(config).join("\n")
   const cssProps = buildProps(config).join("\n")
@@ -31,18 +32,18 @@ function build(customConfig = {}) {
   const cssForms = generateForms(config)
   const cssProse = generateProse(config)
 
-  const fileOutputScales = "./css/generated/scales.css"
-  const fileOutputProps = "./css/generated/props.css"
-  const fileOutputObjects = "./css/generated/objects.css"
-  const fileOutputBrand = "./css/generated/brand.css"
-  const fileOutputTheme = "./css/generated/theme.css"
-  const fileOutputSettings = "./css/generated/settings.css"
-  const fileOutputNormalize = "./css/generated/normalize.css"
-  const fileOutputPageLayout = "./css/generated/page-layout.css"
-  const fileOutputTables = "./css/generated/tables.css"
-  const fileOutputButtons = "./css/generated/buttons.css"
-  const fileOutputForms = "./css/generated/forms.css"
-  const fileOutputProse = "./css/generated/prose.css"
+  const fileOutputScales = `./css/generated/scales${suffix}.css`
+  const fileOutputProps = `./css/generated/props${suffix}.css`
+  const fileOutputObjects = `./css/generated/objects${suffix}.css`
+  const fileOutputBrand = `./css/generated/brand${suffix}.css`
+  const fileOutputTheme = `./css/generated/theme${suffix}.css`
+  const fileOutputSettings = `./css/generated/settings${suffix}.css`
+  const fileOutputNormalize = `./css/generated/normalize${suffix}.css`
+  const fileOutputPageLayout = `./css/generated/page-layout${suffix}.css`
+  const fileOutputTables = `./css/generated/tables${suffix}.css`
+  const fileOutputButtons = `./css/generated/buttons${suffix}.css`
+  const fileOutputForms = `./css/generated/forms${suffix}.css`
+  const fileOutputProse = `./css/generated/prose${suffix}.css`
 
   writeFileSync(fileOutputScales, cssScales)
   writeFileSync(fileOutputProps, cssProps)

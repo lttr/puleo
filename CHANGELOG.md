@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.7.0
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.6.2...v0.7.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
+
+### 💅 Refactors
+
+- Replace defu with object spread and fix CSS generation ([cfd25f3](https://github.com/lttr/puleo/commit/cfd25f3))
+- Use array for rootSelector ([c98ebf1](https://github.com/lttr/puleo/commit/c98ebf1))
+
+### 🏡 Chore
+
+- Update Node.js and package manager versions ([2188aba](https://github.com/lttr/puleo/commit/2188aba))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.6.2
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.6.1...v0.6.2)

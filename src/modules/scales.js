@@ -1,5 +1,3 @@
-import { defu } from "defu"
-
 import { defaultConfig } from "../config.js"
 import { fluidSpace, fluidFontSize, fluidGrid } from "../fluid-calculator.js"
 import { createRootSelector } from "../utils.js"
@@ -37,7 +35,7 @@ function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
 }
 
 export function buildScales(config) {
-  const effectiveConfig = defu(config, defaultConfig)
+  const effectiveConfig = { ...defaultConfig, ...config }
   const {
     fluid,
     fontSize,

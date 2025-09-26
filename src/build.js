@@ -1,5 +1,4 @@
 import { writeFileSync } from "node:fs"
-import { defu } from "defu"
 
 import { defaultConfig } from "./config.js"
 import { generateBrand } from "./modules/brand.js"
@@ -16,7 +15,7 @@ import { buildProps } from "./modules/props.js"
 import { buildObjects } from "./modules/objects.js"
 
 function build(customConfig = {}) {
-  const config = defu(customConfig, defaultConfig)
+  const config = { ...defaultConfig, ...customConfig }
   const suffix = config.rootSelector === ":host" ? ".host" : ""
 
   const cssScales = buildScales(config).join("\n")

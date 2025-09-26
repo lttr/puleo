@@ -46,7 +46,6 @@ export function generateForms(config) {
     }
 
     ${where(
-      useWhere,
       'input:is([type="text"], [type="password"], [type="url"], [type="email"], [type="tel"], [type="search"]), select, textarea',
     )} {
       flex-shrink: 1;
@@ -55,14 +54,12 @@ export function generateForms(config) {
     }
 
     ${where(
-      useWhere,
       'textarea, select, input:not([type="button"], [type="file"], [type="submit"], [type="reset"])',
     )} {
       border-radius: var(--input-radius);
     }
 
     ${where(
-      useWhere,
       'input:not([disabled], [readonly], [type="file"], [type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"]), select, textarea',
     )} {
       background-color: var(--surface-0);

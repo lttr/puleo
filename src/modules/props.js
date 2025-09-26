@@ -1,5 +1,3 @@
-import { defu } from "defu"
-
 import { defaultConfig } from "../config.js"
 import { openProps } from "../open-props.js"
 import { handleShadows } from "../shadows.js"
@@ -38,7 +36,7 @@ function insideRootSelector(groups, { useWhere, rootSelector, mediaDark }) {
 }
 
 export function buildProps(config) {
-  const effectiveConfig = defu(config, defaultConfig)
+  const effectiveConfig = { ...defaultConfig, ...config }
   const {
     borderRadius,
     borderSize,

@@ -34,9 +34,10 @@
     "release": "pnpm verify && changelogen --release --push && pnpm publish",
     "start": "browser-sync start --server --files . --no-notify --serveStatic ./public",
     "test": "exit 0",
-    "verify": "pnpm format && pnpm lint && pnpm build && pnpm test",
+    "verify": "pnpm clean && pnpm format && pnpm lint && pnpm build && pnpm test",
     "watch": "run-p watch:**",
-    "watch:postcss": "postcss --watch 'css/**/*.css' --dir output/ --ext post.css",
+    "watch:postcss:root": "postcss --watch css/index.css --dir output/ --ext post.css --config ./postcss/root/",
+    "watch:postcss:host": "postcss --watch css/index.host.css --dir output/ --ext post.css --config ./postcss/host/",
     "watch:generate": "nodemon --ext js --exec pnpm generate"
   },
   "devDependencies": {

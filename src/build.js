@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs"
+import { writeFileSync, mkdirSync } from "node:fs"
 
 import { defaultConfig } from "./config.js"
 import { generateBrand } from "./modules/brand.js"
@@ -14,9 +14,12 @@ import { buildScales } from "./modules/scales.js"
 import { buildProps } from "./modules/props.js"
 import { buildObjects } from "./modules/objects.js"
 
-function build(customConfig = {}) {
-  const config = { ...defaultConfig, ...customConfig }
-  const suffix = config.rootSelector === ":host" ? ".host" : ""
+function buildForSelector(rootSelector, customConfig = {}) {
+  const config = { ...defaultConfig, ...customConfig, rootSelector }
+  const folder = rootSelector === ":host" ? "host" : "root"
+
+  // Create directory if it doesn't exist
+  mkdirSync(`./css/generated/${folder}`, { recursive: true })
 
   const cssScales = buildScales(config).join("\n")
   const cssProps = buildProps(config).join("\n")
@@ -31,18 +34,18 @@ function build(customConfig = {}) {
   const cssForms = generateForms(config)
   const cssProse = generateProse(config)
 
-  const fileOutputScales = `./css/generated/scales${suffix}.css`
-  const fileOutputProps = `./css/generated/props${suffix}.css`
-  const fileOutputObjects = `./css/generated/objects${suffix}.css`
-  const fileOutputBrand = `./css/generated/brand${suffix}.css`
-  const fileOutputTheme = `./css/generated/theme${suffix}.css`
-  const fileOutputSettings = `./css/generated/settings${suffix}.css`
-  const fileOutputNormalize = `./css/generated/normalize${suffix}.css`
-  const fileOutputPageLayout = `./css/generated/page-layout${suffix}.css`
-  const fileOutputTables = `./css/generated/tables${suffix}.css`
-  const fileOutputButtons = `./css/generated/buttons${suffix}.css`
-  const fileOutputForms = `./css/generated/forms${suffix}.css`
-  const fileOutputProse = `./css/generated/prose${suffix}.css`
+  const fileOutputScales = `./css/generated/${folder}/scales.css`
+  const fileOutputProps = `./css/generated/${folder}/props.css`
+  const fileOutputObjects = `./css/generated/${folder}/objects.css`
+  const fileOutputBrand = `./css/generated/${folder}/brand.css`
+  const fileOutputTheme = `./css/generated/${folder}/theme.css`
+  const fileOutputSettings = `./css/generated/${folder}/settings.css`
+  const fileOutputNormalize = `./css/generated/${folder}/normalize.css`
+  const fileOutputPageLayout = `./css/generated/${folder}/page-layout.css`
+  const fileOutputTables = `./css/generated/${folder}/tables.css`
+  const fileOutputButtons = `./css/generated/${folder}/buttons.css`
+  const fileOutputForms = `./css/generated/${folder}/forms.css`
+  const fileOutputProse = `./css/generated/${folder}/prose.css`
 
   writeFileSync(fileOutputScales, cssScales)
   writeFileSync(fileOutputProps, cssProps)
@@ -56,6 +59,14 @@ function build(customConfig = {}) {
   writeFileSync(fileOutputButtons, cssButtons)
   writeFileSync(fileOutputForms, cssForms)
   writeFileSync(fileOutputProse, cssProse)
+}
+
+function build(customConfig = {}) {
+  // Generate files for :root selector
+  buildForSelector(":root", customConfig)
+
+  // Generate files for :host selector
+  buildForSelector(":host", customConfig)
 }
 
 // Export build function for use in variants

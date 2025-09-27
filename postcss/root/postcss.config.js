@@ -2,7 +2,7 @@ import postcssPresetEnv from "postcss-preset-env"
 import postcssImport from "postcss-import"
 import postcssGlobalData from "@csstools/postcss-global-data"
 import darkThemeClass from "postcss-dark-theme-class"
-import { defaultConfig } from "./src/config.js"
+import { defaultConfig } from "../../src/config.js"
 
 const plugins = [
   postcssImport(),
@@ -30,7 +30,9 @@ const plugins = [
   // Enables to control dark theme via a class
   darkThemeClass({
     useWhere: defaultConfig.useWhere,
-    rootSelector: defaultConfig.rootSelector,
+    // The library does not work with :host, since that pseudo-class works differently:
+    // anything inside that has to be targeted with a pseudo-function like :host(.is-dark)
+    rootSelector: ":root",
   }),
 ]
 

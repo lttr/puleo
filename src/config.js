@@ -2,7 +2,6 @@ export const defaultConfig = {
   propsPrefix: "",
   classPrefix: "p-",
   useWhere: true,
-  rootSelector: [":root", ":host"],
   mediaDark: "@media (--OSdark)",
   layoutHelpers: [
     "container",

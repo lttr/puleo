@@ -1,6 +1,6 @@
 import cssnano from "cssnano"
 
-import config from "../postcss.config.js"
+import config from "../root/postcss.config.js"
 
 export default {
   plugins: [

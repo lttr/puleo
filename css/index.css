@@ -1,27 +1,27 @@
 /*
 * Building blocks (CSS custom properties)
 */
-@import url("./generated/props.css");
-@import url("./generated/scales.css");
+@import url("./generated/root/props.css");
+@import url("./generated/root/scales.css");
 
 /*
 * Resets and base styles (generic styles and element specific styles)
 */
-@import url("./generated/theme.css");
-@import url("./generated/normalize.css");
+@import url("./generated/root/theme.css");
+@import url("./generated/root/normalize.css");
 
-@import url("./generated/page-layout.css");
-@import url("./generated/tables.css");
-@import url("./generated/buttons.css");
-@import url("./generated/forms.css");
+@import url("./generated/root/page-layout.css");
+@import url("./generated/root/tables.css");
+@import url("./generated/root/buttons.css");
+@import url("./generated/root/forms.css");
 
-@import url("./generated/objects.css");
+@import url("./generated/root/objects.css");
 
-@import url("./generated/prose.css");
+@import url("./generated/root/prose.css");
 
 /*
 * Settings are placed at the end since it is expected
 * to be overridden by the user.
 */
-@import url("./generated/settings.css");
-@import url("./generated/brand.css");
+@import url("./generated/root/settings.css");
+@import url("./generated/root/brand.css");

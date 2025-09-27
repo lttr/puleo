@@ -11,10 +11,7 @@ export function where(useWhere, selector) {
 }
 
 export function createRootSelector(useWhere, rootSelector) {
-  const selector = Array.isArray(rootSelector)
-    ? rootSelector.join(", ")
-    : rootSelector
-  return where(useWhere, selector)
+  return where(useWhere, rootSelector)
 }
 
 // Tagged template literal for CSS - improves syntax highlighting and formatting

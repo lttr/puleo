@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Puleo in a web component</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="module">
+      customElements.define(
+        "puleo-web-component",
+        class extends HTMLElement {
+          constructor() {
+            super()
+            this.attachShadow({ mode: "open" })
+            this.shadowRoot.innerHTML = `
+          <link href="../output/index.post.css" rel="stylesheet" />
+          <style>
+
+          </style>
+          <div class="p-container">
+            <h1>Puleo in a web component</h1>
+            <p>
+              Puleo is a CSS library for building websites and web applications.
+            </p>
+            <p>
+              It is a CSS library that is built on top of the Open Props
+              collection of CSS custom properties.
+            </p>
+            <p>
+              Puleo is a CSS library for building websites and web applications.
+            </p>
+          </div>
+        `
+          }
+        },
+      )
+    </script>
+
+    <style>
+      body {
+        background-color: #fff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #2a2a2a;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <puleo-web-component></puleo-web-component>
+  </body>
+</html>

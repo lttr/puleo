@@ -1,12 +1,16 @@
 # Changelog
 
+## v0.8.1
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.8.0...v0.8.1)
+
 ## v0.8.0
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.7.0...v0.8.0)
 
 ### 🚀 Enhancements
 
-- ⚠️  Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
+- ⚠️ Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
 
 ### 🩹 Fixes
 
@@ -20,7 +24,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
+- ⚠️ Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
 
 ### ❤️ Contributors
 

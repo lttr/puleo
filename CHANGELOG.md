@@ -6,7 +6,7 @@
 
 ### 🚀 Enhancements
 
-- ⚠️  Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
+- ⚠️ Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
 
 ### 💅 Refactors
 
@@ -19,7 +19,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
+- ⚠️ Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
 
 ### ❤️ Contributors
 

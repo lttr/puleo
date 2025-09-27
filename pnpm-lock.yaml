@@ -24,9 +24,6 @@ importers:
       cssnano:
         specifier: ^7.1.1
         version: 7.1.1(postcss@8.5.6)
-      defu:
-        specifier: ^6.1.4
-        version: 6.1.4
       eslint:
         specifier: ^9.35.0
         version: 9.35.0(jiti@2.5.1)

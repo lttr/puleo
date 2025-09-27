@@ -1,5 +1,31 @@
 # Changelog
 
+## v0.8.0
+
+[compare changes](https://github.com/lttr/puleo/compare/v0.7.0...v0.8.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
+
+### 🩹 Fixes
+
+- Remove duplicate selector in forms CSS ([ab76286](https://github.com/lttr/puleo/commit/ab76286))
+
+### 🏡 Chore
+
+- Add web component example page ([f1a4095](https://github.com/lttr/puleo/commit/f1a4095))
+- Update changelog formatting and remove unused defu dependency ([7811805](https://github.com/lttr/puleo/commit/7811805))
+- Add @eslint/js dependency ([4a0f9af](https://github.com/lttr/puleo/commit/4a0f9af))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
+
+### ❤️ Contributors
+
+- Lukas Trumm <lukas.trumm@gmail.com>
+
 ## v0.7.0
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.6.2...v0.7.0)

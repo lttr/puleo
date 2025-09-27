@@ -25,6 +25,7 @@ export function generateForms(config) {
       font-size: var(--font-size--1);
       color: inherit;
       letter-spacing: inherit;
+      border-radius: var(--input-radius);
     }
 
     ${where(
@@ -51,12 +52,6 @@ export function generateForms(config) {
       flex-shrink: 1;
       min-inline-size: 5ch;
       max-inline-size: 100%;
-    }
-
-    ${where(
-      'textarea, select, input:not([type="button"], [type="file"], [type="submit"], [type="reset"])',
-    )} {
-      border-radius: var(--input-radius);
     }
 
     ${where(

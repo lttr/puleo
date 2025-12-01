@@ -1,0 +1,20 @@
+# Nixpacks configuration for Puleo CSS demo site
+# https://nixpacks.com/docs/configuration/file
+
+providers = ["node"]
+
+[variables]
+NIXPACKS_NODE_VERSION = '22'
+
+[phases.install]
+onlyIncludeFiles = [
+  "package.json",
+  "pnpm-lock.yaml",
+]
+
+[phases.build]
+cmds = ["pnpm run build"]
+
+# Static site - public directory with demo pages
+[staticAssets]
+directory = "public"

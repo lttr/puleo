@@ -3,6 +3,9 @@ output
 generated
 
 *.min.css
-*.min.css
 *.css.map
 *.post.css
+
+# Generated CSS copies for deployment
+public/puleo.css
+public/puleo.host.css

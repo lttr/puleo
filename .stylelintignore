@@ -1,3 +1,5 @@
 examples
 output
 **/generated/*.css
+public/puleo.css
+public/puleo.host.css

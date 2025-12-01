@@ -62,6 +62,9 @@ function buildForSelector(rootSelector, customConfig = {}) {
 }
 
 function build(customConfig = {}) {
+  // Create output directory if it doesn't exist
+  mkdirSync("./output", { recursive: true })
+
   // Generate files for :root selector
   buildForSelector(":root", customConfig)
 
